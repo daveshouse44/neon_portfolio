@@ -6,6 +6,9 @@ module.exports = {
       fontFamily: {
         neon: ["Tilt Neon", "sans-serif"],
       },
+      colors: {
+        brand: "hsl(var(--color-brand) / <alpha-value>)",
+      },
     },
   },
   plugins: [],
