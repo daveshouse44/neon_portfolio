@@ -16,7 +16,9 @@ const { title = "Dave Tierney's website" } = Astro.props;
   <MainHead title={title} />
   <body>
     <Nav />
-    <slot />
+    <main>
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>
