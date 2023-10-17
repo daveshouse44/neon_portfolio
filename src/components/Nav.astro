@@ -1,7 +1,7 @@
 ---
 import { Icon } from "astro-icon";
-
 import navData from "../data/navData";
+import Link from "./Link.astro";
 ---
 
 <nav>
@@ -10,7 +10,16 @@ import navData from "../data/navData";
       ><Icon name="logo" width="60" class="text-brand" /></a
     >
     <ul>
-      {navData.map((item) => <a href={item.path}>{item.name}</a>)}
+      {
+        navData.map((item) => (
+          <Link
+            text={item.name}
+            href={item.path}
+            data-navLink
+            icon={{ name: item.icon?.name, side: item.icon?.side }}
+          />
+        ))
+      }
     </ul>
   </div>
 </nav>
