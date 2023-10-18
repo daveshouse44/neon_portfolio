@@ -1,0 +1,42 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+
+import MyFace from "../components/MyFace.astro";
+
+import {skillDataWeb, skillDataRestaurant} from "../data/skillData";
+---
+
+<MainLayout title="Skills">
+    <h1 class="flex font-neon font-bold text-neutral-900">
+      My various&nbsp<span class="text-brand">Skills</span>
+    </h1>
+  <MyFace />
+  <h2>Current focus</h2>
+  <h3>
+    A strategic approach to <span class="text-brand">Design</span> and <span
+      class="text-brand">Development</span
+    >
+  </h3>
+  {
+    skillDataWeb.map((item) => (
+      <>
+        <h4>{item.discipline}</h4>
+        <p>{item.description}</p>
+      </>
+    ))
+  }
+  <h2>Prior knowledge</h2>
+  <h3>
+    Restaurant <span class="text-brand">Management</span> and <span
+      class="text-brand">Chef</span
+    > experience
+  </h3>
+  {
+    skillDataRestaurant.map((item) => (
+      <>
+        <h4>{item.discipline}</h4>
+        <p>{item.description}</p>
+      </>
+    ))
+  }
+</MainLayout>../data/skillData

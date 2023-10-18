@@ -1,0 +1,19 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+
+import Link from "../components/Link.astro";
+---
+
+<MainLayout title="Nonexistent">
+  <div class="grid place-items-center gap-4 text-center">
+    <h1 class="flex font-neon font-bold text-neutral-900">
+      <span class="text-brand">404</span>&nbspThis page does not exist
+    </h1>
+    <p>Was it all a dream?</p>
+    <Link
+      href="/"
+      text="Back to reality"
+      icon={{ name: "ph:planet", side: "right" }}
+    />
+  </div>
+</MainLayout>
