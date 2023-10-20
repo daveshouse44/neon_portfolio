@@ -3,7 +3,7 @@ import { Icon } from "astro-icon";
 interface Props {
   text: string;
   href: string;
-  icon?: {
+  icon: {
     name: string;
     side: "left" | "right";
   };
@@ -12,18 +12,42 @@ interface Props {
 const { text, href, icon, ...rest } = Astro.props as Props;
 ---
 
-<a href={href} {...rest} class="inline-flex gap-1 py-2 pl-3 pr-4 text-neutral-900 font-medium uppercase underline underline-offset-2 rounded group transition hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:decoration-brand md:p-0">
+<a
+  href={href}
+  {...rest}
+  class="group inline-flex gap-1 rounded py-2 pl-3 pr-4 font-medium uppercase text-neutral-900 transition hover:bg-gray-100 md:border-0 md:p-0 md:hover:bg-transparent"
+>
   {
     icon && icon.side === "left" && (
-      <Icon name={icon.name} height="24" width="24" class="transition group-hover:text-brand" />
+      <>
+        <Icon
+          name={icon.name}
+          height="24"
+          width="24"
+          class="transition group-hover:text-brand"
+        />
+        <div class="flex flex-col">
+          <span>{text}</span>
+          <span class="-mt-[3px] h-0.5 max-w-0 bg-brand transition-all delay-150 duration-500 group-hover:max-w-full" />
+        </div>
+      </>
     )
   }
 
-  <span>{text}</span>
-
   {
     icon && icon.side === "right" && (
-      <Icon name={icon.name} height="24" width="24" class="transition group-hover:text-brand" />
+      <>
+        <div class="flex flex-col">
+          <span>{text}</span>
+          <span class="-mt-[3px] h-0.5 max-w-0 bg-brand transition-all duration-500 group-hover:max-w-full" />
+        </div>
+        <Icon
+          name={icon.name}
+          height="24"
+          width="24"
+          class="transition delay-500 group-hover:text-brand"
+        />
+      </>
     )
   }
 </a>

@@ -4,31 +4,61 @@ import navData from "../data/navData";
 import Link from "./Link.astro";
 ---
 
-<nav class="bg-gray-400 bg-opacity-5 border border-brand border-opacity-5 shadow-md shadow-current">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-      <a href="/" class="flex items-center gap-2 group" aria-label="Go home">
-        <Icon name="logo" width="50" class="transition group-hover:text-brand" />
-          <span class="self-center text-2xl font-semibold whitespace-nowrap font-neon uppercase text-neutral-900">Dave Tierney</span>
-      </a>
-      <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden focus:outline-none focus:ring-2 text-neutral-500 hover:text-brand hover:bg-grey-700 focus:ring-neutral-600" aria-controls="navbar-default" aria-expanded="false">
-          <span class="sr-only">Open main menu</span>
-          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-          </svg>
-      </button>
-      <div class="hidden w-full md:flex md:w-auto" id="navbar-default">
-        <ul class="flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-8 md:mt-0">
-          {
-            navData.map((item) => (
-              <Link
-                text={item.name}
-                href={item.path}
-                data-navLink
-                icon={{ name: item.icon?.name, side: item.icon?.side }}
-              />
-            ))
-          }
-        </ul>
-      </div>
+<nav
+  class="border border-brand border-opacity-5 bg-gray-400 bg-opacity-5 shadow-md shadow-current"
+>
+  <div
+    class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4"
+  >
+    <a href="/" class="group flex items-center gap-2" aria-label="Go home">
+      <Icon
+        name="logo"
+        width="50"
+        class="transition duration-500 group-hover:text-brand"
+      />
+      <span
+        class="self-center whitespace-nowrap font-neon text-2xl font-bold uppercase text-neutral-900"
+        >Dave Tierney</span
+      >
+    </a>
+    <button
+      data-collapse-toggle="navbar-default"
+      type="button"
+      class="hover:bg-grey-700 inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-neutral-500 hover:text-brand focus:outline-none focus:ring-2 focus:ring-neutral-600 md:hidden"
+      aria-controls="navbar-default"
+      aria-expanded="false"
+    >
+      <span class="sr-only">Open main menu</span>
+      <svg
+        class="h-5 w-5"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 17 14"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M1 1h15M1 7h15M1 13h15"></path>
+      </svg>
+    </button>
+    <div class="hidden w-full md:flex md:w-auto" id="navbar-default">
+      <ul
+        class="mt-4 flex flex-col p-4 md:mt-0 md:flex-row md:space-x-8 md:p-0"
+      >
+        {
+          navData.map((item) => (
+            <Link
+              text={item.name}
+              href={item.path}
+              data-navLink
+              icon={{ name: item.icon?.name, side: item.icon?.side }}
+            />
+          ))
+        }
+      </ul>
     </div>
+  </div>
 </nav>

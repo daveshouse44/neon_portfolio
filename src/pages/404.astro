@@ -7,13 +7,20 @@ import Link from "../components/Link.astro";
 <MainLayout title="Nonexistent">
   <div class="grid place-items-center gap-4 text-center">
     <h1 class="flex font-bold text-neutral-900">
-      <span class="font-neon text-brand uppercase">404</span>&nbspThis page does not exist
+      <span class="font-neon font-bold uppercase text-brand">404</span>&nbspThis
+      page does not exist
     </h1>
     <p>Was it all a dream?</p>
     <Link
       href="/"
       text="Back to reality"
-      icon={{ name: "ph:planet", side: "right" }}
+      icon={{ name: "ph:planet-bold", side: "right" }}
     />
+    <a href="#" class="group text-sky-600 transition duration-300">
+      Link
+      <span
+        class="block h-0.5 max-w-0 bg-sky-600 transition-all duration-500 group-hover:max-w-full"
+      ></span>
+    </a>
   </div>
 </MainLayout>

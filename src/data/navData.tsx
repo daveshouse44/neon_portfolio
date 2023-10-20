@@ -14,7 +14,7 @@ const navData = [
     path: "/me/",
     icon: {
       name: "ic:outline-account-box",
-      side: "left" as iconSide,
+      side: "right" as iconSide,
     },
   },
   {
@@ -22,7 +22,7 @@ const navData = [
     path: "/ripples/",
     icon: {
       name: "ph:broadcast-bold",
-      side: "left" as iconSide,
+      side: "right" as iconSide,
     },
   },
 ];
