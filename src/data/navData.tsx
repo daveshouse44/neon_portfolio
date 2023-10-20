@@ -10,7 +10,7 @@ const navData = [
     },
   },
   {
-    name: "About me",
+    name: "Me",
     path: "/me/",
     icon: {
       name: "ic:outline-account-box",
@@ -21,7 +21,7 @@ const navData = [
     name: "Ripples",
     path: "/ripples/",
     icon: {
-      name: "ic:round-waves",
+      name: "ph:broadcast-bold",
       side: "left" as iconSide,
     },
   },

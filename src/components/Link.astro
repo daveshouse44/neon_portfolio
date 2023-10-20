@@ -12,10 +12,10 @@ interface Props {
 const { text, href, icon, ...rest } = Astro.props as Props;
 ---
 
-<a href={href} {...rest} class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-brand md:p-0 dark:text-white md:dark:hover:text-brand dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+<a href={href} {...rest} class="inline-flex gap-1 py-2 pl-3 pr-4 text-neutral-900 font-medium uppercase underline underline-offset-2 rounded group transition hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:decoration-brand md:p-0">
   {
     icon && icon.side === "left" && (
-      <Icon name={icon.name} height="24" width="24" />
+      <Icon name={icon.name} height="24" width="24" class="transition group-hover:text-brand" />
     )
   }
 
@@ -23,7 +23,7 @@ const { text, href, icon, ...rest } = Astro.props as Props;
 
   {
     icon && icon.side === "right" && (
-      <Icon name={icon.name} height="24" width="24" />
+      <Icon name={icon.name} height="24" width="24" class="transition group-hover:text-brand" />
     )
   }
 </a>
