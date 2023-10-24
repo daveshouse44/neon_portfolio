@@ -6,7 +6,7 @@ const navData = [
     path: "/skills/",
     icon: {
       name: "jam:tools",
-      side: "left" as iconSide,
+      side: "right" as iconSide,
     },
   },
   {
