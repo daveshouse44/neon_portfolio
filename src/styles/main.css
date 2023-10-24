@@ -4,6 +4,15 @@
 
 @layer base {
   :root {
-    --color-brand: 190deg 72% 52%;
+    --color-brand: 190 72% 52%;
+    --color-brand-100: 186 80% 90%;
+    --color-brand-200: 188 78% 82%;
+    --color-brand-300: 190 78% 69%;
+    --color-brand-400: 190 72% 52%;
+    --color-brand-500: 191 80% 43%;
+    --color-brand-600: 194 77% 36%;
+    --color-brand-700: 195 70% 31%;
+    --color-brand-800: 197 58% 27%;
+    --color-brand-900: 198 54% 24%;
   }
 }

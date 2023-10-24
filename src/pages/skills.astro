@@ -8,7 +8,7 @@ import { skillDataWeb, skillDataRestaurant } from "../data/skillData";
 
 <MainLayout title="Skills">
   <h1 class="flex font-bold text-neutral-900">
-    My various&nbsp<span class="font-neon font-bold uppercase text-brand"
+    My various&nbsp<span class="font-neon font-bold uppercase text-brand-base"
       >Skills</span
     >
   </h1>
@@ -16,8 +16,8 @@ import { skillDataWeb, skillDataRestaurant } from "../data/skillData";
   <h2>Current focus</h2>
   <h3>
     A strategic approach to <span
-      class="font-neon font-bold uppercase text-brand">Design</span
-    > and <span class="text-brand">Development</span>
+      class="font-neon font-bold uppercase text-brand-base">Design</span
+    > and <span class="text-brand-base">Development</span>
   </h3>
   {
     skillDataWeb.map((item) => (
@@ -29,9 +29,10 @@ import { skillDataWeb, skillDataRestaurant } from "../data/skillData";
   }
   <h2>Prior knowledge</h2>
   <h3>
-    Restaurant <span class="font-neon font-bold uppercase text-brand"
+    Restaurant <span class="font-neon font-bold uppercase text-brand-base"
       >Management</span
-    > and <span class="font-neon font-bold uppercase text-brand">Chef</span>
+    > and <span class="font-neon font-bold uppercase text-brand-base">Chef</span
+    >
      experience
   </h3>
   {
