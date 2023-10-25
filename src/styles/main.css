@@ -3,16 +3,68 @@
 @tailwind utilities;
 
 @layer base {
+  /* Default light colors */
   :root {
-    --color-brand: 190 72% 52%;
-    --color-brand-100: 186 80% 90%;
-    --color-brand-200: 188 78% 82%;
-    --color-brand-300: 190 78% 69%;
-    --color-brand-400: 190 72% 52%;
-    --color-brand-500: 191 80% 43%;
-    --color-brand-600: 194 77% 36%;
-    --color-brand-700: 195 70% 31%;
-    --color-brand-800: 197 58% 27%;
-    --color-brand-900: 198 54% 24%;
+    --color-neon: 191 80% 43%;
+    --color-background: 210deg 40% 98%;
+    --color-primary: 217deg 32% 17%;
+    --color-secondary:                 
+  ;
+  }
+  /* User settings dark theme */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-neon: 190 72% 52%;
+      --color-background: 217deg 32% 17%;
+      --color-primary: 210deg 40% 98%;
+      --color-secondary:                 
+    ;
+    }
+  }
+  /* User selects dark theme */
+  :root[data-theme="dark"] {
+    --color-neon: 190 72% 52%;
+    --color-background: 217deg 32% 17%;
+    --color-primary: 210deg 40% 98%;
+    --color-secondary:                
+  ;
+  }
+  /* Light neon selection */
+  :root[data-neon="violet"] {
+    --color-neon: 276 100% 60%;
+  }
+  :root[data-neon="blue"] {
+    --color-neon: 216 100% 51%;
+  }
+  :root[data-neon="green"] {
+    --color-neon: 121 100% 45%;
+  }
+  :root[data-neon="yellow"] {
+    --color-neon: 55 95% 47%;
+  }
+  :root[data-neon="orange"] {
+    --color-neon: 36 100% 52%;
+  }
+  :root[data-neon="red"] {
+    --color-neon: 359 100% 46%;
+  }
+  /* Neon selection and dark theme applied */
+  :root[data-neon="violet"][data-theme="dark"] {
+    --color-neon: 276 100% 71%;
+  }
+  :root[data-neon="blue"][data-theme="dark"] {
+    --color-neon: 211 100% 56%;
+  }
+  :root[data-neon="green"][data-theme="dark"] {
+    --color-neon: 120 99% 50%;
+  }
+  :root[data-neon="yellow"][data-theme="dark"] {
+    --color-neon: 57 98% 53%;
+  }
+  :root[data-neon="orange"][data-theme="dark"] {
+    --color-neon: 39 100% 60%;
+  }
+  :root[data-neon="red"][data-theme="dark"] {
+    --color-neon: 359 100% 57%;
   }
 }

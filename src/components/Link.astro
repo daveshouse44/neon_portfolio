@@ -24,11 +24,11 @@ const { text, href, icon, ...rest } = Astro.props as Props;
           name={icon.name}
           height="24"
           width="24"
-          class="transition group-hover:text-brand-base"
+          class="group-hover:text-neon transition"
         />
         <div class="flex flex-col">
           <span>{text}</span>
-          <span class="-mt-[3px] h-0.5 max-w-0 bg-brand-base transition-all delay-150 duration-500 group-hover:max-w-full" />
+          <span class="bg-neon -mt-[3px] h-0.5 max-w-0 transition-all delay-150 duration-500 group-hover:max-w-full" />
         </div>
       </>
     )
@@ -39,13 +39,13 @@ const { text, href, icon, ...rest } = Astro.props as Props;
       <>
         <div class="flex flex-col">
           <span>{text}</span>
-          <span class="-mt-[3px] h-0.5 max-w-0 bg-brand-base transition-all duration-500 group-hover:max-w-full" />
+          <span class="bg-neon -mt-[3px] h-0.5 max-w-0 transition-all duration-500 group-hover:max-w-full" />
         </div>
         <Icon
           name={icon.name}
           height="24"
           width="24"
-          class="transition delay-500 group-hover:text-brand-base"
+          class="group-hover:text-neon transition delay-500"
         />
       </>
     )
