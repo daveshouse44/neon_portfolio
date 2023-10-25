@@ -15,7 +15,7 @@ const { text, href, icon, ...rest } = Astro.props as Props;
 <a
   href={href}
   {...rest}
-  class="group inline-flex gap-1 rounded py-2 pl-3 pr-4 font-medium uppercase text-neutral-900 transition hover:bg-gray-100 md:border-0 md:p-0 md:hover:bg-transparent"
+  class="text-primary group inline-flex gap-1 rounded py-2 pl-3 pr-4 font-medium uppercase transition md:border-0 md:p-0 md:hover:bg-transparent"
 >
   {
     icon && icon.side === "left" && (

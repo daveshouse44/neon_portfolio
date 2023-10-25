@@ -6,15 +6,17 @@ import Link from "../components/Link.astro";
 ---
 
 <MainLayout title="Me">
-  <h1 class="flex font-bold text-neutral-900">
-    More about&nbsp<span class="text-neon font-tilt font-bold uppercase"
-      >Me</span
-    >
-  </h1>
-  <MyFace />
-  <Link
-    href="mailto:me@davetierney.dev"
-    text="Contact me"
-    icon={{ name: "ic:baseline-mail-outline", side: "right" }}
-  />
+  <div class="text-primary bg-background">
+    <h1 class="flex font-bold">
+      More about&nbsp<span class="text-neon font-tilt font-bold uppercase"
+        >Me</span
+      >
+    </h1>
+    <MyFace />
+    <Link
+      href="mailto:me@davetierney.dev"
+      text="Contact me"
+      icon={{ name: "ic:baseline-mail-outline", side: "right" }}
+    />
+  </div>
 </MainLayout>

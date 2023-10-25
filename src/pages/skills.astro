@@ -7,39 +7,43 @@ import { skillDataWeb, skillDataRestaurant } from "../data/skillData";
 ---
 
 <MainLayout title="Skills">
-  <h1 class="flex font-bold text-neutral-900">
-    My various&nbsp<span class="text-neon font-tilt font-bold uppercase"
-      >Skills</span
-    >
-  </h1>
-  <MyFace />
-  <h2>Current focus</h2>
-  <h3>
-    A strategic approach to <span
-      class="text-neon font-tilt font-bold uppercase">Design</span
-    > and <span class="text-neon font-tilt font-bold uppercase">Development</span>
-  </h3>
-  {
-    skillDataWeb.map((item) => (
-      <>
-        <h4>{item.discipline}</h4>
-        <p>{item.description}</p>
-      </>
-    ))
-  }
-  <h2>Prior knowledge</h2>
-  <h3>
-    Restaurant <span class="text-neon font-tilt font-bold uppercase"
-      >Management</span
-    > and <span class="text-neon font-tilt font-bold uppercase">Chef</span>
-     experience
-  </h3>
-  {
-    skillDataRestaurant.map((item) => (
-      <>
-        <h4>{item.discipline}</h4>
-        <p>{item.description}</p>
-      </>
-    ))
-  }
+  <div class="text-primary bg-background">
+    <h1 class="flex font-bold">
+      My various&nbsp<span class="text-neon font-tilt font-bold uppercase"
+        >Skills</span
+      >
+    </h1>
+    <MyFace />
+    <h2>Current focus</h2>
+    <h3>
+      A strategic approach to <span
+        class="text-neon font-tilt font-bold uppercase">Design</span
+      > and <span class="text-neon font-tilt font-bold uppercase"
+        >Development</span
+      >
+    </h3>
+    {
+      skillDataWeb.map((item) => (
+        <>
+          <h4>{item.discipline}</h4>
+          <p>{item.description}</p>
+        </>
+      ))
+    }
+    <h2>Prior knowledge</h2>
+    <h3>
+      Restaurant <span class="text-neon font-tilt font-bold uppercase"
+        >Management</span
+      > and <span class="text-neon font-tilt font-bold uppercase">Chef</span>
+       experience
+    </h3>
+    {
+      skillDataRestaurant.map((item) => (
+        <>
+          <h4>{item.discipline}</h4>
+          <p>{item.description}</p>
+        </>
+      ))
+    }
+  </div>
 </MainLayout>

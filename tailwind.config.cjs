@@ -15,9 +15,9 @@ module.exports = {
       colors: {
         theme: "hsl(var(--color-theme) / <alpha-value>)",
         neon: "hsl(var(--color-neon) / <alpha-value>)",
-        background: "hsl(var(--color-bkg) / <alpha-value>)",
-        primary: "hsl(var(--color-content) / <alpha-value>)",
-        secondary: "hsl(var(--color-content) / <alpha-value>)",
+        background: "hsl(var(--color-background) / <alpha-value>)",
+        primary: "hsl(var(--color-primary) / <alpha-value>)",
+        secondary: "hsl(var(--color-secondary) / <alpha-value>)",
       },
     },
   },
