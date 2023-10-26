@@ -20,11 +20,14 @@ const { title = "Dave Tierney's website" } = Astro.props;
     <Nav />
     <div class="flex items-center justify-center p-2">
       <button
-        class="grid h-8 w-8 place-items-center rounded"
+        class="group grid h-8 w-8 place-items-center rounded-full transition duration-300 hover:bg-secondary hover:bg-opacity-30"
         data-theme-toggle
         aria-label="toggle theme"
       >
-        <Icon name="bx:bxs-sun" class="h-4 w-4 text-primary hover:text-neon" />
+        <Icon
+          name="bx:bxs-sun"
+          class="h-4 w-4 text-primary group-hover:text-neon"
+        />
       </button>
     </div>
     <main>
@@ -35,21 +38,15 @@ const { title = "Dave Tierney's website" } = Astro.props;
       const themeToggles = document.querySelectorAll("[data-theme-toggle]");
 
       const getTheme = () => {
-        if (
-          typeof localStorage !== "undefined" &&
-          localStorage.getItem("theme") === "dark"
-        ) {
-          return "dark";
+        if (typeof localStorage !== "undefined") {
+          const theme = localStorage.getItem("theme");
+          if (theme === "dark" || theme === "light") {
+            return theme;
+          }
         }
-        if (
-          typeof localStorage !== "undefined" &&
-          localStorage.getItem("theme") === "light"
-        ) {
-          return "light";
-        }
-        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-          return "dark";
-        } else return "light";
+        return window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
       };
 
       const setTheme = (theme: string) =>
