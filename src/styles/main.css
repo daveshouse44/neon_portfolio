@@ -52,22 +52,22 @@
     --color-neon: 359deg 100% 46%;
   }
   /* Neon selection and dark theme applied */
-  :root[data-neon="violet"][data-theme="dark"] {
+  :root[data-theme="dark"][data-neon="violet"] {
     --color-neon: 276deg 100% 71%;
   }
-  :root[data-neon="blue"][data-theme="dark"] {
+  :root[data-theme="dark"][data-neon="blue"] {
     --color-neon: 211deg 100% 56%;
   }
-  :root[data-neon="green"][data-theme="dark"] {
+  :root[data-theme="dark"][data-neon="green"] {
     --color-neon: 120deg 99% 50%;
   }
-  :root[data-neon="yellow"][data-theme="dark"] {
+  :root[data-theme="dark"][data-neon="yellow"] {
     --color-neon: 57deg 98% 53%;
   }
-  :root[data-neon="orange"][data-theme="dark"] {
+  :root[data-theme="dark"][data-neon="orange"] {
     --color-neon: 39deg 100% 60%;
   }
-  :root[data-neon="red"][data-theme="dark"] {
+  :root[data-theme="dark"][data-neon="red"] {
     --color-neon: 359deg 100% 57%;
   }
 }
