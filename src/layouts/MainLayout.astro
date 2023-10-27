@@ -141,6 +141,18 @@ const { title = "Dave Tierney's website" } = Astro.props;
       closeModal.addEventListener("click", () => {
         neonSelect.close();
       });
+      neonSelect.addEventListener("click", (event: MouseEvent) => {
+        let rect = (event.target as HTMLElement).getBoundingClientRect();
+
+        if (
+          rect.left > event.clientX ||
+          rect.right < event.clientX ||
+          rect.top > event.clientY ||
+          rect.bottom < event.clientY
+        ) {
+          neonSelect.close();
+        }
+      });
     </script>
   </body>
 </html>
