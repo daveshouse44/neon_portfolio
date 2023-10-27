@@ -20,7 +20,7 @@ const { title = "Dave Tierney's website" } = Astro.props;
     <Nav />
     <section class="flex items-center justify-center gap-1 p-2">
       <button
-        class="group grid h-8 w-8 place-items-center rounded-full transition duration-300 hover:bg-secondary hover:bg-opacity-30"
+        class="group grid h-8 w-8 place-items-center rounded-sm transition duration-300 hover:bg-secondary hover:bg-opacity-30"
         data-theme-toggle
         aria-label="toggle theme"
       >
@@ -30,7 +30,7 @@ const { title = "Dave Tierney's website" } = Astro.props;
         />
       </button>
       <button
-        class="group grid h-8 w-8 place-items-center rounded-full transition duration-300 hover:bg-secondary hover:bg-opacity-30"
+        class="group grid h-8 w-8 place-items-center rounded-sm transition duration-300 hover:bg-secondary hover:bg-opacity-30"
         data-neon-select
         aria-label="select color"
       >
@@ -39,33 +39,57 @@ const { title = "Dave Tierney's website" } = Astro.props;
           class="h-4 w-4 text-primary group-hover:text-neon"
         />
       </button>
-      <dialog data-neon-modal class="border border-neon shadow-md shadow-neon">
-        <div
-          class="flex flex-col justify-center gap-2 bg-secondary p-8 text-center font-bold text-background"
-        >
-          <h2>Color select</h2>
-          <ul class="flex justify-evenly gap-2">
-            <li class="h-2 w-2 rounded-full bg-[#2cbfdd]"></li>
-            <li class="h-2 w-2 rounded-full bg-red-600"></li>
-            <li class="h-2 w-2 rounded-full bg-orange-600"></li>
-            <li class="h-2 w-2 rounded-full bg-yellow-600"></li>
-            <li class="h-2 w-2 rounded-full bg-green-600"></li>
-            <li class="h-2 w-2 rounded-full bg-blue-600"></li>
-            <li class="h-2 w-2 rounded-full bg-violet-600"></li>
-          </ul>
-          <button
-            class="group grid h-6 w-6 place-items-center self-center rounded-full transition duration-300 hover:bg-secondary hover:bg-opacity-30"
-            data-modal-close
-            aria-label="close modal"
-          >
-            <Icon
-              name="ic:baseline-close"
-              class="h-4 w-4 text-background group-hover:text-neon"
-            />
-          </button>
-        </div>
-      </dialog>
     </section>
+    <dialog
+      data-neon-modal
+      class="rounded-sm border border-neon shadow-md shadow-neon"
+    >
+      <div
+        class="flex flex-col gap-4 bg-secondary p-8 text-center font-bold text-background"
+      >
+        <h2>Color select</h2>
+        <ul class="flex justify-evenly gap-4">
+          <li
+            class="h-4 w-4 rounded-sm border border-gray-900 border-opacity-75 bg-[#2cbfdd] bg-opacity-75 shadow shadow-gray-900 hover:bg-opacity-100 hover:shadow-none"
+          >
+          </li>
+          <li
+            class="h-4 w-4 rounded-sm border border-gray-900 border-opacity-75 bg-red-600 bg-opacity-75 shadow shadow-gray-900 hover:bg-opacity-100 hover:shadow-none"
+          >
+          </li>
+          <li
+            class="h-4 w-4 rounded-sm border border-gray-900 border-opacity-75 bg-orange-600 bg-opacity-75 shadow shadow-gray-900 hover:bg-opacity-100 hover:shadow-none"
+          >
+          </li>
+          <li
+            class="h-4 w-4 rounded-sm border border-gray-900 border-opacity-75 bg-yellow-600 bg-opacity-75 shadow shadow-gray-900 hover:bg-opacity-100 hover:shadow-none"
+          >
+          </li>
+          <li
+            class="h-4 w-4 rounded-sm border border-gray-900 border-opacity-75 bg-green-600 bg-opacity-75 shadow shadow-gray-900 hover:bg-opacity-100 hover:shadow-none"
+          >
+          </li>
+          <li
+            class="h-4 w-4 rounded-sm border border-gray-900 border-opacity-75 bg-blue-600 bg-opacity-75 shadow shadow-gray-900 hover:bg-opacity-100 hover:shadow-none"
+          >
+          </li>
+          <li
+            class="h-4 w-4 rounded-sm border border-gray-900 border-opacity-75 bg-violet-600 bg-opacity-75 shadow shadow-gray-900 hover:bg-opacity-100 hover:shadow-none"
+          >
+          </li>
+        </ul>
+        <button
+          class="group mt-2 grid h-6 w-6 place-items-center self-center rounded-sm border border-background transition duration-300 hover:border-neon hover:bg-primary hover:bg-opacity-20"
+          data-modal-close
+          aria-label="close modal"
+        >
+          <Icon
+            name="ic:baseline-close"
+            class="h-4 w-4 text-background group-hover:text-neon"
+          />
+        </button>
+      </div>
+    </dialog>
     <main>
       <slot />
     </main>
