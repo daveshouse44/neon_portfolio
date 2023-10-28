@@ -45,39 +45,24 @@ const { title = "Dave Tierney's website" } = Astro.props;
       class="rounded-sm border border-neon shadow-md shadow-neon"
     >
       <div
-        class="flex flex-col gap-4 bg-secondary p-8 text-center font-bold text-background"
+        class="flex flex-col content-center gap-4 bg-secondary p-8 text-center font-bold text-background"
       >
         <h2>Color select</h2>
-        <ul class="flex justify-evenly gap-4">
-          <li
-            class="h-4 w-4 rounded-sm border border-gray-900 border-opacity-75 bg-[#2cbfdd] bg-opacity-75 shadow shadow-gray-900 hover:bg-opacity-100 hover:shadow-none"
-          >
-          </li>
-          <li
-            class="h-4 w-4 rounded-sm border border-gray-900 border-opacity-75 bg-red-600 bg-opacity-75 shadow shadow-gray-900 hover:bg-opacity-100 hover:shadow-none"
-          >
-          </li>
-          <li
-            class="h-4 w-4 rounded-sm border border-gray-900 border-opacity-75 bg-orange-600 bg-opacity-75 shadow shadow-gray-900 hover:bg-opacity-100 hover:shadow-none"
-          >
-          </li>
-          <li
-            class="h-4 w-4 rounded-sm border border-gray-900 border-opacity-75 bg-yellow-600 bg-opacity-75 shadow shadow-gray-900 hover:bg-opacity-100 hover:shadow-none"
-          >
-          </li>
-          <li
-            class="h-4 w-4 rounded-sm border border-gray-900 border-opacity-75 bg-green-600 bg-opacity-75 shadow shadow-gray-900 hover:bg-opacity-100 hover:shadow-none"
-          >
-          </li>
-          <li
-            class="h-4 w-4 rounded-sm border border-gray-900 border-opacity-75 bg-blue-600 bg-opacity-75 shadow shadow-gray-900 hover:bg-opacity-100 hover:shadow-none"
-          >
-          </li>
-          <li
-            class="h-4 w-4 rounded-sm border border-gray-900 border-opacity-75 bg-violet-600 bg-opacity-75 shadow shadow-gray-900 hover:bg-opacity-100 hover:shadow-none"
-          >
-          </li>
-        </ul>
+        <div class="flex justify-evenly gap-4">
+          <label for="btn-default" class="inline-flex">
+            <input
+              type="radio"
+              name="color"
+              value="default"
+              class="appearance-none"
+            />
+            <span class="sr-only">Set neon to default</span>
+            <div
+              class="h-6 w-6 rounded-sm border border-gray-900 border-opacity-75 bg-[#2cbfdd] bg-opacity-75 shadow shadow-gray-900 hover:bg-opacity-100 hover:shadow-none"
+            >
+            </div>
+          </label>
+        </div>
         <button
           class="group mt-2 grid h-6 w-6 place-items-center self-center rounded-sm border border-background transition duration-300 hover:border-neon hover:bg-primary hover:bg-opacity-20"
           data-modal-close
@@ -90,6 +75,7 @@ const { title = "Dave Tierney's website" } = Astro.props;
         </button>
       </div>
     </dialog>
+
     <main>
       <slot />
     </main>
