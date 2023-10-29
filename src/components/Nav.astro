@@ -17,6 +17,7 @@ import Link from "./Link.astro";
         class="text-neon text-opacity-75 transition duration-500 group-hover:text-opacity-100"
       />
       <span
+        aria-label="Go home"
         class="self-center whitespace-nowrap font-tilt text-2xl font-bold uppercase text-primary"
         >Dave Tierney</span
       >
@@ -45,7 +46,7 @@ import Link from "./Link.astro";
       </svg>
     </button>
     <div class="hidden w-full md:flex md:w-auto" id="navbar-default">
-      <ul
+      <div
         class="mt-4 flex flex-col p-4 md:mt-0 md:flex-row md:space-x-8 md:p-0"
       >
         {
@@ -58,7 +59,7 @@ import Link from "./Link.astro";
             />
           ))
         }
-      </ul>
+      </div>
     </div>
   </div>
 </nav>
