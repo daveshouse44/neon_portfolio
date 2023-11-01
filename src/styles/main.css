@@ -6,13 +6,13 @@
   /* Default light colors */
   :root {
     --color-neon: 191deg 80% 43%;
-    --color-background: 228deg 10% 90%;
+    --color-background: 228deg 10% 82%;
     --color-primary: 240deg 10% 4%;
     --color-secondary: 231deg 11% 53%;
   }
   :root[data-theme="light"] {
     --color-neon: 191deg 80% 43%;
-    --color-background: 228deg 10% 90%;
+    --color-background: 228deg 10% 82%;
     --color-primary: 240deg 10% 4%;
     --color-secondary: 231deg 11% 53%;
   }
