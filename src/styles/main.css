@@ -40,13 +40,13 @@
     --color-neon: 216deg 100% 51%;
   }
   :root[data-neon="green"] {
-    --color-neon: 121deg 100% 45%;
+    --color-neon: 121deg 100% 39%;
   }
   :root[data-neon="yellow"] {
-    --color-neon: 55deg 95% 47%;
+    --color-neon: 55deg 95% 37%;
   }
   :root[data-neon="orange"] {
-    --color-neon: 36deg 100% 52%;
+    --color-neon: 36deg 100% 45%;
   }
   :root[data-neon="red"] {
     --color-neon: 359deg 100% 46%;
