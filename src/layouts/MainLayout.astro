@@ -215,16 +215,21 @@ const { title = "Dave Tierney's website" } = Astro.props;
       });
       // Neon color functions
       const getColor = () => {
-        if (typeof localStorage !== "undefined" || null) {
-          const color: string = localStorage.getItem("color")!;
+        if (typeof localStorage !== "undefined") {
+          const color: string = localStorage.getItem("color") || "default";
           return color;
         } else {
           return "default";
         }
       };
 
-      const setNeonColor = (color: string) =>
+      const setNeonColor = (color: string) => {
         document.documentElement.setAttribute("data-neon", color);
+        const neonRadio = document.getElementById(
+          `btn-${color}`,
+        ) as HTMLInputElement;
+        neonRadio.checked = true;
+      };
 
       window.addEventListener("DOMContentLoaded", () =>
         setNeonColor(getColor()),
@@ -235,7 +240,7 @@ const { title = "Dave Tierney's website" } = Astro.props;
         color.addEventListener("change", (e: Event) => {
           console.log(e.target);
           const { name, checked, value } = e.target as HTMLInputElement;
-          localStorage.setItem("color", value);
+          localStorage.setItem(name, value);
           setNeonColor(value);
           // Add update to radio buttons for user
         });
