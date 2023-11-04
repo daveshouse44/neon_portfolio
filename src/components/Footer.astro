@@ -1,5 +1,6 @@
 ---
-
+import Icon from "astro-icon";
+import contactData from "../data/contactData";
 ---
 
 <footer>
@@ -7,13 +8,21 @@
     class="border-t-2 border-neon border-opacity-30 bg-neon bg-opacity-5 shadow hover:border-opacity-100 hover:bg-neon hover:bg-opacity-10 hover:shadow-glow hover:shadow-neon"
   >
     <div
-      class="mx-auto flex max-w-screen-xl flex-col-reverse flex-wrap items-center justify-between p-4 sm:flex-row"
+      class="mx-auto flex max-w-screen-xl flex-col-reverse flex-wrap items-center justify-between gap-2 p-4 sm:flex-row"
     >
       <small class="font-semibold"
         >Copyright &copy;<span id="copyright"></span> Dave Tierney | All rights
         reserved</small
       >
-      <div>Socials here</div>
+      <div class="sm: flex gap-4 gap-6">
+        {
+          contactData.map((item) => (
+            <a href={item.href}>
+              <Icon name={item.icon} class={item.class} />
+            </a>
+          ))
+        }
+      </div>
     </div>
   </div>
 </footer>
