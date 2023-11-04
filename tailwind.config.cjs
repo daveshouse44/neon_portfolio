@@ -24,6 +24,9 @@ module.exports = {
       textShadow: {
         glow: "0 0 10px var(--tw-shadow-color), 0 0 20px var(--tw-shadow-color), 0 0 30px var(--tw-shadow-color), 0 0 40px var(--tw-shadow-color)",
       },
+      boxShadow: {
+        glow: "0 0 5px var(--tw-shadow-color), 0 0 20px var(--tw-shadow-color)",
+      },
     },
   },
   plugins: [
