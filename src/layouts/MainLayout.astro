@@ -1,9 +1,11 @@
 ---
 import MainHead from "./MainHead.astro";
-import Footer from "../components/Footer.astro";
-import Nav from "../components/Nav.astro";
 import Icon from "astro-icon";
 
+import Footer from "../components/Footer.astro";
+import Nav from "../components/Nav.astro";
+
+import neonData from "../data/neonData";
 import "../styles/main.css";
 import "@fontsource-variable/albert-sans";
 import "@fontsource/tilt-neon";
@@ -50,104 +52,23 @@ const { title = "Dave Tierney's website" } = Astro.props;
         >
           <h2 class="text-xl font-bold">Color select</h2>
           <div class="flex justify-evenly gap-3 sm:gap-4">
-            <label for="btn-default" class="relative inline-flex">
-              <input
-                id="btn-default"
-                type="radio"
-                name="color"
-                value="default"
-                class="absolute -z-10 h-6 w-6 appearance-none rounded-sm checked:z-10 checked:border checked:border-gray-900 checked:bg-[#2cbfdd] checked:outline checked:outline-white"
-              />
-              <span class="sr-only absolute">Set neon to default</span>
-              <div
-                class="h-6 w-6 rounded-sm border border-gray-900 border-opacity-75 bg-[#2cbfdd] bg-opacity-60 shadow shadow-gray-900 hover:border-none hover:bg-opacity-100 hover:shadow-none hover:outline hover:outline-white"
-              >
-              </div>
-            </label>
-            <label for="btn-violet" class="relative inline-flex">
-              <input
-                id="btn-violet"
-                type="radio"
-                name="color"
-                value="violet"
-                class="absolute -z-10 h-6 w-6 appearance-none rounded-sm checked:z-10 checked:border checked:border-gray-900 checked:bg-[#8c00fc] checked:outline checked:outline-white"
-              />
-              <span class="sr-only absolute">Set neon to violet</span>
-              <div
-                class="h-6 w-6 rounded-sm border border-gray-900 border-opacity-75 bg-[#8c00fc] bg-opacity-60 shadow shadow-gray-900 hover:border-none hover:bg-opacity-100 hover:shadow-none hover:outline hover:outline-white"
-              >
-              </div>
-            </label>
-            <label for="btn-blue" class="relative inline-flex">
-              <input
-                id="btn-blue"
-                type="radio"
-                name="color"
-                value="blue"
-                class="absolute -z-10 h-6 w-6 appearance-none rounded-sm checked:z-10 checked:border checked:border-gray-900 checked:bg-[#006cff] checked:outline checked:outline-white"
-              />
-              <span class="sr-only absolute">Set neon to blue</span>
-              <div
-                class="h-6 w-6 rounded-sm border border-gray-900 border-opacity-75 bg-[#006cff] bg-opacity-60 shadow shadow-gray-900 hover:border-none hover:bg-opacity-100 hover:shadow-none hover:outline hover:outline-white"
-              >
-              </div>
-            </label>
-            <label for="btn-green" class="relative inline-flex">
-              <input
-                id="btn-green"
-                type="radio"
-                name="color"
-                value="green"
-                class="absolute -z-10 h-6 w-6 appearance-none rounded-sm checked:z-10 checked:border checked:border-gray-900 checked:bg-[#01fe01] checked:outline checked:outline-white"
-              />
-              <span class="sr-only absolute">Set neon to green</span>
-              <div
-                class="h-6 w-6 rounded-sm border border-gray-900 border-opacity-75 bg-[#01fe01] bg-opacity-60 shadow shadow-gray-900 hover:border-none hover:bg-opacity-100 hover:shadow-none hover:outline hover:outline-white"
-              >
-              </div>
-            </label>
-            <label for="btn-yellow" class="relative inline-flex">
-              <input
-                id="btn-yellow"
-                type="radio"
-                name="color"
-                value="yellow"
-                class="absolute -z-10 h-6 w-6 appearance-none rounded-sm checked:z-10 checked:border checked:border-gray-900 checked:bg-[#fffe37] checked:outline checked:outline-white"
-              />
-              <span class="sr-only absolute">Set neon to yellow</span>
-              <div
-                class="h-6 w-6 rounded-sm border border-gray-900 border-opacity-75 bg-[#fffe37] bg-opacity-60 shadow shadow-gray-900 hover:border-none hover:bg-opacity-100 hover:shadow-none hover:outline hover:outline-white"
-              >
-              </div>
-            </label>
-            <label for="btn-orange" class="relative inline-flex">
-              <input
-                id="btn-orange"
-                type="radio"
-                name="color"
-                value="orange"
-                class="absolute -z-10 h-6 w-6 appearance-none rounded-sm checked:z-10 checked:border checked:border-gray-900 checked:bg-[#ff8600] checked:outline checked:outline-white"
-              />
-              <span class="sr-only absolute">Set neon to orange</span>
-              <div
-                class="h-6 w-6 rounded-sm border border-gray-900 border-opacity-75 bg-[#ff8600] bg-opacity-60 shadow shadow-gray-900 hover:border-none hover:bg-opacity-100 hover:shadow-none hover:outline hover:outline-white"
-              >
-              </div>
-            </label>
-            <label for="btn-red" class="relative inline-flex">
-              <input
-                id="btn-red"
-                type="radio"
-                name="color"
-                value="red"
-                class="absolute -z-10 h-6 w-6 appearance-none rounded-sm checked:z-10 checked:border checked:border-gray-900 checked:bg-[#ed0003] checked:outline checked:outline-white"
-              />
-              <span class="sr-only absolute">Set neon to red</span>
-              <div
-                class="h-6 w-6 rounded-sm border border-gray-900 border-opacity-75 bg-[#ed0003] bg-opacity-60 shadow shadow-gray-900 hover:border-none hover:bg-opacity-100 hover:shadow-none hover:outline hover:outline-white"
-              >
-              </div>
-            </label>
+            {
+              neonData.map((color) => (
+                <label for={`btn-${color.name}`} class="relative inline-flex">
+                  <input
+                    id={`btn-${color.name}`}
+                    type="radio"
+                    name="color"
+                    value={color.name}
+                    class={`absolute -z-10 h-6 w-6 appearance-none rounded-sm checked:z-10 checked:border checked:border-gray-900 checked:bg-[${color.hex}] checked:outline checked:outline-white`}
+                  />
+                  <span class="sr-only absolute">Set neon to {color.name}</span>
+                  <div
+                    class={`h-6 w-6 rounded-sm border border-gray-900 border-opacity-75 bg-[${color.hex}] bg-opacity-60 shadow shadow-gray-900 hover:border-none hover:bg-opacity-100 hover:shadow-none hover:outline hover:outline-white`}
+                  />
+                </label>
+              ))
+            }
           </div>
           <button
             class="group mt-2 grid h-8 w-8 place-items-center self-center rounded-sm border-2 border-neon border-opacity-30 shadow transition duration-300 hover:border-opacity-100 hover:bg-neon hover:bg-opacity-5 hover:shadow-glow hover:shadow-neon"
@@ -200,19 +121,24 @@ const { title = "Dave Tierney's website" } = Astro.props;
       const neonContainer = document.querySelector(
         "[data-neon-container]",
       ) as HTMLElement;
+
       const neonToggle = document.querySelector(
         "[data-neon-toggle]",
       ) as HTMLElement;
+
       const neonClose = document.querySelector(
         "[data-neon-close]",
       ) as HTMLElement;
+
       // Neon color listeners
       neonToggle.addEventListener("click", () => {
         neonContainer.classList.toggle("invisible");
       });
+
       neonClose.addEventListener("click", () => {
         neonContainer.classList.toggle("invisible");
       });
+
       // Neon color functions
       const getColor = () => {
         if (typeof localStorage !== "undefined") {

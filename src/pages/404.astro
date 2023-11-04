@@ -6,8 +6,8 @@ import Link from "../components/Link.astro";
 
 <MainLayout title="Nonexistent">
   <div class="grid place-items-center gap-4 text-center">
-    <h1 class="text-primary flex font-bold">
-      <span class="text-neon font-tilt font-bold uppercase">404</span>&nbspThis
+    <h1 class="flex font-bold text-primary">
+      <span class="font-tilt font-bold uppercase text-neon">404</span>&nbspThis
       page does not exist
     </h1>
     <p>Was it all a dream?</p>
@@ -17,4 +17,102 @@ import Link from "../components/Link.astro";
       icon={{ name: "ph:planet-bold", side: "right" }}
     />
   </div>
+  <label for="btn-default" class="relative inline-flex">
+    <input
+      id="btn-default"
+      type="radio"
+      name="color"
+      value="default"
+      class="absolute -z-10 h-6 w-6 appearance-none rounded-sm checked:z-10 checked:border checked:border-gray-900 checked:bg-[#2cbfdd] checked:outline checked:outline-white"
+    />
+    <span class="sr-only absolute">Set neon to default</span>
+    <div
+      class="h-6 w-6 rounded-sm border border-gray-900 border-opacity-75 bg-[#2cbfdd] bg-opacity-60 shadow shadow-gray-900 hover:border-none hover:bg-opacity-100 hover:shadow-none hover:outline hover:outline-white"
+    >
+    </div>
+  </label>
+  <label for="btn-violet" class="relative inline-flex">
+    <input
+      id="btn-violet"
+      type="radio"
+      name="color"
+      value="violet"
+      class="absolute -z-10 h-6 w-6 appearance-none rounded-sm checked:z-10 checked:border checked:border-gray-900 checked:bg-[#8c00fc] checked:outline checked:outline-white"
+    />
+    <span class="sr-only absolute">Set neon to violet</span>
+    <div
+      class="h-6 w-6 rounded-sm border border-gray-900 border-opacity-75 bg-[#8c00fc] bg-opacity-60 shadow shadow-gray-900 hover:border-none hover:bg-opacity-100 hover:shadow-none hover:outline hover:outline-white"
+    >
+    </div>
+  </label>
+  <label for="btn-blue" class="relative inline-flex">
+    <input
+      id="btn-blue"
+      type="radio"
+      name="color"
+      value="blue"
+      class="absolute -z-10 h-6 w-6 appearance-none rounded-sm checked:z-10 checked:border checked:border-gray-900 checked:bg-[#006cff] checked:outline checked:outline-white"
+    />
+    <span class="sr-only absolute">Set neon to blue</span>
+    <div
+      class="h-6 w-6 rounded-sm border border-gray-900 border-opacity-75 bg-[#006cff] bg-opacity-60 shadow shadow-gray-900 hover:border-none hover:bg-opacity-100 hover:shadow-none hover:outline hover:outline-white"
+    >
+    </div>
+  </label>
+  <label for="btn-green" class="relative inline-flex">
+    <input
+      id="btn-green"
+      type="radio"
+      name="color"
+      value="green"
+      class="absolute -z-10 h-6 w-6 appearance-none rounded-sm checked:z-10 checked:border checked:border-gray-900 checked:bg-[#01fe01] checked:outline checked:outline-white"
+    />
+    <span class="sr-only absolute">Set neon to green</span>
+    <div
+      class="h-6 w-6 rounded-sm border border-gray-900 border-opacity-75 bg-[#01fe01] bg-opacity-60 shadow shadow-gray-900 hover:border-none hover:bg-opacity-100 hover:shadow-none hover:outline hover:outline-white"
+    >
+    </div>
+  </label>
+  <label for="btn-yellow" class="relative inline-flex">
+    <input
+      id="btn-yellow"
+      type="radio"
+      name="color"
+      value="yellow"
+      class="absolute -z-10 h-6 w-6 appearance-none rounded-sm checked:z-10 checked:border checked:border-gray-900 checked:bg-[#fffe37] checked:outline checked:outline-white"
+    />
+    <span class="sr-only absolute">Set neon to yellow</span>
+    <div
+      class="h-6 w-6 rounded-sm border border-gray-900 border-opacity-75 bg-[#fffe37] bg-opacity-60 shadow shadow-gray-900 hover:border-none hover:bg-opacity-100 hover:shadow-none hover:outline hover:outline-white"
+    >
+    </div>
+  </label>
+  <label for="btn-orange" class="relative inline-flex">
+    <input
+      id="btn-orange"
+      type="radio"
+      name="color"
+      value="orange"
+      class="absolute -z-10 h-6 w-6 appearance-none rounded-sm checked:z-10 checked:border checked:border-gray-900 checked:bg-[#ff8600] checked:outline checked:outline-white"
+    />
+    <span class="sr-only absolute">Set neon to orange</span>
+    <div
+      class="h-6 w-6 rounded-sm border border-gray-900 border-opacity-75 bg-[#ff8600] bg-opacity-60 shadow shadow-gray-900 hover:border-none hover:bg-opacity-100 hover:shadow-none hover:outline hover:outline-white"
+    >
+    </div>
+  </label>
+  <label for="btn-red" class="relative inline-flex">
+    <input
+      id="btn-red"
+      type="radio"
+      name="color"
+      value="red"
+      class="absolute -z-10 h-6 w-6 appearance-none rounded-sm checked:z-10 checked:border checked:border-gray-900 checked:bg-[#ed0003] checked:outline checked:outline-white"
+    />
+    <span class="sr-only absolute">Set neon to red</span>
+    <div
+      class="h-6 w-6 rounded-sm border border-gray-900 border-opacity-75 bg-[#ed0003] bg-opacity-60 shadow shadow-gray-900 hover:border-none hover:bg-opacity-100 hover:shadow-none hover:outline hover:outline-white"
+    >
+    </div>
+  </label>
 </MainLayout>
