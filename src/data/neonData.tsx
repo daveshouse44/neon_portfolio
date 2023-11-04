@@ -1,32 +1,52 @@
 const neonData = [
   {
     name: "default",
-    hex: "#2cbfdd",
+    hex: {
+      input: "checked:bg-[#2cbfdd]",
+      div: "bg-[#2cbfdd]",
+    },
   },
   {
     name: "violet",
-    hex: "#8c00fc",
+    hex: {
+      input: "checked:bg-[#8c00fc]",
+      div: "bg-[#8c00fc]",
+    },
   },
   {
     name: "blue",
-    hex: "#006cff",
+    hex: {
+      input: "checked:bg-[#006cff]",
+      div: "bg-[#006cff]",
+    },
   },
-
   {
     name: "green",
-    hex: "#01fe01",
+    hex: {
+      input: "checked:bg-[#01fe01]",
+      div: "bg-[#01fe01]",
+    },
   },
   {
     name: "yellow",
-    hex: "#fffe37",
+    hex: {
+      input: "checked:bg-[#fffe37]",
+      div: "bg-[#fffe37]",
+    },
   },
   {
     name: "orange",
-    hex: "#ff8600",
+    hex: {
+      input: "checked:bg-[#ff8600]",
+      div: "bg-[#ff8600]",
+    },
   },
   {
     name: "red",
-    hex: "#ed0003",
+    hex: {
+      input: "checked:bg-[#ed0003]",
+      div: "bg-[#ed0003]",
+    },
   },
 ];
 

@@ -60,11 +60,11 @@ const { title = "Dave Tierney's website" } = Astro.props;
                     type="radio"
                     name="color"
                     value={color.name}
-                    class={`absolute -z-10 h-6 w-6 appearance-none rounded-sm checked:z-10 checked:border checked:border-gray-900 checked:bg-[${color.hex}] checked:outline checked:outline-white`}
+                    class={`absolute -z-10 h-6 w-6 appearance-none rounded-sm checked:z-10 checked:border checked:border-gray-900 ${color.hex.input} checked:outline checked:outline-white`}
                   />
                   <span class="sr-only absolute">Set neon to {color.name}</span>
                   <div
-                    class={`h-6 w-6 rounded-sm border border-gray-900 border-opacity-75 bg-[${color.hex}] bg-opacity-60 shadow shadow-gray-900 hover:border-none hover:bg-opacity-100 hover:shadow-none hover:outline hover:outline-white`}
+                    class={`h-6 w-6 rounded-sm border border-gray-900 border-opacity-75 ${color.hex.div} bg-opacity-60 shadow shadow-gray-900 hover:border-none hover:bg-opacity-100 hover:shadow-none hover:outline hover:outline-white`}
                   />
                 </label>
               ))
