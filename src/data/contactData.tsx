@@ -1,7 +1,7 @@
 const contactData = [
   {
     name: "Email",
-    href: "mailto:me@davetierney.dev:",
+    href: "mailto:me@davetierney.dev",
     icon: "ph:envelope-simple-bold",
     class: "h-4 w-4 text-primary transition duration-300 hover:text-neon",
   },

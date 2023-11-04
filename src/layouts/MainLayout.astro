@@ -168,7 +168,6 @@ const { title = "Dave Tierney's website" } = Astro.props;
           const { name, checked, value } = e.target as HTMLInputElement;
           localStorage.setItem(name, value);
           setNeonColor(value);
-          // Add update to radio buttons for user
         });
       });
     </script>
