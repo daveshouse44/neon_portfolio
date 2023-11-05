@@ -54,7 +54,7 @@ import Link from "./Link.astro";
             <Link
               text={item.name}
               href={item.path}
-              data-navLink
+              data-nav-link
               icon={{ name: item.icon?.name, side: item.icon?.side }}
             />
           ))
@@ -63,3 +63,6 @@ import Link from "./Link.astro";
     </div>
   </div>
 </nav>
+<script>
+  import "../ts/nav";
+</script>
