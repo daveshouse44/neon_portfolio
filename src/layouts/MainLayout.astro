@@ -89,87 +89,8 @@ const { title = "Dave Tierney's website" } = Astro.props;
     </main>
     <Footer />
     <script>
-      // Light and dark theme functions
-      const themeToggles = document.querySelectorAll("[data-theme-toggle]");
-
-      const getTheme = () => {
-        if (typeof localStorage !== "undefined") {
-          const theme = localStorage.getItem("theme");
-          if (theme === "dark" || theme === "light") {
-            return theme;
-          }
-        }
-        return window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? "dark"
-          : "light";
-      };
-
-      const setTheme = (theme: string) =>
-        document.documentElement.setAttribute("data-theme", theme);
-
-      window.addEventListener("DOMContentLoaded", () => setTheme(getTheme()));
-      // document.addEventListener("astro:after-swap", () => setTheme(getTheme()));
-
-      themeToggles.forEach((toggle) => {
-        toggle.addEventListener("click", () => {
-          const nextTheme = getTheme() === "light" ? "dark" : "light";
-          localStorage.setItem("theme", nextTheme);
-          setTheme(nextTheme);
-        });
-      });
-      // Neon color selectors
-      const neonContainer = document.querySelector(
-        "[data-neon-container]",
-      ) as HTMLElement;
-
-      const neonToggle = document.querySelector(
-        "[data-neon-toggle]",
-      ) as HTMLElement;
-
-      const neonClose = document.querySelector(
-        "[data-neon-close]",
-      ) as HTMLElement;
-
-      // Neon color listeners
-      neonToggle.addEventListener("click", () => {
-        neonContainer.classList.toggle("invisible");
-      });
-
-      neonClose.addEventListener("click", () => {
-        neonContainer.classList.toggle("invisible");
-      });
-
-      // Neon color functions
-      const getColor = () => {
-        if (typeof localStorage !== "undefined") {
-          const color: string = localStorage.getItem("color") || "default";
-          return color;
-        } else {
-          return "default";
-        }
-      };
-
-      const setNeonColor = (color: string) => {
-        document.documentElement.setAttribute("data-neon", color);
-        const neonRadio = document.getElementById(
-          `btn-${color}`,
-        ) as HTMLInputElement;
-        neonRadio.checked = true;
-      };
-
-      window.addEventListener("DOMContentLoaded", () =>
-        setNeonColor(getColor()),
-      );
-
-      const neonColors = document.querySelectorAll("[type='radio']");
-      neonColors.forEach((color) => {
-        color.addEventListener("change", (e: Event) => {
-          console.log(e.target);
-          const { name, checked, value } = e.target as HTMLInputElement;
-          localStorage.setItem(name, value);
-          setNeonColor(value);
-        });
-      });
+      import "../ts/theme";
+      import "../ts/neon";
     </script>
   </body>
 </html>
