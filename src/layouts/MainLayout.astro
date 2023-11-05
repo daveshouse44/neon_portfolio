@@ -64,7 +64,7 @@ const { title = "Dave Tierney's website" } = Astro.props;
                   />
                   <span class="sr-only absolute">Set neon to {color.name}</span>
                   <div
-                    class={`h-6 w-6 rounded-sm border border-gray-900 border-opacity-75 ${color.hex.div} bg-opacity-60 shadow shadow-gray-900 hover:border-none hover:bg-opacity-100 hover:shadow-none hover:outline hover:outline-white`}
+                    class={`h-6 w-6 rounded-sm border ${color.hex.div.border} border-opacity-75 ${color.hex.div.background} bg-opacity-60 shadow shadow-gray-900 hover:border-none hover:bg-opacity-100 hover:shadow-none hover:outline hover:outline-white`}
                   />
                 </label>
               ))
