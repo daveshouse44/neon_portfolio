@@ -1,0 +1,17 @@
+---
+import { slugify, formatDate } from "../ts/utils";
+
+const { category, title, author, date } = Astro.props;
+---
+
+<header>
+  <div>
+    <small>
+      <a href={`/category/${slugify(category)}`} class="">{category}</a>
+    </small>
+    <h1>{title}</h1>
+    <p>
+      <a href={`/author/${slugify(author)}`}>{author}</a> | {formatDate(date)}
+    </p>
+  </div>
+</header>

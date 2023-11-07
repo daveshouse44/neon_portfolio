@@ -1,0 +1,13 @@
+---
+import RippleHeader from "../components/RippleHeader.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+
+const { frontmatter } = Astro.props;
+console.log(frontmatter);
+const { title, date, author, description, category } = frontmatter;
+---
+
+<MainLayout title={title} description={description}>
+  <RippleHeader title={title} date={date} author={author} category={category} />
+  <slot />
+</MainLayout>

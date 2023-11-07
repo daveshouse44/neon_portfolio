@@ -11,13 +11,17 @@ import "@fontsource-variable/albert-sans";
 import "@fontsource/tilt-neon";
 interface Props {
   title?: string;
+  description?: string;
 }
 
-const { title = "Dave Tierney's website" } = Astro.props;
+const {
+  title = "Dave Tierney's site",
+  description = "Creating ripples in my world",
+} = Astro.props;
 ---
 
 <html lang="en">
-  <MainHead title={title} />
+  <MainHead title={title} {description} />
   <body class="bg-background text-primary">
     <Nav />
     <section class="relative flex flex-col items-center">
