@@ -4,19 +4,19 @@ import { slugify, formatDate } from "../ts/utils";
 const { category, title, author, date } = Astro.props;
 ---
 
-<header class="my-4 grid w-full place-items-center">
-  <div class="grid max-w-5xl place-items-center gap-4">
-    <small>
-      <a href={`/category/${slugify(category)}`} class="">{category}</a>
-    </small>
-    <h1 class="text-3xl text-neon">{title}</h1>
-    <p>
-      <a href={`/author/${slugify(author)}`}
-        ><span
-          class="transition duration-300 hover:text-neon hover:underline hover:decoration-neon"
-          >{author}</span
-        ></a
-      > | {formatDate(date)}
-    </p>
-  </div>
+<header class="my-4 grid place-items-center gap-4">
+  <small
+    class="rounded-sm border-2 border-neon border-opacity-30 p-2 shadow transition duration-300 hover:border-opacity-100 hover:bg-neon hover:bg-opacity-5 hover:shadow-glow hover:shadow-neon"
+  >
+    <a href={`/category/${slugify(category)}`}>{category}</a>
+  </small>
+  <h1 class="text-3xl text-neon">{title}</h1>
+  <p>
+    <a href={`/author/${slugify(author)}`}
+      ><span
+        class="transition duration-300 hover:text-neon hover:underline hover:decoration-neon"
+        >{author}</span
+      ></a
+    > | {formatDate(date)}
+  </p>
 </header>

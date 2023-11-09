@@ -7,9 +7,14 @@ const { title, date, author, description, category } = frontmatter;
 ---
 
 <MainLayout title={title} description={description}>
-  <RippleHeader title={title} date={date} author={author} category={category} />
   <div class="my-4 grid w-full place-items-center">
     <div class="grid max-w-5xl place-items-center gap-6 p-6">
+      <RippleHeader
+        title={title}
+        date={date}
+        author={author}
+        category={category}
+      />
       <slot />
     </div>
   </div>
