@@ -5,11 +5,11 @@ const { category, title, author, date } = Astro.props;
 ---
 
 <header class="my-4 grid place-items-center gap-4">
-  <small
-    class="rounded-sm border-2 border-neon border-opacity-30 p-2 shadow transition duration-300 hover:border-opacity-100 hover:bg-neon hover:bg-opacity-5 hover:shadow-glow hover:shadow-neon"
+  <a
+    class="rounded-sm border-2 border-neon border-opacity-30 p-2 text-sm shadow transition duration-300 hover:border-opacity-100 hover:bg-neon hover:bg-opacity-5 hover:shadow-glow hover:shadow-neon"
+    href={`/category/${slugify(category)}`}>{category}</a
   >
-    <a href={`/category/${slugify(category)}`}>{category}</a>
-  </small>
+
   <h1 class="text-3xl text-neon">{title}</h1>
   <p>
     <a href={`/author/${slugify(author)}`}
