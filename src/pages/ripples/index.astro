@@ -1,6 +1,10 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
 import MyFace from "../../components/MyFace.astro";
+import RippleGlass from "../../components/RippleGlass.astro";
+
+const allRipples = await Astro.glob("./*.mdx");
+console.log(allRipples);
 ---
 
 <MainLayout title="Ripples" description="A small ripple can spread">
@@ -11,5 +15,6 @@ import MyFace from "../../components/MyFace.astro";
        &nbsp into the world.
     </h1>
     <MyFace />
+    {allRipples.map((ripple) => <RippleGlass {ripple} />)}
   </div>
 </MainLayout>
