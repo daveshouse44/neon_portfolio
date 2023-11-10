@@ -2,4 +2,6 @@
 const { ripple } = Astro.props;
 ---
 
-<p>{ripple.frontmatter.title}</p>
+<div class="flex flex-col items-center justify-center gap-4">
+  <a href={ripple.url}>{ripple.frontmatter.title}</a>
+</div>
