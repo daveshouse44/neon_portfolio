@@ -6,18 +6,16 @@ import Link from "../components/Link.astro";
 ---
 
 <MainLayout title="Nonexistent" description="You might be lost, or dreaming">
-  <div class="w-full">
-    <Grid />
-  </div>
+  <Grid />
   <div
-    class="flex min-h-[800px] flex-col items-center justify-center gap-4 text-center"
+    class="flex h-[800px] flex-col items-center justify-center gap-4 text-center"
   >
     <h1
       class="font-tilt text-7xl font-bold uppercase text-neon transition duration-500 hover:text-primary hover:shadow-neon hover:text-shadow-glow"
     >
       404
     </h1>
-    <p class="flex items-center gap-4 text-primary">This page does not exist</p>
+    <p class="flex items-center text-primary">This page does not exist</p>
     <p>Was it all a dream?</p>
     <Link
       href="/"

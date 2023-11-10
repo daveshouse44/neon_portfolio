@@ -1,16 +1,21 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import MyFace from "../components/MyFace.astro";
+import Grid from "../components/Grid.astro";
 ---
 
 <MainLayout title="Homepage" description="Welcome to my website">
-  <div class="bg-background text-primary">
-    <h1 class="flex font-bold">
-      Welcome, I'm&nbsp<span
-        class="transiton font-tilt font-bold uppercase text-neon duration-500 hover:text-primary hover:shadow-neon hover:text-shadow-glow"
-        >Dave!</span
+  <Grid />
+  <div class="flex h-[800px] items-center justify-center gap-4">
+    <MyFace />
+    <div class="flex flex-col gap-4">
+      <h2 class="font-bold">Greetings, I'm</h2>
+      <h1
+        class="font-tilt text-4xl font-bold uppercase text-neon transition duration-500 hover:text-primary hover:shadow-neon hover:text-shadow-glow md:text-5xl"
       >
-    </h1>
+        Dave Tierney
+      </h1>
+      <p>Web Developer | Chef | Tinkerer</p>
+    </div>
   </div>
-  <MyFace />
 </MainLayout>

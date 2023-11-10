@@ -3,8 +3,8 @@ import { Image } from "astro:assets";
 import profilePic from "../assets/images/Profile_Pic_no_bg.png";
 ---
 
-<div class="relative m-4 h-80 w-80">
-  <div class="absolute h-full">
+<div class="relative m-4 w-80">
+  <div class="absolute h-fit">
     <Image
       class="rounded-full brightness-125 grayscale filter"
       src={profilePic}
@@ -12,7 +12,7 @@ import profilePic from "../assets/images/Profile_Pic_no_bg.png";
     />
   </div>
   <div
-    class="relative h-full rounded-full bg-neon bg-opacity-20 transition duration-300 hover:shadow-glow hover:shadow-neon"
+    class="relative aspect-square rounded-full bg-neon bg-opacity-20 transition duration-300 hover:shadow-glow hover:shadow-neon"
   >
   </div>
 </div>
