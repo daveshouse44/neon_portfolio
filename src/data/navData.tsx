@@ -2,18 +2,18 @@ type iconSide = "left" | "right";
 
 const navData = [
   {
-    name: "Skills",
-    path: "/skills/",
-    icon: {
-      name: "jam:tools",
-      side: "right" as iconSide,
-    },
-  },
-  {
     name: "Me",
     path: "/me/",
     icon: {
       name: "ic:outline-account-box",
+      side: "right" as iconSide,
+    },
+  },
+  {
+    name: "Skills",
+    path: "/skills/",
+    icon: {
+      name: "jam:tools",
       side: "right" as iconSide,
     },
   },

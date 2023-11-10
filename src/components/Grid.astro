@@ -1,0 +1,50 @@
+<section>
+  <div class="container">
+    <div class="bg top"></div>
+    <div class="bg bottom"></div>
+  </div>
+</section>
+
+<style>
+  section {
+    position: relative;
+    background-color: var(--color-background);
+    z-index: -5;
+    opacity: 0.3;
+  }
+  .container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    perspective: 500px;
+    overflow: hidden;
+  }
+
+  .bg {
+    height: 600px;
+    width: 100%;
+    background-image: linear-gradient(
+        hsl(var(--color-neon)) 1.5px,
+        transparent 1.5px,
+        transparent calc(100% - 1.5px),
+        hsl(var(--color-neon)) calc(100% - 1.5px)
+      ),
+      linear-gradient(
+        90deg,
+        hsl(var(--color-neon)) 1.5px,
+        transparent 1.5px,
+        transparent calc(100% - 1.5px),
+        hsl(var(--color-neon)) calc(100% - 1.5px)
+      );
+    background-size: 5% 5%;
+    border: 1.5px solid hsl(var(--color-neon));
+    margin-block: -100px;
+  }
+  .top {
+    transform: rotateX(-85deg);
+  }
+  .bottom {
+    transform: rotateX(85deg);
+  }
+</style>
