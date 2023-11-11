@@ -18,6 +18,14 @@ const navData = [
     },
   },
   {
+    name: "Work",
+    path: "/work/",
+    icon: {
+      name: "ph:briefcase-bold",
+      side: "right" as iconSide,
+    },
+  },
+  {
     name: "Ripples",
     path: "/ripples/",
     icon: {

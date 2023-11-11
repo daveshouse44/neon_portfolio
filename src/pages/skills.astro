@@ -1,49 +1,67 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 
-import MyFace from "../components/MyFace.astro";
+import Link from "../components/Link.astro";
 
-import { skillDataWeb, skillDataRestaurant } from "../data/skillData";
+import {
+  skillDataWeb,
+  skillDataRestaurant,
+  skillLinks,
+} from "../data/skillData";
 ---
 
 <MainLayout title="Skills" description="Things I can do">
-  <div class="bg-background text-primary">
-    <h1 class="flex font-bold">
-      My various&nbsp<span class="font-tilt font-bold uppercase text-neon"
-        >Skills</span
-      >
-    </h1>
-    <MyFace />
-    <h2>Current focus</h2>
-    <h3>
-      A strategic approach to <span
-        class="font-tilt font-bold uppercase text-neon">Design</span
-      > and <span class="font-tilt font-bold uppercase text-neon"
-        >Development</span
-      >
-    </h3>
-    {
-      skillDataWeb.map((item) => (
-        <>
-          <h4>{item.discipline}</h4>
-          <p>{item.description}</p>
-        </>
-      ))
-    }
-    <h2>Prior knowledge</h2>
-    <h3>
-      Restaurant <span class="font-tilt font-bold uppercase text-neon"
-        >Management</span
-      > and <span class="font-tilt font-bold uppercase text-neon">Chef</span>
-       experience
-    </h3>
-    {
-      skillDataRestaurant.map((item) => (
-        <>
-          <h4>{item.discipline}</h4>
-          <p>{item.description}</p>
-        </>
-      ))
-    }
+  <div class="flex justify-evenly">
+    <div class="flex flex-col justify-center">
+      <h1 class="flex items-end font-bold">
+        <span
+          class="md:text-5x font-tilt text-4xl font-bold uppercase text-neon transition duration-500 hover:text-primary hover:shadow-neon hover:text-shadow-glow"
+          >Skills&nbsp</span
+        >
+         I am honing
+      </h1>
+      {
+        skillLinks.map((item) => (
+          <Link
+            text={item.name}
+            href={item.path}
+            data-nav-link
+            icon={{ name: item.icon?.name, side: item.icon?.side }}
+          />
+        ))
+      }
+    </div>
+    <div class="flex flex-col">
+      <h3>
+        A strategic approach to <span
+          class="font-tilt font-bold uppercase text-neon">Design</span
+        > and <span class="font-tilt font-bold uppercase text-neon"
+          >Development</span
+        >
+      </h3>
+      {
+        skillDataWeb.map((item) => (
+          <>
+            <h4>{item.discipline}</h4>
+            <p>{item.description}</p>
+          </>
+        ))
+      }
+      <h2>Prior knowledge</h2>
+      <h3>
+        Restaurant <span class="font-tilt font-bold uppercase text-neon"
+          >Management</span
+        > and <span class="font-tilt font-bold uppercase text-neon">Chef</span>
+         experience
+      </h3>
+      {
+        skillDataRestaurant.map((item) => (
+          <>
+            <h4>{item.discipline}</h4>
+            <p>{item.description}</p>
+          </>
+        ))
+      }
+    </div>
   </div>
 </MainLayout>

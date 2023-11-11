@@ -47,7 +47,7 @@ import Link from "./Link.astro";
     </button>
     <div class="hidden w-full md:flex md:w-auto" id="navbar-default">
       <div
-        class="mt-4 block p-4 text-right md:mt-0 md:flex md:flex-row md:space-x-8 md:p-0"
+        class="mt-4 flex flex-col items-end p-4 text-right md:mt-0 md:flex-row md:space-x-8 md:p-0"
       >
         {
           navData.map((item) => (
@@ -65,13 +65,4 @@ import Link from "./Link.astro";
 </nav>
 <script>
   import "../ts/nav";
-  const navBarMenu = document.getElementById("navbar-default") as HTMLElement;
-
-  const navToggle = document.querySelector(
-    "[data-collapse-toggle]",
-  ) as HTMLElement;
-
-  navToggle.addEventListener("click", () => {
-    navBarMenu.classList.toggle("hidden");
-  });
 </script>
