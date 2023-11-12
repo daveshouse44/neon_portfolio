@@ -17,7 +17,7 @@ import {
     >
       <h1 class="font-bold">
         <span
-          class="md:text-5x font-tilt text-4xl font-bold uppercase text-neon transition duration-500 hover:text-primary hover:shadow-neon hover:text-shadow-glow"
+          class="font-tilt text-3xl font-bold uppercase text-neon transition duration-500 hover:text-primary hover:shadow-neon hover:text-shadow-glow md:text-4xl"
           >Skills&nbsp</span
         >
          I am currently honing :
@@ -33,37 +33,46 @@ import {
         ))
       }
     </div>
-    <div class="flex flex-col">
-      <h3>
-        A strategic approach to <span
-          class="font-tilt font-bold uppercase text-neon">Design</span
-        > and <span class="font-tilt font-bold uppercase text-neon"
-          >Development</span
-        >
-      </h3>
-      {
-        skillDataWeb.map((item) => (
-          <>
-            <h4>{item.discipline}</h4>
-            <p>{item.description}</p>
-          </>
-        ))
-      }
-      <h2>Prior knowledge</h2>
-      <h3>
-        Restaurant <span class="font-tilt font-bold uppercase text-neon"
-          >Management</span
-        > and <span class="font-tilt font-bold uppercase text-neon">Chef</span>
-         experience
-      </h3>
-      {
-        skillDataRestaurant.map((item) => (
-          <>
-            <h4>{item.discipline}</h4>
-            <p>{item.description}</p>
-          </>
-        ))
-      }
+    <div class="grid grid-cols-2">
+      <div>
+        <h3 class="font-bold">
+          A strategic approach to <span
+            class="font-tilt text-lg font-bold uppercase text-neon md:text-xl"
+            >Design</span
+          > and <span
+            class="font-tilt text-lg font-bold uppercase text-neon md:text-xl"
+            >Development</span
+          >
+        </h3>
+        {
+          skillDataWeb.map((item) => (
+            <>
+              <h4>{item.discipline}</h4>
+              <p>{item.description}</p>
+            </>
+          ))
+        }
+      </div>
+      <div>
+        <h3 class="font-bold">
+          Restaurant <span
+            class="font-tilt text-lg font-bold uppercase text-neon md:text-xl"
+            >Management</span
+          > and <span
+            class="font-tilt text-lg font-bold uppercase text-neon md:text-xl"
+            >Chef</span
+          >
+           experience
+        </h3>
+        {
+          skillDataRestaurant.map((item) => (
+            <>
+              <h4>{item.discipline}</h4>
+              <p>{item.description}</p>
+            </>
+          ))
+        }
+      </div>
     </div>
   </div>
 </MainLayout>

@@ -42,6 +42,30 @@ const skillLinks = [
     },
   },
   {
+    name: "Python",
+    path: "https://www.python.org/",
+    icon: {
+      name: "teenyicons:python-outline",
+      side: "left" as iconSide,
+    },
+  },
+  {
+    name: "Vue.js",
+    path: "https://vuejs.org/",
+    icon: {
+      name: "teenyicons:vue-outline",
+      side: "left" as iconSide,
+    },
+  },
+  {
+    name: "WordPress",
+    path: "https://wordpress.org/",
+    icon: {
+      name: "teenyicons:wordpress-outline",
+      side: "left" as iconSide,
+    },
+  },
+  {
     name: "Figma",
     path: "https://www.figma.com/",
     icon: {
