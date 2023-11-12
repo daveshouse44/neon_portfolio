@@ -58,7 +58,7 @@ const skillLinks = [
     },
   },
   {
-    name: "Pizza making",
+    name: "Pizza dough",
     path: "https://www.seriouseats.com/hacker-free-neapolitan-pizza-for-a-home-kitchen-recipe",
     icon: {
       name: "fluent:food-pizza-24-regular",
