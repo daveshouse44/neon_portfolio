@@ -3,73 +3,49 @@ import MainLayout from "../layouts/MainLayout.astro";
 
 import Link from "../components/Link.astro";
 
-import {
-  skillDataWeb,
-  skillDataRestaurant,
-  skillLinks,
-} from "../data/skillData";
+import { skillData, skillDataRestaurant, skillLinks } from "../data/skillData";
 ---
 
 <MainLayout title="Skills" description="Things I can do">
-  <div class="flex justify-evenly">
+  <div class="flex justify-center gap-24">
     <div
-      class="my-8 flex flex-col justify-evenly gap-4 rounded-sm border-2 border-neon border-opacity-30 p-6 shadow transition duration-300 hover:border-opacity-100 hover:bg-neon hover:bg-opacity-5 hover:shadow-glow hover:shadow-neon"
+      class="my-8 flex flex-col gap-5 rounded-sm border-2 border-neon border-opacity-30 p-6 shadow transition duration-300 hover:border-opacity-100 hover:bg-neon hover:bg-opacity-5 hover:shadow-glow hover:shadow-neon"
     >
       <h1 class="font-bold">
         <span
           class="font-tilt text-3xl font-bold uppercase text-neon transition duration-500 hover:text-primary hover:shadow-neon hover:text-shadow-glow md:text-4xl"
           >Skills&nbsp</span
         >
-         I am currently honing :
+         I am actively honing :
       </h1>
-      {
-        skillLinks.map((item) => (
-          <Link
-            text={item.name}
-            href={item.path}
-            data-nav-link
-            icon={{ name: item.icon?.name, side: item.icon?.side }}
-          />
-        ))
-      }
-    </div>
-    <div class="grid grid-cols-2">
-      <div>
-        <h3 class="font-bold">
-          A strategic approach to <span
-            class="font-tilt text-lg font-bold uppercase text-neon md:text-xl"
-            >Design</span
-          > and <span
-            class="font-tilt text-lg font-bold uppercase text-neon md:text-xl"
-            >Development</span
-          >
-        </h3>
+      <div class="flex flex-col gap-4 p-2">
         {
-          skillDataWeb.map((item) => (
-            <>
-              <h4>{item.discipline}</h4>
-              <p>{item.description}</p>
-            </>
+          skillLinks.map((item) => (
+            <Link
+              text={item.name}
+              href={item.path}
+              data-nav-link
+              icon={{ name: item.icon?.name, side: item.icon?.side }}
+            />
           ))
         }
       </div>
-      <div>
-        <h3 class="font-bold">
-          Restaurant <span
-            class="font-tilt text-lg font-bold uppercase text-neon md:text-xl"
-            >Management</span
-          > and <span
-            class="font-tilt text-lg font-bold uppercase text-neon md:text-xl"
-            >Chef</span
-          >
-           experience
-        </h3>
+    </div>
+    <div class="max-w-4xl">
+      <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
         {
-          skillDataRestaurant.map((item) => (
-            <>
-              <h4>{item.discipline}</h4>
-              <p>{item.description}</p>
-            </>
+          skillData.map((item) => (
+            <div class="my-8 flex flex-col justify-center gap-2 rounded-sm border-2 border-neon border-opacity-30 p-6 shadow transition duration-300 hover:border-opacity-100 hover:bg-neon hover:bg-opacity-5 hover:shadow-glow hover:shadow-neon">
+              <h2 class="font-tilt text-xl font-bold uppercase text-neon transition duration-500 hover:text-primary hover:shadow-neon hover:text-shadow-glow md:text-2xl">
+                {item.title}
+              </h2>
+              <h3 class="text-lg">{item.description}</h3>
+              <ul class="list-disc p-6">
+                {item.list.map((el) => (
+                  <li>{el}</li>
+                ))}
+              </ul>
+            </div>
           ))
         }
       </div>

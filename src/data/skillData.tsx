@@ -82,31 +82,47 @@ const skillLinks = [
     },
   },
   {
-    name: "Pizza dough",
+    name: "Wood-fired pizza",
     path: "https://www.seriouseats.com/hacker-free-neapolitan-pizza-for-a-home-kitchen-recipe",
     icon: {
       name: "fluent:food-pizza-24-regular",
       side: "left" as iconSide,
     },
   },
+  {
+    name: "Leathercraft",
+    path: "https://www.weaverleathersupply.com/pages/getting-started-in-leathercrafting",
+    icon: {
+      name: "iconoir:wallet",
+      side: "left" as iconSide,
+    },
+  },
 ];
 
-const skillDataWeb = [
+const skillData = [
   {
-    discipline: "Web Development",
-    description: "Building and maintaining websites",
+    icon: "Web",
+    title: "Full Stack Web Development",
+    description: "I take a strategic approach to design and development",
+    list: [
+      "Building and maintaining websites",
+      "End to end application development",
+      "Focusing on user driven designs",
+      "Creating dynamic UX / UI experiences",
+      "Cybersecurity and data protection",
+    ],
   },
   {
-    discipline: "Full Stack",
-    description: "End to end application development",
-  },
-  {
-    discipline: "User Driven Designs",
-    description: "Creating dynamic UX / UI experiences",
-  },
-  {
-    discipline: "Back-End Security",
-    description: "Managing data from the server to user",
+    icon: "Kitchen",
+    title: "Chef and Restaurant Management",
+    description: "I have a passion for food and the restaurant industry",
+    list: [
+      "Efficent execution and oversight",
+      "Keen awareness of food safety",
+      "Concise food preparation and portioning",
+      "Cost control in all aspects of operations",
+      "Strong leadership and developer of people",
+    ],
   },
 ];
 const skillDataRestaurant = [
@@ -127,4 +143,4 @@ const skillDataRestaurant = [
     description: "Managing data from the server to user",
   },
 ];
-export { skillDataWeb, skillDataRestaurant, skillLinks };
+export { skillData, skillDataRestaurant, skillLinks };
