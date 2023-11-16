@@ -101,7 +101,7 @@ const skillLinks = [
 
 const skillData = [
   {
-    icon: "Web",
+    icon: "mdi:web",
     title: "Full Stack Web Development",
     description: "I take a strategic approach to design and development",
     list: [
@@ -113,7 +113,31 @@ const skillData = [
     ],
   },
   {
-    icon: "Kitchen",
+    icon: "mdi:web",
+    title: "Full Stack Web Development",
+    description: "I take a strategic approach to design and development",
+    list: [
+      "Building and maintaining websites",
+      "End to end application development",
+      "Focusing on user driven designs",
+      "Creating dynamic UX / UI experiences",
+      "Cybersecurity and data protection",
+    ],
+  },
+  {
+    icon: "carbon:restaurant-fine",
+    title: "Chef and Restaurant Management",
+    description: "I have a passion for food and the restaurant industry",
+    list: [
+      "Efficent execution and oversight",
+      "Keen awareness of food safety",
+      "Concise food preparation and portioning",
+      "Cost control in all aspects of operations",
+      "Strong leadership and developer of people",
+    ],
+  },
+  {
+    icon: "carbon:restaurant-fine",
     title: "Chef and Restaurant Management",
     description: "I have a passion for food and the restaurant industry",
     list: [
