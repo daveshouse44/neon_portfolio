@@ -2,15 +2,13 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import Icon from "astro-icon";
 
-import Grid from "../components/Grid.astro";
 import Link from "../components/Link.astro";
 
 import { skillData, skillLinks } from "../data/skillData";
 ---
 
 <MainLayout title="Skills" description="Things I can do">
-  <Grid />
-  <div class="flex justify-center gap-24">
+  <div class="mx-16 flex min-h-screen justify-center gap-16">
     <div
       class="group/glass my-8 flex h-fit flex-col gap-5 rounded-sm border-2 border-neon border-opacity-30 bg-background bg-opacity-80 p-6 shadow transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur"
     >
