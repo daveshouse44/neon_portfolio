@@ -7,13 +7,15 @@ const allRipples = await Astro.glob("./*.mdx");
 ---
 
 <MainLayout title="Ripples" description="A small ripple can spread">
-  <div class="bg-background text-primary">
-    <h1 class="flex font-bold">
-      Sending &nbsp
-      <span class="font-tilt font-bold uppercase text-neon">ripples</span>
-       &nbsp into the world.
-    </h1>
+  <div class="flex h-screen items-center justify-center">
     <MyFace />
-    {allRipples.map((ripple) => <RippleGlass {ripple} />)}
+    <div class="flex flex-col items-start">
+      <h1 class="font-bold">
+        Sending &nbsp;
+        <span class="font-tilt font-bold uppercase text-neon">ripples</span>
+         &nbsp into the world.
+      </h1>
+      {allRipples.map((ripple) => <RippleGlass {ripple} />)}
+    </div>
   </div>
 </MainLayout>
