@@ -9,19 +9,19 @@ import { skillData, skillLinks } from "../data/skillData";
 
 <MainLayout title="Skills" description="Things I can do">
   <div
-    class="mx-16 flex min-h-screen flex-col-reverse items-center justify-center gap-16 sm:flex-row"
+    class="mx-16 flex min-h-screen flex-col-reverse justify-center gap-6 sm:flex-row md:gap-16"
   >
     <div
-      class="group/glass my-8 flex h-fit basis-1/4 flex-col gap-5 rounded-sm border-2 border-neon border-opacity-30 bg-background bg-opacity-80 p-6 shadow transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur"
+      class="group/glass my-8 flex h-fit flex-col gap-4 rounded-sm border-2 border-neon border-opacity-30 bg-background bg-opacity-80 px-4 py-6 shadow transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur"
     >
       <h1 class="font-bold">
         <span
           class="font-tilt text-3xl font-bold uppercase text-neon transition duration-500 group-hover/glass:text-primary group-hover/glass:shadow-neon group-hover/glass:text-shadow-glow md:text-4xl"
           >Skills&nbsp</span
         >
-         I am actively honing :
+         I am honing:
       </h1>
-      <div class="flex flex-col gap-4 p-2">
+      <div class="flex flex-col md:gap-4">
         {
           skillLinks.map((item) => (
             <Link
@@ -34,16 +34,16 @@ import { skillData, skillLinks } from "../data/skillData";
         }
       </div>
     </div>
-    <div class="basis-3/4">
+    <div class="">
       <div class="my-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
         {
           skillData.map((item) => (
-            <div class="group flex flex-col items-center justify-evenly gap-2 rounded-sm border-2 border-neon border-opacity-30 bg-background bg-opacity-80 p-6 text-center shadow transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur">
+            <div class="group flex flex-col items-center justify-evenly gap-2 rounded-sm border-2 border-neon border-opacity-30 bg-background bg-opacity-80 px-4 py-6 text-center shadow transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur md:gap-6">
               <Icon
                 name={item.icon}
                 class="h-10 w-10 text-primary transition duration-300 group-hover:text-neon"
               />
-              <h2 class="font-tilt text-xl font-bold uppercase text-neon transition duration-500 group-hover:text-primary group-hover:shadow-neon group-hover:text-shadow-glow md:text-2xl">
+              <h2 class="font-tilt text-2xl font-bold uppercase text-neon transition duration-500 group-hover:text-primary group-hover:shadow-neon group-hover:text-shadow-glow md:text-3xl">
                 {item.title}
               </h2>
               <h3 class="text-lg">{item.description}</h3>

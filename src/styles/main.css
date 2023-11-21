@@ -5,14 +5,14 @@
 @layer base {
   /* Default light colors */
   :root {
-    --color-neon: 191deg 80% 43%;
-    --color-background: 228deg 10% 82%;
+    --color-neon: 191deg 80% 35%;
+    --color-background: 228deg 10% 80%;
     --color-primary: 240deg 10% 4%;
     --color-secondary: 231deg 11% 53%;
   }
   :root[data-theme="light"] {
-    --color-neon: 191deg 80% 43%;
-    --color-background: 228deg 10% 82%;
+    --color-neon: 191deg 80% 35%;
+    --color-background: 228deg 10% 80%;
     --color-primary: 240deg 10% 4%;
     --color-secondary: 231deg 11% 53%;
   }
@@ -34,22 +34,22 @@
   }
   /* Light neon selection */
   :root[data-neon="violet"] {
-    --color-neon: 276deg 100% 60%;
+    --color-neon: 278deg 100% 54%;
   }
   :root[data-neon="blue"] {
-    --color-neon: 216deg 100% 51%;
+    --color-neon: 216deg 100% 50%;
   }
   :root[data-neon="green"] {
-    --color-neon: 121deg 100% 39%;
+    --color-neon: 124deg 100% 31%;
   }
   :root[data-neon="yellow"] {
-    --color-neon: 55deg 95% 37%;
+    --color-neon: 52deg 100% 32%;
   }
   :root[data-neon="orange"] {
-    --color-neon: 36deg 100% 45%;
+    --color-neon: 35deg 100% 42%;
   }
   :root[data-neon="red"] {
-    --color-neon: 359deg 100% 46%;
+    --color-neon: 359deg 100% 43%;
   }
   /* Neon selection and dark theme applied */
   :root[data-theme="dark"][data-neon="violet"] {
