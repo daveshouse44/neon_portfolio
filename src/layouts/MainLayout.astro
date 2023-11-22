@@ -22,11 +22,11 @@ const {
 
 <html lang="en">
   <MainHead title={title} {description} />
-  <body class="bg-background text-primary">
+  <body class="flex h-screen flex-col bg-background text-primary">
     <Nav />
     <Grid />
     <Theme />
-    <main>
+    <main class="grow">
       <slot />
     </main>
     <Footer />

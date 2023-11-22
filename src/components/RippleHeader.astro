@@ -1,17 +1,18 @@
 ---
 import { slugify, formatDate } from "../ts/utils";
+import { Image } from "astro:assets";
 
 const { category, title, author, date } = Astro.props;
 ---
 
 <header class="my-4 grid place-items-center gap-4">
   <a
-    class="rounded-sm border-2 border-neon border-opacity-30 p-2 text-sm shadow transition duration-300 hover:border-opacity-100 hover:bg-neon hover:bg-opacity-5 hover:shadow-glow hover:shadow-neon"
+    class="rounded-sm border-2 border-neon border-opacity-30 bg-secondary bg-opacity-50 p-2 text-sm shadow transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur"
     href={`/category/${slugify(category)}`}>{category}</a
   >
 
-  <h1 class="text-3xl text-neon">{title}</h1>
-  <p>
+  <h1 class="text-3xl font-medium text-neon">{title}</h1>
+  <p class="font-bold">
     <a href={`/author/${slugify(author)}`}
       ><span
         class="transition duration-300 hover:text-neon hover:underline hover:decoration-neon"
