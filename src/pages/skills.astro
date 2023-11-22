@@ -12,7 +12,7 @@ import { skillData, skillLinks } from "../data/skillData";
     class="mx-6 flex min-h-screen flex-col-reverse justify-center sm:flex-row sm:gap-6 md:mx-16 md:gap-16"
   >
     <div
-      class="group/glass my-8 flex h-fit flex-col gap-4 rounded-sm border-2 border-neon border-opacity-30 bg-background bg-opacity-80 px-4 py-6 shadow transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur"
+      class="group/glass my-8 flex h-fit flex-col gap-4 rounded-sm border-2 border-neon border-opacity-30 bg-secondary bg-opacity-50 px-4 py-6 shadow transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur"
     >
       <h1 class="font-bold">
         <span
@@ -38,7 +38,7 @@ import { skillData, skillLinks } from "../data/skillData";
       <div class="my-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
         {
           skillData.map((item) => (
-            <div class="group flex flex-col items-center justify-evenly gap-2 rounded-sm border-2 border-neon border-opacity-30 bg-background bg-opacity-80 px-4 py-6 text-center shadow transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur md:gap-6">
+            <div class="group flex flex-col items-center justify-evenly gap-2 rounded-sm border-2 border-neon border-opacity-30 bg-secondary bg-opacity-50 px-4 py-6 text-center shadow transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur md:gap-6">
               <Icon
                 name={item.icon}
                 class="h-10 w-10 text-primary transition duration-300 group-hover:text-neon"
