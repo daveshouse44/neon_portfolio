@@ -1,7 +1,18 @@
 ---
-const { ripple } = Astro.props;
+import { slugify, formatDate } from "../ts/utils";
+
+const { frontmatter, url } = Astro.props;
+const { title, date, author, description, category } = frontmatter;
 ---
 
-<div class="flex flex-col gap-4">
-  <a href={ripple.url}>{ripple.frontmatter.title}</a>
+<div
+  class="group flex flex-col items-center justify-evenly gap-2 rounded-sm border-2 border-neon border-opacity-30 bg-secondary bg-opacity-50 px-4 py-6 text-center shadow transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur md:gap-6"
+>
+  <h3 class="text-2xl font-bold">
+    <a href={url}>{title}</a>
+  </h3>
+  <p>{author}</p>
+  <p>{description}</p>
+  <p>{formatDate(date)}</p>
+  <a href={url}>{title}</a>
 </div>
