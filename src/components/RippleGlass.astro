@@ -1,18 +1,35 @@
 ---
 import { slugify, formatDate } from "../ts/utils";
+import Link from "./Link.astro";
 
 const { frontmatter, url } = Astro.props;
 const { title, date, author, description, category } = frontmatter;
 ---
 
 <div
-  class="group flex flex-col items-center justify-evenly gap-2 rounded-sm border-2 border-neon border-opacity-30 bg-secondary bg-opacity-50 px-4 py-6 text-center shadow transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur md:gap-6"
+  class="group/glass flex flex-col items-center justify-evenly rounded-sm border-2 border-neon border-opacity-30 bg-secondary bg-opacity-50 p-4 text-center shadow transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur"
 >
-  <h3 class="text-2xl font-bold">
+  <a
+    class="rounded-sm border-2 border-neon border-opacity-30 bg-secondary bg-opacity-50 p-1 text-sm shadow transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur"
+    href={`/category/${slugify(category)}`}>{category}</a
+  >
+  <h3
+    class="font-tilt text-lg font-bold uppercase text-neon transition duration-500 hover:underline hover:decoration-neon group-hover/glass:text-primary group-hover/glass:shadow-neon group-hover/glass:text-shadow-glow md:text-xl"
+  >
     <a href={url}>{title}</a>
   </h3>
-  <p>{author}</p>
+  <p class="font-semibold">
+    <a href={`/author/${slugify(author)}`}
+      ><span
+        class="transition duration-300 hover:text-neon hover:underline hover:decoration-neon"
+        >{author}</span
+      ></a
+    > &#12316; {formatDate(date)}
+  </p>
   <p>{description}</p>
-  <p>{formatDate(date)}</p>
-  <a href={url}>{title}</a>
+  <Link
+    href={url}
+    text="Read More"
+    icon={{ name: "ic:round-read-more", side: "right" }}
+  />
 </div>

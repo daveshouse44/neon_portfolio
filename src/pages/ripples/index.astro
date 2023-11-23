@@ -7,7 +7,7 @@ const allRipples = await Astro.glob("./*.mdx");
 ---
 
 <MainLayout title="Ripples" description="A small ripple can spread">
-  <div class="flex h-full justify-center gap-4 p-4">
+  <div class="mx-6 flex h-full justify-center gap-4 p-4">
     <div class="my-8 flex flex-col items-center gap-4">
       <h1 class="text-xl font-bold">
         Sending &nbsp;
@@ -19,7 +19,7 @@ const allRipples = await Astro.glob("./*.mdx");
       </h1>
       <MyFace />
     </div>
-    <div class="flex flex-col items-start gap-4">
+    <div class="my-8 grid grid-cols-2 gap-6 lg:grid-cols-2">
       {
         allRipples.map((ripple) => (
           <RippleGlass frontmatter={ripple.frontmatter} url={ripple.url} />

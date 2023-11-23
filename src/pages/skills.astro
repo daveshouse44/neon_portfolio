@@ -34,28 +34,26 @@ import { skillData, skillLinks } from "../data/skillData";
         }
       </div>
     </div>
-    <div class="">
-      <div class="my-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
-        {
-          skillData.map((item) => (
-            <div class="group flex flex-col items-center justify-evenly gap-2 rounded-sm border-2 border-neon border-opacity-30 bg-secondary bg-opacity-50 px-4 py-6 text-center shadow transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur md:gap-6">
-              <Icon
-                name={item.icon}
-                class="h-10 w-10 text-primary transition duration-300 group-hover:text-neon"
-              />
-              <h2 class="font-tilt text-2xl font-bold uppercase text-neon transition duration-500 group-hover:text-primary group-hover:shadow-neon group-hover:text-shadow-glow md:text-3xl">
-                {item.title}
-              </h2>
-              <h3 class="text-lg font-semibold">{item.description}</h3>
-              <ul class="text-start">
-                {item.list.map((el) => (
-                  <li>&bull;&nbsp;{el}</li>
-                ))}
-              </ul>
-            </div>
-          ))
-        }
-      </div>
+    <div class="my-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
+      {
+        skillData.map((item) => (
+          <div class="group flex flex-col items-center justify-evenly gap-2 rounded-sm border-2 border-neon border-opacity-30 bg-secondary bg-opacity-50 p-4 text-center shadow transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur md:gap-4">
+            <Icon
+              name={item.icon}
+              class="h-10 w-10 text-primary transition duration-300 group-hover:text-neon"
+            />
+            <h2 class="font-tilt text-2xl font-bold uppercase text-neon transition duration-500 group-hover:text-primary group-hover:shadow-neon group-hover:text-shadow-glow md:text-3xl">
+              {item.title}
+            </h2>
+            <h3 class="text-lg font-semibold">{item.description}</h3>
+            <ul class="text-start">
+              {item.list.map((el) => (
+                <li>&bull;&nbsp;{el}</li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
     </div>
   </div>
 </MainLayout>

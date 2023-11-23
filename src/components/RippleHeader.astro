@@ -6,7 +6,7 @@ const { category, title, author, date } = Astro.props;
 
 <header class="my-4 grid place-items-center gap-4">
   <a
-    class="rounded-sm border-2 border-neon border-opacity-30 bg-secondary bg-opacity-50 p-2 text-sm shadow transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur"
+    class="rounded-sm border-2 border-neon border-opacity-30 bg-secondary bg-opacity-50 p-1 text-sm shadow transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur"
     href={`/category/${slugify(category)}`}>{category}</a
   >
 
@@ -17,6 +17,6 @@ const { category, title, author, date } = Astro.props;
         class="transition duration-300 hover:text-neon hover:underline hover:decoration-neon"
         >{author}</span
       ></a
-    > | {formatDate(date)}
+    > &#12316; {formatDate(date)}
   </p>
 </header>
