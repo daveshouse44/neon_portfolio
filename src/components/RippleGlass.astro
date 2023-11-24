@@ -7,7 +7,7 @@ const { title, date, author, description, category } = frontmatter;
 ---
 
 <div
-  class="group/glass flex flex-col items-center justify-evenly rounded-sm border-2 border-neon border-opacity-30 bg-secondary bg-opacity-50 p-4 text-center shadow transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur"
+  class="group/glass flex max-w-lg flex-col items-center justify-evenly gap-2 rounded-sm border-2 border-neon border-opacity-30 bg-secondary bg-opacity-50 p-4 text-center shadow transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur"
 >
   <a
     class="rounded-sm border-2 border-neon border-opacity-30 bg-secondary bg-opacity-50 p-1 text-sm shadow transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur"
@@ -30,6 +30,6 @@ const { title, date, author, description, category } = frontmatter;
   <Link
     href={url}
     text="Read More"
-    icon={{ name: "ic:round-read-more", side: "right" }}
+    icon={{ name: "ph:rocket-launch-bold", side: "right" }}
   />
 </div>

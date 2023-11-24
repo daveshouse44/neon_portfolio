@@ -1,13 +1,22 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
-import MyFace from "../../components/MyFace.astro";
 import RippleGlass from "../../components/RippleGlass.astro";
 
+import { formatRipples, type Ripple } from "../../ts/utils";
+
 const allRipples = await Astro.glob("./*.mdx");
+const ripples: Ripple[] = allRipples.map((ripple) => ({
+  frontmatter: ripple.frontmatter as Ripple["frontmatter"],
+  url: ripple.url,
+}));
+const formattedRipples = formatRipples(ripples);
 ---
 
 <MainLayout title="Ripples" description="A small ripple can spread">
-  <div class="mx-6 flex h-full justify-center gap-4 p-4">
+  <div
+    class="mx-6 flex h-full justify-center gap-4 p-4"
+    aria-label="New Ripples"
+  >
     <div class="my-8 flex flex-col items-center gap-4">
       <h1 class="text-xl font-bold">
         Sending &nbsp;
@@ -15,16 +24,15 @@ const allRipples = await Astro.glob("./*.mdx");
           class="font-tilt text-4xl font-bold uppercase text-neon transition duration-500 hover:text-primary hover:shadow-neon hover:text-shadow-glow md:text-5xl"
           >ripples</span
         >
-         &nbsp;into the world.
+         &nbsp;into the ether.
       </h1>
-      <MyFace />
-    </div>
-    <div class="my-8 grid grid-cols-2 gap-6 lg:grid-cols-2">
-      {
-        allRipples.map((ripple) => (
-          <RippleGlass frontmatter={ripple.frontmatter} url={ripple.url} />
-        ))
-      }
+      <div class="my-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          formattedRipples.map((ripple) => (
+            <RippleGlass frontmatter={ripple.frontmatter} url={ripple.url} />
+          ))
+        }
+      </div>
     </div>
   </div>
 </MainLayout>
