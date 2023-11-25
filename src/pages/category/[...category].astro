@@ -33,7 +33,10 @@ const { category } = Astro.params;
 const { ripples, categoryName } = Astro.props;
 ---
 
-<MainLayout title={categoryName} description="A small ripple can spread">
+<MainLayout
+  title={`${categoryName} ripples`}
+  description="A small ripple can spread"
+>
   <div
     class="mx-6 flex h-full justify-center gap-4 p-4"
     aria-label={`Ripples about ${categoryName}`}
