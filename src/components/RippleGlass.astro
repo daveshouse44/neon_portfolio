@@ -19,7 +19,9 @@ const { title, date, author, description, category } = frontmatter;
     <a href={url}>{title}</a>
   </h3>
   <p class="font-semibold">
-    <a href={`/author/${slugify(author)}`}
+    <!-- Comment in line below if ever multiple authors -->
+    <!-- <a href={`/author/${slugify(author)}`} -->
+    <a href="/me"
       ><span
         class="transition duration-300 hover:text-neon hover:underline hover:decoration-neon"
         >{author}</span

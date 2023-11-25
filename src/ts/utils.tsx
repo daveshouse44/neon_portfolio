@@ -21,6 +21,7 @@ export interface Ripple {
     draft: boolean;
   };
   url?: string;
+  category?: string;
 }
 
 export function formatRipples(

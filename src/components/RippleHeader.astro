@@ -12,7 +12,9 @@ const { category, title, author, date } = Astro.props;
 
   <h1 class="font-tilt text-3xl font-bold text-neon">{title}</h1>
   <p class="font-bold">
-    <a href={`/author/${slugify(author)}`}
+    <!-- Comment in line below if ever multiple authors -->
+    <!-- <a href={`/author/${slugify(author)}`} -->
+    <a href="/me"
       ><span
         class="transition duration-300 hover:text-neon hover:underline hover:decoration-neon"
         >{author}</span

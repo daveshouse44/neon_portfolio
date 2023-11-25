@@ -1,0 +1,59 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import RippleGlass from "../../components/RippleGlass.astro";
+
+import { slugify, formatRipples, type Ripple } from "../../ts/utils";
+
+export async function getStaticPaths() {
+  const allRipples = await Astro.glob("../ripples/*.mdx");
+  const ripples: Ripple[] = allRipples.map((ripple) => ({
+    frontmatter: ripple.frontmatter as Ripple["frontmatter"],
+    url: ripple.url,
+    category: ripple.frontmatter.category || "uncategorized",
+  }));
+  const formattedRipples = formatRipples(ripples);
+  const allCategories = [
+    ...new Set(formattedRipples.map((ripple) => ripple.category).flat()),
+  ];
+  return allCategories.map((category) => {
+    const categoryRipples = formattedRipples.filter(
+      (ripple) => ripple.category === category,
+    );
+    return {
+      params: { category: slugify(category || "uncategorized") },
+      props: {
+        categoryName: category,
+        ripples: categoryRipples,
+      },
+    };
+  });
+}
+
+const { category } = Astro.params;
+const { ripples, categoryName } = Astro.props;
+---
+
+<MainLayout title={categoryName} description="A small ripple can spread">
+  <div
+    class="mx-6 flex h-full justify-center gap-4 p-4"
+    aria-label={`Ripples about ${categoryName}`}
+  >
+    <div class="my-8 flex flex-col items-center gap-4">
+      <h1 class="text-xl font-bold">
+        <a
+          href="/ripples"
+          class="font-tilt text-4xl font-bold uppercase text-neon transition duration-500 hover:text-primary hover:underline hover:decoration-neon hover:shadow-neon hover:text-shadow-glow md:text-5xl"
+          >ripples</a
+        >
+         &nbsp;about&nbsp;{categoryName?.toLowerCase()}
+      </h1>
+      <div class="my-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          ripples.map((ripple) => (
+            <RippleGlass frontmatter={ripple.frontmatter} url={ripple.url} />
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</MainLayout>
