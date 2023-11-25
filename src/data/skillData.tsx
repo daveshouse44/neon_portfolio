@@ -3,7 +3,7 @@ type iconSide = "left" | "right";
 const skillLinks = [
   {
     name: "Astro.js",
-    path: "https://astro.build/",
+    path: "/ripples/ripple-3",
     icon: {
       name: "simple-icons:astro",
       side: "left" as iconSide,
@@ -11,7 +11,7 @@ const skillLinks = [
   },
   {
     name: "tailwindcss",
-    path: "https://tailwindcss.com/",
+    path: "/ripples/ripple-3",
     icon: {
       name: "teenyicons:tailwind-outline",
       side: "left" as iconSide,
@@ -19,7 +19,7 @@ const skillLinks = [
   },
   {
     name: "React.js",
-    path: "https://react.dev/",
+    path: "/ripples/ripple-7",
     icon: {
       name: "teenyicons:react-outline",
       side: "left" as iconSide,
@@ -27,7 +27,7 @@ const skillLinks = [
   },
   {
     name: "Next.js",
-    path: "https://nextjs.org/",
+    path: "/ripples/ripple-5",
     icon: {
       name: "teenyicons:nextjs-outline",
       side: "left" as iconSide,
@@ -35,7 +35,7 @@ const skillLinks = [
   },
   {
     name: "TypeScript",
-    path: "https://www.typescriptlang.org/",
+    path: "/ripples/ripple-5",
     icon: {
       name: "teenyicons:typescript-outline",
       side: "left" as iconSide,
@@ -43,7 +43,7 @@ const skillLinks = [
   },
   {
     name: "Python",
-    path: "https://www.python.org/",
+    path: "/ripples/ripple-8",
     icon: {
       name: "teenyicons:python-outline",
       side: "left" as iconSide,
@@ -51,7 +51,7 @@ const skillLinks = [
   },
   {
     name: "Vue.js",
-    path: "https://vuejs.org/",
+    path: "/ripples/ripple-7",
     icon: {
       name: "teenyicons:vue-outline",
       side: "left" as iconSide,
@@ -59,7 +59,7 @@ const skillLinks = [
   },
   {
     name: "WordPress",
-    path: "https://wordpress.org/",
+    path: "/ripples/ripple-8",
     icon: {
       name: "teenyicons:wordpress-outline",
       side: "left" as iconSide,
@@ -67,7 +67,7 @@ const skillLinks = [
   },
   {
     name: "Figma",
-    path: "https://www.figma.com/",
+    path: "/ripples/ripple-11",
     icon: {
       name: "teenyicons:figma-outline",
       side: "left" as iconSide,
@@ -75,7 +75,7 @@ const skillLinks = [
   },
   {
     name: "Knife sharpening",
-    path: "https://www.webstaurantstore.com/article/39/how-to-use-a-sharpening-stone.html",
+    path: "/ripples/ripple-12",
     icon: {
       name: "ph:knife",
       side: "left" as iconSide,
@@ -83,7 +83,7 @@ const skillLinks = [
   },
   {
     name: "Wood-fired pizza",
-    path: "https://www.seriouseats.com/hacker-free-neapolitan-pizza-for-a-home-kitchen-recipe",
+    path: "/ripples/ripple-10",
     icon: {
       name: "fluent:food-pizza-24-regular",
       side: "left" as iconSide,
@@ -91,7 +91,7 @@ const skillLinks = [
   },
   {
     name: "Leathercraft",
-    path: "https://www.weaverleathersupply.com/pages/getting-started-in-leathercrafting",
+    path: "/ripples/ripple-9",
     icon: {
       name: "iconoir:wallet",
       side: "left" as iconSide,
