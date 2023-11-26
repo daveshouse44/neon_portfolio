@@ -1,19 +1,13 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import MyFace from "../components/MyFace.astro";
+
+import Tabs from "../components/Tabs.astro";
 ---
 
 <MainLayout title="Work" description="Jobs and projects">
   <div class="flex h-full items-center justify-center gap-4 p-4">
     <MyFace />
-    <div class="flex flex-col gap-4">
-      <h2 class="text-xl font-bold">Greetings, I'm</h2>
-      <h1
-        class="font-tilt text-4xl font-bold uppercase text-neon transition duration-500 hover:text-primary hover:shadow-neon hover:text-shadow-glow md:text-5xl"
-      >
-        Dave Tierney
-      </h1>
-      <p class="text-lg font-semibold">Web Developer | Chef | Tinkerer</p>
-    </div>
+    <Tabs />
   </div>
 </MainLayout>
