@@ -2,12 +2,15 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import MyFace from "../components/MyFace.astro";
 
+import workTabItems from "../data/workTabData.tsx";
 import Tabs from "../components/Tabs.astro";
+import TabsComponent from "../components/ReactTabs.tsx";
 ---
 
 <MainLayout title="Work" description="Jobs and projects">
   <div class="flex h-full items-center justify-center gap-4 p-4">
     <MyFace />
     <Tabs />
+    <TabsComponent items={workTabItems} client:only="react" />
   </div>
 </MainLayout>
