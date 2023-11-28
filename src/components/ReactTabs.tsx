@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { IcOutlineLocalPizza } from "../icons/react-icons/pizzaIcon";
 
 interface TabItem {
   title: string;
@@ -22,7 +23,7 @@ const TabsComponent: React.FC<TabsProps> = ({ items }) => {
   return (
     <div className="flex items-center justify-center bg-sky-100 py-12">
       <div className="flex w-full max-w-md flex-col gap-y-2">
-        <div className="flex items-center  justify-between gap-x-2 rounded-xl bg-blue-400 p-1 font-bold text-white">
+        <div className="flex items-center justify-between gap-x-2 rounded-xl bg-blue-400 p-1 font-bold text-white">
           {items.map((item, index) => (
             <button
               ref={index === 0 ? firstBtnRef : null}
@@ -45,6 +46,7 @@ const TabsComponent: React.FC<TabsProps> = ({ items }) => {
               <div className="rounded-lg border-2 border-blue-400 p-4">
                 <h1 className="text-3xl text-blue-600">{item.title}</h1>
                 <p>{item.content}</p>
+                <IcOutlineLocalPizza className="h-10 w-10 text-neon" />
               </div>
             </div>
           ))}
