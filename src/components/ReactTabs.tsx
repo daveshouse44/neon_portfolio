@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-interface TabItem {
+
+export interface TabItem {
   title: string;
+  employer: string;
   content: string;
-  icon: string;
 }
 
 interface TabsProps {
@@ -28,22 +29,22 @@ const ReactTabs: React.FC<TabsProps> = ({ items }) => {
               ref={index === 0 ? firstBtnRef : null}
               key={index}
               onClick={() => setSelectedTab(index)}
-              className={`inline-flex w-full items-center rounded-lg px-4 py-3 ${
-                selectedTab === index ? "bg-white" : ""
+              className={`inline-flex w-full items-center rounded-lg border-2 px-4 py-3 ${
+                selectedTab === index ? "border-neon" : "border-transparent"
               } `}
             >
-              {item.title} goes here
+              {item.employer}
             </button>
           </li>
         ))}
       </ul>
-      <div className="text-medium w-full rounded-lg bg-background p-6 text-gray-500">
+      <div className="text-medium w-full rounded-lg p-6">
         {items.map((item, index) => (
           <div
             className={`${selectedTab === index ? "" : "hidden"}`}
             key={index}
           >
-            <div className="rounded-lg border-2 border-blue-400 p-4">
+            <div className="rounded-lg border-2 border-neon p-4">
               <h3 className="mb-2 text-lg font-bold text-gray-900">
                 {item.title}
               </h3>
