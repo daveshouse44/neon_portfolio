@@ -21,38 +21,44 @@ const TabsComponent: React.FC<TabsProps> = ({ items }) => {
   }, []);
 
   return (
-    <div className="flex items-center justify-center bg-sky-100 py-12">
-      <div className="flex w-full max-w-md flex-col gap-y-2">
-        <div className="flex items-center justify-between gap-x-2 rounded-xl bg-blue-400 p-1 font-bold text-white">
-          {items.map((item, index) => (
-            <button
-              ref={index === 0 ? firstBtnRef : null}
-              key={index}
-              onClick={() => setSelectedTab(index)}
-              className={`text-cneter w-full rounded-xl p-2 outline-none hover:bg-blue-300 focus:bg-white focus:text-blue-600 focus:ring-2 ${
-                selectedTab === index ? "bg-white text-blue-600 ring-2" : ""
-              } `}
-            >
-              {item.title}
-            </button>
-          ))}
-        </div>
-        <div className="rounded-xl bg-white p-2">
-          {items.map((item, index) => (
-            <div
-              className={`${selectedTab === index ? "" : "hidden"}`}
-              key={index}
-            >
-              <div className="rounded-lg border-2 border-blue-400 p-4">
-                <h1 className="text-3xl text-blue-600">{item.title}</h1>
-                <p>{item.content}</p>
-                <IcOutlineLocalPizza className="h-10 w-10 text-neon" />
+    <>
+      <div className="flex items-center justify-center">
+        <div className="md:flex">
+          <ul className="flex-column space-y mb-4 space-y-4 text-sm font-medium md:mb-0 md:me-4">
+            {items.map((item, index) => (
+              <li>
+                <button
+                  ref={index === 0 ? firstBtnRef : null}
+                  key={index}
+                  onClick={() => setSelectedTab(index)}
+                  className={`inline-flex w-full items-center rounded-lg px-4 py-3 ${
+                    selectedTab === index ? "bg-white" : ""
+                  } `}
+                >
+                  {item.title} goes here
+                </button>
+              </li>
+            ))}
+          </ul>
+          <div className="text-medium w-full rounded-lg bg-background p-6 text-gray-500">
+            {items.map((item, index) => (
+              <div
+                className={`${selectedTab === index ? "" : "hidden"}`}
+                key={index}
+              >
+                <div className="rounded-lg border-2 border-blue-400 p-4">
+                  <h3 className="mb-2 text-lg font-bold text-gray-900">
+                    {item.title}
+                  </h3>
+                  <p className="mb-2">{item.content}</p>
+                  <IcOutlineLocalPizza className="h-10 w-10 text-neon" />
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
