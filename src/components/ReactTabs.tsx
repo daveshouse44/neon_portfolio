@@ -46,35 +46,36 @@ const ReactTabs: React.FC<TabsProps> = ({ items }) => {
           </li>
         ))}
       </ul>
-      <div className="text-medium w-full rounded-lg p-6">
+      <div className="w-full max-w-4xl rounded-lg p-6">
         {items.map((item, index) => (
           <div
             className={`${selectedTab === index ? "" : "hidden"}`}
             key={index}
           >
-            <div className="rounded-lg border-2 border-neon p-4">
-              <h3 className="mb-2 text-lg font-bold text-neon">{item.title}</h3>
+            <div className="flex flex-col items-center justify-center rounded-lg border-2 border-neon p-4">
+              <span className="flex items-center justify-center text-neon">
+                {item.icon === 0 ? (
+                  <CodeIcon className=" mb-2 h-10 w-10" />
+                ) : item.icon === 1 ? (
+                  <EarthIcon className=" mb-2 h-10 w-10" />
+                ) : item.icon === 2 ? (
+                  <PizzaIcon className=" mb-2 h-10 w-10" />
+                ) : item.icon === 3 ? (
+                  <CheeseIcon className=" mb-2 h-10 w-10" />
+                ) : item.icon === 4 ? (
+                  <HammerIcon className=" mb-2 h-10 w-10" />
+                ) : null}
+              </span>
+              <h3 className="text-xl font-bold text-neon">{item.employer}</h3>
+              <h5 className="mb-2 text-lg font-bold text-neon">{item.title}</h5>
               <p className="mb-2 text-sm font-semibold text-secondary">
                 {item.dates}
               </p>
               {item.content.map((el, index) => (
-                <p key={index} className="mb-2">
-                  {el}
+                <p key={index} className="mx-12 mb-2 self-start">
+                  &bull;&nbsp;{el}
                 </p>
               ))}
-              <span className="h-4 w-4">
-                {item.icon === 0 ? (
-                  <CodeIcon />
-                ) : item.icon === 1 ? (
-                  <EarthIcon />
-                ) : item.icon === 2 ? (
-                  <PizzaIcon />
-                ) : item.icon === 3 ? (
-                  <CheeseIcon />
-                ) : item.icon === 4 ? (
-                  <HammerIcon />
-                ) : null}
-              </span>
             </div>
           </div>
         ))}
