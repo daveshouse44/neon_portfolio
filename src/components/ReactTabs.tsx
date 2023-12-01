@@ -1,6 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 
+import { CodeIcon } from "../data/react-icons/CodeIcon";
+import { EarthIcon } from "../data/react-icons/EarthIcon";
+import { PizzaIcon } from "../data/react-icons/PizzaIcon";
+import { CheeseIcon } from "../data/react-icons/CheeseIcon";
+import { HammerIcon } from "../data/react-icons/HammerIcon";
+
 export interface TabItem {
+  icon: number;
   title: string;
   employer: string;
   content: string;
@@ -49,6 +56,19 @@ const ReactTabs: React.FC<TabsProps> = ({ items }) => {
                 {item.title}
               </h3>
               <p className="mb-2">{item.content}</p>
+              <span className="h-4 w-4">
+                {item.icon === 0 ? (
+                  <CodeIcon />
+                ) : item.icon === 1 ? (
+                  <EarthIcon />
+                ) : item.icon === 2 ? (
+                  <PizzaIcon />
+                ) : item.icon === 3 ? (
+                  <CheeseIcon />
+                ) : item.icon === 4 ? (
+                  <HammerIcon />
+                ) : null}
+              </span>
             </div>
           </div>
         ))}
