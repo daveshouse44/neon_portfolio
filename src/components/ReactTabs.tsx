@@ -10,7 +10,8 @@ export interface TabItem {
   icon: number;
   title: string;
   employer: string;
-  content: string;
+  dates: string;
+  content: string[];
 }
 
 interface TabsProps {
@@ -52,10 +53,15 @@ const ReactTabs: React.FC<TabsProps> = ({ items }) => {
             key={index}
           >
             <div className="rounded-lg border-2 border-neon p-4">
-              <h3 className="mb-2 text-lg font-bold text-gray-900">
-                {item.title}
-              </h3>
-              <p className="mb-2">{item.content}</p>
+              <h3 className="mb-2 text-lg font-bold text-neon">{item.title}</h3>
+              <p className="mb-2 text-sm font-semibold text-secondary">
+                {item.dates}
+              </p>
+              {item.content.map((el, index) => (
+                <p key={index} className="mb-2">
+                  {el}
+                </p>
+              ))}
               <span className="h-4 w-4">
                 {item.icon === 0 ? (
                   <CodeIcon />
