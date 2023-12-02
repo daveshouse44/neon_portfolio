@@ -41,6 +41,14 @@ const workLinks = [
       side: "right" as iconSide,
     },
   },
+  {
+    name: "Password Generator",
+    link: "https://pw-gen2.netlify.app/",
+    icon: {
+      name: "teenyicons:typescript-outline",
+      side: "right" as iconSide,
+    },
+  },
 ];
 
 export default workLinks;
