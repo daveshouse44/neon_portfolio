@@ -1,9 +1,10 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import MyFace from "../components/MyFace.astro";
+import Link from "../components/Link.astro";
 
 import workTabItems from "../data/workTabData.tsx";
 import ReactTabs from "../components/ReactTabs.tsx";
+import workLinks from "../data/workLinks";
 ---
 
 <MainLayout title="Work" description="Jobs and projects">
@@ -11,6 +12,28 @@ import ReactTabs from "../components/ReactTabs.tsx";
     class="flex h-full flex-col items-center justify-center gap-4 p-4 lg:flex-row"
   >
     <ReactTabs items={workTabItems} client:only="react" />
-    <MyFace />
+    <div
+      class="group/glass my-8 flex h-fit flex-col gap-4 rounded-sm border-2 border-neon border-opacity-30 bg-secondary bg-opacity-50 px-4 py-6 shadow transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur"
+    >
+      <h1 class="text-lg font-bold">
+        <span
+          class="font-tilt text-3xl font-semibold uppercase text-neon transition duration-500 group-hover/glass:text-primary group-hover/glass:shadow-neon group-hover/glass:text-shadow-glow md:text-4xl"
+          >Work&nbsp</span
+        >
+         to see:
+      </h1>
+      <div class="flex flex-wrap sm:flex-col md:gap-4">
+        {
+          workLinks.map((item) => (
+            <Link
+              text={item.name}
+              href={item.link}
+              data-nav-link
+              icon={{ name: item.icon?.name, side: item.icon?.side }}
+            />
+          ))
+        }
+      </div>
+    </div>
   </div>
 </MainLayout>
