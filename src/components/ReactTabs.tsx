@@ -37,7 +37,7 @@ const ReactTabs: React.FC<TabsProps> = ({ items }) => {
               ref={index === 0 ? firstBtnRef : null}
               key={index}
               onClick={() => setSelectedTab(index)}
-              className={`inline-flex w-full items-center rounded-lg border-2 px-4 py-3 ${
+              className={`grid w-full items-center rounded-lg border-2 px-4 py-3 md:inline-flex ${
                 selectedTab === index ? "border-neon" : "border-transparent"
               } `}
             >
@@ -52,7 +52,7 @@ const ReactTabs: React.FC<TabsProps> = ({ items }) => {
             className={`${selectedTab === index ? "" : "hidden"}`}
             key={index}
           >
-            <div className="flex flex-col items-center justify-center rounded-lg border-2 border-neon p-4">
+            <div className="flex flex-col items-center justify-center rounded-lg border-2 border-neon p-4 text-center">
               <span className="flex items-center justify-center text-neon">
                 {item.icon === 0 ? (
                   <CodeIcon className=" mb-2 h-10 w-10" />
@@ -72,7 +72,10 @@ const ReactTabs: React.FC<TabsProps> = ({ items }) => {
                 {item.dates}
               </p>
               {item.content.map((el, index) => (
-                <p key={index} className="mx-12 mb-2 self-start">
+                <p
+                  key={index}
+                  className="mb-2 self-start px-4 text-start sm:mx-16"
+                >
                   &bull;&nbsp;{el}
                 </p>
               ))}
