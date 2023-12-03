@@ -7,13 +7,17 @@ interface Props {
     name: string;
     side: "left" | "right";
   };
+  target?: string;
+  rel?: string;
 }
 
-const { text, href, icon, ...rest } = Astro.props as Props;
+const { text, href, icon, target, rel, ...rest } = Astro.props as Props;
 ---
 
 <a
   href={href}
+  target={target}
+  rel={rel}
   {...rest}
   class="group inline-flex gap-1 rounded py-2 pl-3 pr-4 font-semibold uppercase text-primary transition md:border-0 md:p-0 md:hover:bg-transparent"
 >
