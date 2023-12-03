@@ -38,7 +38,7 @@ const neonColors = document.querySelectorAll("[type='radio']");
 neonColors.forEach((color) => {
   color.addEventListener("change", (e: Event) => {
     console.log(e.target);
-    const { name, checked, value } = e.target as HTMLInputElement;
+    const { name, value } = e.target as HTMLInputElement;
     localStorage.setItem(name, value);
     setNeonColor(value);
   });
