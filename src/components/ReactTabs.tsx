@@ -30,7 +30,7 @@ const ReactTabs: React.FC<TabsProps> = ({ items }) => {
 
   return (
     <div className="max-w-5xl md:flex">
-      <ul className="flex-column space-y mb-4 space-y-4 text-sm font-medium md:mb-0 md:me-4">
+      <ul className="flex-column space-y mb-4 space-y-4 p-6 text-sm font-medium md:mb-0 md:me-4">
         {items.map((item, index) => (
           <li key={index}>
             <button
