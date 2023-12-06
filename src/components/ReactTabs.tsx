@@ -37,8 +37,10 @@ const ReactTabs: React.FC<TabsProps> = ({ items }) => {
               ref={index === 0 ? firstBtnRef : null}
               key={index}
               onClick={() => setSelectedTab(index)}
-              className={`grid w-full items-center rounded-lg border-2 px-4 py-3 md:inline-flex ${
-                selectedTab === index ? "border-neon" : "border-transparent"
+              className={`grid w-full items-center rounded-lg border-2 px-4 py-3 transition hover:border-neon md:inline-flex ${
+                selectedTab === index
+                  ? "border-neon bg-secondary bg-opacity-50"
+                  : "border-transparent"
               } `}
             >
               {item.employer}
@@ -52,8 +54,8 @@ const ReactTabs: React.FC<TabsProps> = ({ items }) => {
             className={`${selectedTab === index ? "" : "hidden"}`}
             key={index}
           >
-            <div className="flex flex-col items-center justify-center rounded-lg border-2 border-neon p-4 text-center">
-              <span className="flex items-center justify-center text-neon">
+            <div className="group flex flex-col items-center justify-center rounded-sm border-2 border-neon border-opacity-30 bg-secondary bg-opacity-50 p-4 text-center shadow transition duration-300 hover:shadow-glow hover:shadow-neon hover:backdrop-blur">
+              <span className="flex items-center justify-center group-hover:text-neon">
                 {item.icon === 0 ? (
                   <CodeIcon className=" mb-2 h-10 w-10" />
                 ) : item.icon === 1 ? (
@@ -66,15 +68,19 @@ const ReactTabs: React.FC<TabsProps> = ({ items }) => {
                   <HammerIcon className=" mb-2 h-10 w-10" />
                 ) : null}
               </span>
-              <h3 className="text-xl font-bold text-neon">{item.employer}</h3>
-              <h5 className="mb-2 text-lg font-bold text-neon">{item.title}</h5>
+              <h3 className="font-tilt text-2xl font-bold uppercase text-neon transition duration-500 group-hover:text-primary group-hover:text-shadow-glow ">
+                {item.employer}
+              </h3>
+              <h5 className="mb-2 text-lg font-bold group-hover:text-neon">
+                {item.title}
+              </h5>
               <p className="mb-2 text-sm font-semibold text-secondary">
                 {item.dates}
               </p>
               {item.content.map((el, index) => (
                 <p
                   key={index}
-                  className="mb-2 self-start px-4 text-start sm:mx-16"
+                  className="mb-2 self-start px-4 text-start md:mx-16"
                 >
                   &bull;&nbsp;{el}
                 </p>
