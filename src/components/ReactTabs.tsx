@@ -37,7 +37,7 @@ const ReactTabs: React.FC<TabsProps> = ({ items }) => {
               ref={index === 0 ? firstBtnRef : null}
               key={index}
               onClick={() => setSelectedTab(index)}
-              className={`grid w-full items-center rounded-lg border-2 px-4 py-3 transition hover:border-neon md:inline-flex ${
+              className={`grid w-full items-center rounded-sm border-2 border-opacity-30 px-4 py-3 transition hover:border-neon md:inline-flex ${
                 selectedTab === index
                   ? "border-neon bg-secondary bg-opacity-50"
                   : "border-transparent"
