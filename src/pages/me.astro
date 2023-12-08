@@ -46,7 +46,7 @@ import meData from "../data/meData";
         <ul class="text-base">
           {
             meData.map((item) =>
-              item.facts.map((el) => <li>&bull;&nbsp;{el}</li>),
+              item.facts.map((el: string) => <li>&bull;&nbsp;{el}</li>),
             )
           }
         </ul>
