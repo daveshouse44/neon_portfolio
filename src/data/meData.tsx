@@ -1,15 +1,16 @@
 const meData = [
   {
     text: [
-      "I take a strategic approach to design and development. I'm a full stack web developer with a passion for creating dynamic user experiences. I'm currently working as a freelance developer and consultant. I'm also a part-time student at the University of Washington, pursuing a degree in Human Centered Design and Engineering. I'm a lifelong learner and I'm always looking for new opportunities to grow and expand my skillset.",
-      "Hello there! My name is Dave and I appreciate you taking the time to check out my portfolio. I'm a full stack web developer with a passion for creating dynamic user experiences. I'm currently working as a freelance developer and consultant. I'm also a part-time student at the University of Washington, pursuing a degree in Human Centered Design and Engineering. I'm a lifelong learner and I'm always looking for new opportunities to grow and expand my skillset. Everything is trash!",
+      "Thank you for visiting my website! My name is Dave and I am working as a full stack web developer. I have worn many different hats in my time, but I have always had a desire to know how things work. This has driven me throughout my life and various career focuses. I enjoy the challenge of creating something to achieve what I need, or fixing a problem and then things better.",
+      "I began my programming journey in 2021, and I am so glad I did. Though my quest for understanding and problem solving nature has always been an asset, it shines in my current focus. I am excited to continue to learn and grow in this field, and I look forward to the challenges ahead. I will always make, fix, take apart, reassemble, and learn. It is what I do.",
     ],
     facts: [
-      "Building and maintaining websites",
-      "End to end application development",
-      "Focusing on user driven designs",
-      "Creating dynamic UX / UI experiences",
-      "Best practices in SEO and accessibility",
+      "I have two dogs and a wonderfully supportive wife",
+      "I love making something instead of buying it",
+      "My favorite foods to make are fried rice, pizza, smoked salmon, and enchiladas",
+      "I enjoy disc golf, bowling, beach volleyball, darts, and rollerblading",
+      "I usually read sci-fi and magical realism, but I also enjoy non-fiction",
+      "Some newer interests of mine are yoga and mycology",
     ],
   },
 ];
