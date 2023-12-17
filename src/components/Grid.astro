@@ -1,7 +1,9 @@
-<section class="grid-lines">
-  <div class="grid-box">
-    <div class="bg top"></div>
-    <div class="bg bottom"></div>
+<section class="fixed z-[-1] h-full w-full">
+  <div class="grid-lines">
+    <div class="grid-box">
+      <div class="bg top"></div>
+      <div class="bg bottom"></div>
+    </div>
   </div>
 </section>
 
@@ -9,14 +11,13 @@
   .grid-lines {
     width: 100%;
     position: relative;
-    background-color: hsl(var(--color-background));
     z-index: -5;
-    opacity: 0.3;
+    opacity: 0.2;
   }
   .grid-box {
     width: 100%;
+    background-color: hsl(var(--color-background));
     position: absolute;
-    top: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
