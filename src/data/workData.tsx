@@ -18,18 +18,18 @@ const workLinks = [
     },
   },
   {
-    name: "Earth Hero",
-    link: "https://www.earthhero.org/",
-    icon: {
-      name: "teenyicons:react-outline",
-      side: "right" as iconSide,
-    },
-  },
-  {
     name: "Starts Resource Tool",
     link: "https://www.alleyinsights.org/startup-resources",
     icon: {
       name: "teenyicons:vue-outline",
+      side: "right" as iconSide,
+    },
+  },
+  {
+    name: "Earth Hero",
+    link: "https://www.earthhero.org/",
+    icon: {
+      name: "teenyicons:gatsbyjs-outline",
       side: "right" as iconSide,
     },
   },
@@ -46,6 +46,14 @@ const workLinks = [
     link: "https://pw-gen2.netlify.app/",
     icon: {
       name: "teenyicons:typescript-outline",
+      side: "right" as iconSide,
+    },
+  },
+  {
+    name: "Previous Portfolio",
+    link: "https://davetierney.dev",
+    icon: {
+      name: "teenyicons:react-outline",
       side: "right" as iconSide,
     },
   },
