@@ -16,7 +16,7 @@ const { title, date, author, description, category } = frontmatter;
         category={category}
       />
       <div
-        class="grid gap-6 p-6 [&>:nth-child(2):first-letter]:float-left [&>:nth-child(2):first-letter]:mr-1.5 [&>:nth-child(2):first-letter]:font-tilt [&>:nth-child(2):first-letter]:text-5xl [&>:nth-child(2):first-letter]:font-bold [&>:nth-child(2):first-letter]:text-neon"
+        class="grid gap-6 bg-background bg-opacity-50 p-6 backdrop-blur-sm [&>:nth-child(2):first-letter]:float-left [&>:nth-child(2):first-letter]:mr-1.5 [&>:nth-child(2):first-letter]:font-tilt [&>:nth-child(2):first-letter]:text-5xl [&>:nth-child(2):first-letter]:font-bold [&>:nth-child(2):first-letter]:text-neon"
       >
         <slot />
       </div>
