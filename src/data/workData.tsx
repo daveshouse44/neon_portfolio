@@ -51,7 +51,7 @@ const workLinks = [
   },
   {
     name: "Previous Portfolio",
-    link: "https://davetierney.dev",
+    link: "https://daveshouse44.github.io/portfolio_update/",
     icon: {
       name: "teenyicons:react-outline",
       side: "right" as iconSide,
