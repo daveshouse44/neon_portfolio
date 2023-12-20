@@ -1,0 +1,36 @@
+---
+// component imports
+import Link from "./Link.astro";
+
+const { prevUrl, nextUrl } = Astro.props;
+---
+
+<nav
+  aria-label="Ripple pages"
+  class="flex items-center justify-center gap-2 sm:gap-4"
+>
+  {
+    prevUrl && (
+      <Link
+        text="to surface"
+        href={prevUrl}
+        icon={{
+          name: "ph:arrow-fat-up-bold",
+          side: "left",
+        }}
+      />
+    )
+  }
+  {
+    nextUrl && (
+      <Link
+        text="go deeper"
+        href={nextUrl}
+        icon={{
+          name: "ph:arrow-fat-down-bold",
+          side: "right",
+        }}
+      />
+    )
+  }
+</nav>
