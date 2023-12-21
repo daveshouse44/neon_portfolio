@@ -15,13 +15,13 @@ const ripples: Ripple[] = allRipples.map((ripple) => ({
   url: ripple.url,
   category: ripple.frontmatter.category,
 }));
-const formattedRipples = formatRipples(ripples);
+const formattedRipples = formatRipples(ripples, { sortByDate: false });
 const similarRipples = formattedRipples
   .filter(
     (ripple) =>
       ripple.category === category && ripple.frontmatter.title !== title,
   )
-  .slice(0, 3);
+  .slice(0, 2);
 ---
 
 <MainLayout title={title} description={description}>
