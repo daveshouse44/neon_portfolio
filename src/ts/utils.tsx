@@ -17,6 +17,7 @@ export function formatDate(date: string) {
 
 export interface Ripple {
   frontmatter: {
+    title: string;
     date: string;
     draft: boolean;
   };

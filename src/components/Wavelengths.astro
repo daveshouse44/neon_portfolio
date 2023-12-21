@@ -1,0 +1,45 @@
+---
+import { formatRipples, type Ripple, slugify } from "../ts/utils";
+
+const allRipples = await Astro.glob("../pages/ripples/*.mdx");
+const ripples: Ripple[] = allRipples.map((ripple) => ({
+  frontmatter: ripple.frontmatter as Ripple["frontmatter"],
+  url: ripple.url,
+  category: ripple.frontmatter.category,
+}));
+const formattedRipples = formatRipples(ripples);
+const allWavelengths = formattedRipples.map((waves) => waves.category).flat();
+
+const processedWaves = allWavelengths.reduce(
+  (acc: Record<string, number>, wavelength) => {
+    if (wavelength !== undefined) {
+      const value = acc[wavelength] || 0;
+
+      return {
+        ...acc,
+        [wavelength]: value + 1,
+      };
+    } else {
+      return acc;
+    }
+  },
+  {} as Record<string, number>,
+);
+
+const { showCount } = Astro.props;
+---
+
+<ul class="flex flex-wrap items-center justify-center gap-2">
+  {
+    Object.entries(processedWaves).map(([key, val]) => (
+      <li>
+        <a
+          class="rounded-sm border-2 border-neon border-opacity-30 bg-secondary bg-opacity-50 p-1 text-sm shadow transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur"
+          href={`/category/${slugify(key)}/`}
+        >
+          {key}&nbsp;{showCount && `~ ${val}`}
+        </a>
+      </li>
+    ))
+  }
+</ul>

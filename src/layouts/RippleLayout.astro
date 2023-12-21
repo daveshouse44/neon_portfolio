@@ -1,9 +1,27 @@
 ---
 import RippleHeader from "../components/RippleHeader.astro";
+import Wavelengths from "../components/Wavelengths.astro";
 import MainLayout from "../layouts/MainLayout.astro";
+import SimilarRipples from "../components/SimilarRipples.astro";
+
+import { formatRipples, type Ripple } from "../ts/utils";
 
 const { frontmatter } = Astro.props;
 const { title, date, author, description, category } = frontmatter;
+
+const allRipples = await Astro.glob("../pages/ripples/*.mdx");
+const ripples: Ripple[] = allRipples.map((ripple) => ({
+  frontmatter: ripple.frontmatter as Ripple["frontmatter"],
+  url: ripple.url,
+  category: ripple.frontmatter.category,
+}));
+const formattedRipples = formatRipples(ripples);
+const similarRipples = formattedRipples
+  .filter(
+    (ripple) =>
+      ripple.category === category && ripple.frontmatter.title !== title,
+  )
+  .slice(0, 3);
 ---
 
 <MainLayout title={title} description={description}>
@@ -20,6 +38,20 @@ const { title, date, author, description, category } = frontmatter;
       >
         <slot />
       </div>
+      <aside
+        class="mb-8 flex flex-col items-center justify-center gap-2 px-1"
+        aria-label="Different waves"
+      >
+        <h2 class="text-lg font-semibold">Different waves</h2>
+        <Wavelengths showCount={true} />
+      </aside>
+      <aside
+        class="mb-8 flex flex-col items-center justify-center gap-2 px-1"
+        aria-label="Similar ripples"
+      >
+        <h2 class="text-lg font-semibold">Similar ripples</h2>
+        <SimilarRipples {similarRipples} />
+      </aside>
     </div>
   </div>
 </MainLayout>

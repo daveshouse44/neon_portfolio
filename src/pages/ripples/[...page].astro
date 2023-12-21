@@ -2,6 +2,7 @@
 import MainLayout from "../../layouts/MainLayout.astro";
 import RippleGlass from "../../components/RippleGlass.astro";
 import Paginate from "../../components/Paginate.astro";
+import Wavelengths from "../../components/Wavelengths.astro";
 
 import { formatRipples, type Ripple } from "../../ts/utils";
 
@@ -10,6 +11,7 @@ export async function getStaticPaths({ paginate }: { paginate: Function }) {
   const ripples: Ripple[] = allRipples.map((ripple) => ({
     frontmatter: ripple.frontmatter as Ripple["frontmatter"],
     url: ripple.url,
+    category: ripple.frontmatter.category,
   }));
   const formattedRipples = formatRipples(ripples);
 
@@ -37,7 +39,7 @@ const { page }: { page: PageType } = Astro.props;
     class="mx-6 flex h-full flex-col justify-center gap-4 p-4"
     aria-label="New Ripples"
   >
-    <div class="my-8 flex flex-col items-center gap-4">
+    <div class="my-4 flex flex-col items-center gap-4 text-center">
       <h1 class="text-xl font-bold">
         Sending &nbsp;
         <span
@@ -46,7 +48,7 @@ const { page }: { page: PageType } = Astro.props;
         >
          &nbsp;into the ether
       </h1>
-      <div class="my-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {
           page.data.map((ripple) => (
             <RippleGlass frontmatter={ripple.frontmatter} url={ripple.url} />
@@ -55,5 +57,12 @@ const { page }: { page: PageType } = Astro.props;
       </div>
     </div>
     <Paginate prevUrl={page.url.prev} nextUrl={page.url.next} />
+    <aside
+      class="mb-8 flex flex-col items-center justify-center gap-2 self-center"
+      aria-label="Different waves"
+    >
+      <h2 class="text-lg font-semibold">Different waves</h2>
+      <Wavelengths showCount={true} />
+    </aside>
   </div>
 </MainLayout>
