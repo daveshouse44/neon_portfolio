@@ -54,7 +54,7 @@ const ReactTabs: React.FC<TabsProps> = ({ items }) => {
             className={`${selectedTab === index ? "" : "hidden"}`}
             key={index}
           >
-            <div className="group flex flex-col items-center justify-center rounded-sm border-2 border-neon border-opacity-30 bg-secondary bg-opacity-50 p-4 text-center shadow transition duration-300 hover:shadow-glow hover:shadow-neon hover:backdrop-blur backdrop-blur sm:backdrop-blur-none">
+            <div className="group flex flex-col items-center justify-center rounded-sm border-2 border-neon border-opacity-30 bg-secondary bg-opacity-50 p-4 text-center shadow backdrop-blur transition duration-300 hover:shadow-glow hover:shadow-neon hover:backdrop-blur sm:backdrop-blur-none">
               <span className="flex items-center justify-center group-hover:text-neon">
                 {item.icon === 0 ? (
                   <CodeIcon className=" mb-2 h-10 w-10" />
