@@ -17,7 +17,7 @@ const setTheme = (theme: string) =>
   document.documentElement.setAttribute("data-theme", theme);
 
 window.addEventListener("DOMContentLoaded", () => setTheme(getTheme()));
-// document.addEventListener("astro:after-swap", () => setTheme(getTheme()));
+document.addEventListener("astro:after-swap", () => setTheme(getTheme()));
 
 themeToggles.forEach((toggle) => {
   toggle.addEventListener("click", () => {
