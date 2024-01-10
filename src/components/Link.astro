@@ -19,7 +19,7 @@ const { text, href, icon, target, rel, ...rest } = Astro.props as Props;
   target={target}
   rel={rel}
   {...rest}
-  class="group inline-flex gap-1 rounded py-2 pl-3 pr-4 font-semibold uppercase text-primary transition md:border-0 md:p-0 md:hover:bg-transparent"
+  class="group inline-flex gap-1 rounded px-1 py-2 font-semibold uppercase text-primary transition md:border-0 md:p-0 md:hover:bg-transparent"
 >
   {
     icon && icon.side === "left" && (
