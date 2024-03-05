@@ -1,11 +1,13 @@
 ---
-import MainLayout from "../../layouts/MainLayout.astro";
-import RippleGlass from "../../components/RippleGlass.astro";
+import MainLayout from "../../../layouts/MainLayout.astro";
+import RippleGlass from "../../../components/RippleGlass.astro";
+import Paginate from "../../../components/Paginate.astro";
+import Wavelengths from "../../../components/Wavelengths.astro";
 
-import { slugify, formatRipples, type Ripple } from "../../ts/utils";
+import { slugify, formatRipples, type Ripple } from "../../../ts/utils";
 
-export async function getStaticPaths() {
-  const allRipples = await Astro.glob("../ripples/*.mdx");
+export async function getStaticPaths({ paginate }: { paginate: Function }) {
+  const allRipples = await Astro.glob("../../ripples/*.mdx");
   const ripples: Ripple[] = allRipples.map((ripple) => ({
     frontmatter: ripple.frontmatter as Ripple["frontmatter"],
     url: ripple.url,
@@ -15,31 +17,28 @@ export async function getStaticPaths() {
   const allCategories = [
     ...new Set(formattedRipples.map((ripple) => ripple.category).flat()),
   ];
-  return allCategories.map((category) => {
+  return allCategories.flatMap((category) => {
     const categoryRipples = formattedRipples.filter(
       (ripple) => ripple.category === category,
     );
-    return {
+    return paginate(categoryRipples, {
       params: { category: slugify(category || "uncategorized") },
-      props: {
-        categoryName: category,
-        ripples: categoryRipples,
-      },
-    };
+      pageSize: 6,
+    });
   });
 }
 
-const { category } = Astro.params;
-const { ripples, categoryName } = Astro.props;
+const { page, categoryName } = Astro.props;
+const params = Astro.params;
 ---
 
 <MainLayout
-  title={`${categoryName} ripples`}
+  title={`${params.category} ripples`}
   description="A small ripple can spread"
 >
   <div
     class="mx-6 flex h-full justify-center gap-4 p-4"
-    aria-label={`Ripples about ${categoryName}`}
+    aria-label={`Ripples about ${params.category}`}
   >
     <div class="my-8 flex flex-col items-center gap-4">
       <h1 class="text-xl font-bold">
@@ -48,15 +47,23 @@ const { ripples, categoryName } = Astro.props;
           class="font-tilt text-4xl font-bold uppercase text-neon underline transition duration-500 hover:text-primary hover:underline hover:decoration-neon hover:shadow-neon hover:text-shadow-glow sm:no-underline md:text-5xl"
           >ripples</a
         >
-        &nbsp;about&nbsp;{categoryName?.toLowerCase()}
+        &nbsp;about&nbsp;{params.category?.toLowerCase()}
       </h1>
       <div class="my-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {
-          ripples.map((ripple) => (
+          page.data.map((ripple) => (
             <RippleGlass frontmatter={ripple.frontmatter} url={ripple.url} />
           ))
         }
       </div>
+      <Paginate prevUrl={page.url.prev} nextUrl={page.url.next} />
+      <aside
+        class="mb-8 flex flex-col items-center justify-center gap-2 self-center"
+        aria-label="Different ripples"
+      >
+        <h2 class="text-lg font-semibold">Different ripples</h2>
+        <Wavelengths showCount={true} />
+      </aside>
     </div>
   </div>
 </MainLayout>

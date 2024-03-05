@@ -38,7 +38,6 @@ document.addEventListener("astro:after-swap", () => setNeonColor(getColor()));
 const neonColors = document.querySelectorAll("[type='radio']");
 neonColors.forEach((color) => {
   color.addEventListener("change", (e: Event) => {
-    console.log(e.target);
     const { name, value } = e.target as HTMLInputElement;
     localStorage.setItem(name, value);
     setNeonColor(value);
