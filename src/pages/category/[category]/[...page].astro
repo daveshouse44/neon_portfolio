@@ -28,12 +28,14 @@ export async function getStaticPaths({ paginate }: { paginate: Function }) {
   });
 }
 
-const { page, categoryName } = Astro.props;
+const { page } = Astro.props;
 const params = Astro.params;
+const capitalizedCategory =
+  params.category.charAt(0).toUpperCase() + params.category.slice(1);
 ---
 
 <MainLayout
-  title={`${params.category} ripples`}
+  title={`${capitalizedCategory} ripples`}
   description="A small ripple can spread"
 >
   <div
@@ -47,11 +49,11 @@ const params = Astro.params;
           class="font-tilt text-4xl font-bold uppercase text-neon underline transition duration-500 hover:text-primary hover:underline hover:decoration-neon hover:shadow-neon hover:text-shadow-glow sm:no-underline md:text-5xl"
           >ripples</a
         >
-        &nbsp;about&nbsp;{params.category?.toLowerCase()}
+        &nbsp;about&nbsp;{params.category}
       </h1>
       <div class="my-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {
-          page.data.map((ripple) => (
+          page.data.map((ripple: Ripple) => (
             <RippleGlass frontmatter={ripple.frontmatter} url={ripple.url} />
           ))
         }

@@ -1,3 +1,26 @@
+export interface Ripple {
+  frontmatter: {
+    title: string;
+    date: string;
+    draft: boolean;
+  };
+  url?: string;
+  category?: string;
+}
+export interface PageType {
+  url: {
+    prev: string;
+    next: string;
+  };
+  data: Array<{
+    frontmatter: {
+      date: string;
+      draft: boolean;
+    };
+    url: string;
+  }>;
+}
+
 export function slugify(text: string) {
   return text
     .toString()
@@ -13,16 +36,6 @@ export function formatDate(date: string) {
   return new Date(date).toLocaleDateString("en-US", {
     timeZone: "UTC",
   });
-}
-
-export interface Ripple {
-  frontmatter: {
-    title: string;
-    date: string;
-    draft: boolean;
-  };
-  url?: string;
-  category?: string;
 }
 
 export function formatRipples(
