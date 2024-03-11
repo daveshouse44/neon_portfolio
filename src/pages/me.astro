@@ -35,7 +35,7 @@ import meData from "../data/meData";
           class="h-10 w-10 text-primary transition duration-300 group-hover:text-neon"
         />
         <div
-          class="p-6 [&>:first-child:first-letter]:float-left [&>:first-child:first-letter]:mr-1.5 [&>:first-child:first-letter]:font-tilt [&>:first-child:first-letter]:text-7xl [&>:first-child:first-letter]:font-bold [&>:first-child:first-letter]:text-neon"
+          class="p-4 sm:p-6 [&>:first-child:first-letter]:float-left [&>:first-child:first-letter]:mr-1.5 [&>:first-child:first-letter]:font-tilt [&>:first-child:first-letter]:text-7xl [&>:first-child:first-letter]:font-bold [&>:first-child:first-letter]:text-neon"
         >
           {
             meData.map((item) =>
@@ -43,7 +43,7 @@ import meData from "../data/meData";
             )
           }
         </div>
-        <ul class="text-base">
+        <ul class="p-5 text-base sm:p-7">
           {
             meData.map((item) =>
               item.facts.map((el: string) => <li>&bull;&nbsp;{el}</li>),
