@@ -26,7 +26,7 @@ const { page }: { page: PageType } = Astro.props;
     class="mx-6 flex h-full flex-col justify-center gap-4 p-4"
     aria-label="New Ripples"
   >
-    <div class="my-4 flex flex-col items-center gap-4 text-center">
+    <div class="mt-4 flex flex-col items-center gap-4 text-center">
       <h1 class="text-xl font-bold">
         Sending &nbsp;
         <span
@@ -35,7 +35,8 @@ const { page }: { page: PageType } = Astro.props;
         >
         &nbsp;into the ether
       </h1>
-      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <Paginate prevUrl={page.url.prev} />
+      <div class="my-2 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {
           page.data.map((ripple) => (
             <RippleGlass frontmatter={ripple.frontmatter} url={ripple.url} />
@@ -43,7 +44,7 @@ const { page }: { page: PageType } = Astro.props;
         }
       </div>
     </div>
-    <Paginate prevUrl={page.url.prev} nextUrl={page.url.next} />
+    <Paginate nextUrl={page.url.next} />
     <aside
       class="mb-8 flex flex-col items-center justify-center gap-2 self-center"
       aria-label="Different ripples"

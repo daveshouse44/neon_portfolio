@@ -42,7 +42,7 @@ const capitalizedCategory =
     class="mx-6 flex h-full justify-center gap-4 p-4"
     aria-label={`Ripples about ${params.category}`}
   >
-    <div class="my-8 flex flex-col items-center gap-4">
+    <div class="mt-4 flex flex-col items-center gap-4">
       <h1 class="text-xl font-bold">
         <a
           href="/ripples"
@@ -51,14 +51,15 @@ const capitalizedCategory =
         >
         &nbsp;about&nbsp;{params.category}
       </h1>
-      <div class="my-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <Paginate prevUrl={page.url.prev} />
+      <div class="my-2 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {
           page.data.map((ripple: Ripple) => (
             <RippleGlass frontmatter={ripple.frontmatter} url={ripple.url} />
           ))
         }
       </div>
-      <Paginate prevUrl={page.url.prev} nextUrl={page.url.next} />
+      <Paginate nextUrl={page.url.next} />
       <aside
         class="mb-8 flex flex-col items-center justify-center gap-2 self-center"
         aria-label="Different ripples"
