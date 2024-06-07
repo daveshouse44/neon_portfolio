@@ -1,5 +1,6 @@
 // Light and dark theme functions
 const themeToggles = document.querySelectorAll("[data-theme-toggle]");
+const textSuggestions = document.querySelectorAll("[data-text-suggestion]");
 
 const getTheme = () => {
   if (typeof localStorage !== "undefined") {
@@ -16,13 +17,31 @@ const getTheme = () => {
 const setTheme = (theme: string) =>
   document.documentElement.setAttribute("data-theme", theme);
 
-window.addEventListener("DOMContentLoaded", () => setTheme(getTheme()));
-document.addEventListener("astro:after-swap", () => setTheme(getTheme()));
+const toggleSuggestion = () => {
+  const theme = getTheme();
+  textSuggestions.forEach((suggestion) => {
+    if (theme === "dark") {
+      suggestion.classList.add("hidden");
+    } else {
+      suggestion.classList.remove("hidden");
+    }
+  });
+};
+
+window.addEventListener("DOMContentLoaded", () => {
+  setTheme(getTheme());
+  toggleSuggestion();
+});
+document.addEventListener("astro:after-swap", () => {
+  setTheme(getTheme());
+  toggleSuggestion();
+});
 
 themeToggles.forEach((toggle) => {
   toggle.addEventListener("click", () => {
     const nextTheme = getTheme() === "light" ? "dark" : "light";
     localStorage.setItem("theme", nextTheme);
     setTheme(nextTheme);
+    toggleSuggestion();
   });
 });
