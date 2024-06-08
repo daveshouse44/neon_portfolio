@@ -16,6 +16,15 @@ neonClose.addEventListener("click", () => {
   neonContainer.classList.toggle("invisible");
 });
 
+document.addEventListener("click", (e) => {
+  if (
+    !neonContainer.contains(e.target as Node) &&
+    !neonToggle.contains(e.target as Node)
+  ) {
+    neonContainer.classList.add("invisible");
+  }
+});
+
 // Neon color functions
 const getColor = () => {
   if (typeof localStorage !== "undefined") {
