@@ -1,0 +1,21 @@
+---
+layout: "../../layouts/RippleLayout.astro"
+title: Latest post
+date: 2024-06-13
+author: Dave Tierney
+description: Working description
+draft: true
+category: Food
+---
+
+import { Image } from "astro:assets";
+import eatPizza from "../../assets/images/eat_pizza.jpg";
+
+<Image
+  src={eatPizza}
+  alt="Eat pizza every day neon sign"
+  height="600"
+  width="1200"
+/>
+
+{/* <a href="" target="_blank" rel="noopener" className="whitespace-nowrap underline decoration-neon transition hover:text-neon"></a> */}
