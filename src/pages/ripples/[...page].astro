@@ -4,13 +4,18 @@ import RippleGlass from "../../components/RippleGlass.astro";
 import Paginate from "../../components/Paginate.astro";
 import Wavelengths from "../../components/Wavelengths.astro";
 
-import { formatRipples, type Ripple, type PageType } from "../../ts/utils";
+import {
+  formatRipples,
+  type Ripple,
+  type PageType,
+  slugify,
+} from "../../ts/utils";
 
 export async function getStaticPaths({ paginate }: { paginate: Function }) {
-  const allRipples = await Astro.glob("./*.mdx");
+  const allRipples = await Astro.glob("../../posts/*.mdx");
   const ripples: Ripple[] = allRipples.map((ripple) => ({
     frontmatter: ripple.frontmatter as Ripple["frontmatter"],
-    url: ripple.url,
+    url: slugify(ripple.frontmatter.title),
     category: ripple.frontmatter.category,
   }));
   const formattedRipples = formatRipples(ripples);

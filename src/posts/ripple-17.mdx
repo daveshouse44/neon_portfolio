@@ -1,5 +1,5 @@
 ---
-layout: "../../layouts/RippleLayout.astro"
+layout: "../layouts/RippleLayout.astro"
 title: Hank and Pepper ~ Two pretty good dogs
 date: 2024-03-16
 author: Dave Tierney
@@ -9,9 +9,14 @@ category: Personal
 ---
 
 import { Image } from "astro:assets";
-import dogs from "../../assets/images/doggos.jpg";
+import dogs from "../assets/images/doggos.jpg";
 
-<Image src={dogs} alt="Dogs on neon background sign" height="600" width="1200" />
+<Image
+  src={dogs}
+  alt="Dogs on neon background sign"
+  height="600"
+  width="1200"
+/>
 
 We have two dogs. Their name's are Hank and Pepper and they are pretty good. Hank is an 8 year old Pomeranian/Alaskan Cattle Dog and Pepper is a 1 year old Beagle/Boxer. They are both rescues, about 25 pounds, kind of a handful, and we love them very much.
 

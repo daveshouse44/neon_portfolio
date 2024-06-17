@@ -3,7 +3,7 @@ type iconSide = "left" | "right";
 const skillLinks = [
   {
     name: "Astro.js",
-    path: "/ripples/ripple-3",
+    path: "/ripples/new-astro-projects-gearing-for-launch",
     icon: {
       name: "simple-icons:astro",
       side: "left" as iconSide,
@@ -11,7 +11,7 @@ const skillLinks = [
   },
   {
     name: "tailwindcss",
-    path: "/ripples/ripple-3",
+    path: "/ripples/adventures-in-tailwind-and-astro",
     icon: {
       name: "teenyicons:tailwind-outline",
       side: "left" as iconSide,
@@ -19,7 +19,7 @@ const skillLinks = [
   },
   {
     name: "React.js",
-    path: "/ripples/ripple-7",
+    path: "/ripples/comparing-vue-and-react",
     icon: {
       name: "teenyicons:react-outline",
       side: "left" as iconSide,
@@ -27,7 +27,7 @@ const skillLinks = [
   },
   {
     name: "Next.js",
-    path: "/ripples/ripple-5",
+    path: "/ripples/next-and-typescript",
     icon: {
       name: "teenyicons:nextjs-outline",
       side: "left" as iconSide,
@@ -35,7 +35,7 @@ const skillLinks = [
   },
   {
     name: "TypeScript",
-    path: "/ripples/ripple-5",
+    path: "/ripples/next-and-typescript",
     icon: {
       name: "teenyicons:typescript-outline",
       side: "left" as iconSide,
@@ -43,7 +43,7 @@ const skillLinks = [
   },
   {
     name: "Python",
-    path: "/ripples/ripple-8",
+    path: "/ripples/learning-wordpress-and-python-for-work",
     icon: {
       name: "teenyicons:python-outline",
       side: "left" as iconSide,
@@ -51,7 +51,7 @@ const skillLinks = [
   },
   {
     name: "Vue.js",
-    path: "/ripples/ripple-7",
+    path: "/ripples/comparing-vue-and-react",
     icon: {
       name: "teenyicons:vue-outline",
       side: "left" as iconSide,
@@ -59,7 +59,7 @@ const skillLinks = [
   },
   {
     name: "WordPress",
-    path: "/ripples/ripple-8",
+    path: "/ripples/learning-wordpress-and-python-for-work",
     icon: {
       name: "teenyicons:wordpress-outline",
       side: "left" as iconSide,
@@ -67,7 +67,7 @@ const skillLinks = [
   },
   {
     name: "Figma",
-    path: "/ripples/ripple-11",
+    path: "/ripples/pushing-my-design-creativity-with-figma",
     icon: {
       name: "teenyicons:figma-outline",
       side: "left" as iconSide,
@@ -75,7 +75,7 @@ const skillLinks = [
   },
   {
     name: "Knife sharpening",
-    path: "/ripples/ripple-12",
+    path: "/ripples/staying-sharp-talking-about-knives-this-time",
     icon: {
       name: "ph:knife",
       side: "left" as iconSide,
@@ -83,7 +83,7 @@ const skillLinks = [
   },
   {
     name: "Wood-fired pizza",
-    path: "/ripples/ripple-10",
+    path: "/ripples/becoming-a-pizzaiolo-at-home",
     icon: {
       name: "fluent:food-pizza-24-regular",
       side: "left" as iconSide,
@@ -91,7 +91,7 @@ const skillLinks = [
   },
   {
     name: "Leathercraft",
-    path: "/ripples/ripple-9",
+    path: "/ripples/exploring-leathercraft-with-simple-projects",
     icon: {
       name: "iconoir:wallet",
       side: "left" as iconSide,

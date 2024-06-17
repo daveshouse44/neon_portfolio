@@ -4,15 +4,15 @@ import Wavelengths from "../components/Wavelengths.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import SimilarRipples from "../components/SimilarRipples.astro";
 
-import { formatRipples, type Ripple } from "../ts/utils";
+import { formatRipples, type Ripple, slugify } from "../ts/utils";
 
 const { frontmatter } = Astro.props;
 const { title, date, author, description, category } = frontmatter;
 
-const allRipples = await Astro.glob("../pages/ripples/*.mdx");
+const allRipples = await Astro.glob("../posts/*.mdx");
 const ripples: Ripple[] = allRipples.map((ripple) => ({
   frontmatter: ripple.frontmatter as Ripple["frontmatter"],
-  url: ripple.url,
+  url: slugify(ripple.frontmatter.title),
   category: ripple.frontmatter.category,
 }));
 const formattedRipples = formatRipples(ripples, { sortByDate: false });

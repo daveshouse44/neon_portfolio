@@ -1,10 +1,10 @@
 ---
 import { formatRipples, type Ripple, slugify } from "../ts/utils";
 
-const allRipples = await Astro.glob("../pages/ripples/*.mdx");
+const allRipples = await Astro.glob("../posts/*.mdx");
 const ripples: Ripple[] = allRipples.map((ripple) => ({
   frontmatter: ripple.frontmatter as Ripple["frontmatter"],
-  url: ripple.url,
+  url: slugify(ripple.frontmatter.title),
   category: ripple.frontmatter.category,
 }));
 const formattedRipples = formatRipples(ripples);

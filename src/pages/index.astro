@@ -4,12 +4,12 @@ import MyFace from "../components/MyFace.astro";
 
 import RippleGlass from "../components/RippleGlass.astro";
 
-import { formatRipples, type Ripple } from "../ts/utils";
+import { formatRipples, type Ripple, slugify } from "../ts/utils";
 
-const allRipples = await Astro.glob("./ripples/*.mdx");
+const allRipples = await Astro.glob("../posts/*.mdx");
 const ripples: Ripple[] = allRipples.map((ripple) => ({
   frontmatter: ripple.frontmatter as Ripple["frontmatter"],
-  url: ripple.url,
+  url: "ripples/" + slugify(ripple.frontmatter.title),
 }));
 const formattedRipples = formatRipples(ripples, { limit: 1 });
 ---
