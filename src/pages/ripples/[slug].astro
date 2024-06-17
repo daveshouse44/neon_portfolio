@@ -1,8 +1,9 @@
 ---
 import { type Ripple, slugify } from "../../ts/utils";
+type MDXPost = Ripple & { Content: any };
 
 export async function getStaticPaths() {
-  const posts: Ripple[] = await Astro.glob("../../posts/*.mdx");
+  const posts: MDXPost[] = await Astro.glob("../../posts/*.mdx");
 
   return posts.map((post) => ({
     params: {
