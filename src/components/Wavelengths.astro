@@ -25,19 +25,20 @@ const processedWaves = allWavelengths.reduce(
   },
   {} as Record<string, number>,
 );
-
+const wavesArray = Object.entries(processedWaves);
+const sortedWaves = wavesArray.sort((a, b) => b[1] - a[1]);
 const { showCount } = Astro.props;
 ---
 
 <ul class="flex flex-wrap items-center justify-center gap-2">
   {
-    Object.entries(processedWaves).map(([key, val]) => (
+    sortedWaves.map(([wavelength, count]) => (
       <li>
         <a
           class="rounded-sm border-2 border-neon border-opacity-30 bg-secondary bg-opacity-50 p-1 text-sm shadow backdrop-blur transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur sm:backdrop-blur-none"
-          href={`/category/${slugify(key)}/`}
+          href={`/category/${slugify(wavelength)}/`}
         >
-          {key}&nbsp;{showCount && `~ ${val}`}
+          {wavelength}&nbsp;{showCount && `~ ${count}`}
         </a>
       </li>
     ))
