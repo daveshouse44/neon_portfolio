@@ -15,7 +15,7 @@ export async function getStaticPaths({ paginate }: { paginate: Function }) {
   const allRipples = await Astro.glob("../../posts/*.mdx");
   const ripples: Ripple[] = allRipples.map((ripple) => ({
     frontmatter: ripple.frontmatter as Ripple["frontmatter"],
-    url: slugify(ripple.frontmatter.title),
+    url: "/ripples/" + slugify(ripple.frontmatter.title),
     category: ripple.frontmatter.category,
   }));
   const formattedRipples = formatRipples(ripples);
