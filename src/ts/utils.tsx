@@ -21,6 +21,10 @@ export interface PageType {
   }>;
 }
 
+const urlPrefix = "/ripples/";
+
+export { urlPrefix };
+
 export function slugify(text: string) {
   return text
     .toString()

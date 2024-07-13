@@ -1,5 +1,5 @@
 ---
-import { formatDate, slugify } from "../ts/utils";
+import { formatDate, slugify, urlPrefix } from "../ts/utils";
 
 const { similarRipples } = Astro.props;
 
@@ -19,7 +19,7 @@ interface RippleType {
     similarRipples.map((ripple: RippleType) => (
       <div class="group/glass flex flex-col items-center justify-evenly gap-2 rounded-sm border-2 border-neon border-opacity-30 bg-secondary bg-opacity-50 p-4 text-center shadow backdrop-blur transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur sm:backdrop-blur-none">
         <h3 class="md:text-x font-tilt text-lg font-bold uppercase text-neon transition duration-500 hover:underline hover:decoration-neon group-hover/glass:text-primary group-hover/glass:shadow-neon group-hover/glass:text-shadow-glow">
-          <a href={"/ripples/" + slugify(ripple.frontmatter.title)}>
+          <a href={urlPrefix + slugify(ripple.frontmatter.title)}>
             {ripple.frontmatter.title}
           </a>
         </h3>

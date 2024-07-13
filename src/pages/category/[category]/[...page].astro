@@ -4,13 +4,18 @@ import RippleGlass from "../../../components/RippleGlass.astro";
 import Paginate from "../../../components/Paginate.astro";
 import Wavelengths from "../../../components/Wavelengths.astro";
 
-import { slugify, formatRipples, type Ripple } from "../../../ts/utils";
+import {
+  slugify,
+  formatRipples,
+  type Ripple,
+  urlPrefix,
+} from "../../../ts/utils";
 
 export async function getStaticPaths({ paginate }: { paginate: Function }) {
   const allRipples = await Astro.glob("../../../posts/*.mdx");
   const ripples: Ripple[] = allRipples.map((ripple) => ({
     frontmatter: ripple.frontmatter as Ripple["frontmatter"],
-    url: "/ripples/" + slugify(ripple.frontmatter.title),
+    url: urlPrefix + slugify(ripple.frontmatter.title),
     category: ripple.frontmatter.category || "uncategorized",
   }));
   const formattedRipples = formatRipples(ripples);
@@ -45,7 +50,7 @@ const capitalizedCategory =
     <div class="mt-4 flex flex-col items-center gap-4">
       <h1 class="text-xl font-bold">
         <a
-          href="/ripples/"
+          href={urlPrefix}
           class="font-tilt text-4xl font-bold uppercase text-neon underline transition duration-500 hover:text-primary hover:underline hover:decoration-neon hover:shadow-neon hover:text-shadow-glow sm:no-underline md:text-5xl"
           >ripples</a
         >
