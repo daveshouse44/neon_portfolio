@@ -39,6 +39,11 @@ const setNeonColor = (color: string) => {
   document.documentElement.setAttribute("data-neon", color);
   const neonRadio = document.getElementById(`btn-${color}`) as HTMLInputElement;
   neonRadio.checked = true;
+
+  const favicon = document.getElementById("favicon") as HTMLLinkElement;
+  if (favicon) {
+    favicon.href = `/favicon_${color}.svg`;
+  }
 };
 
 window.addEventListener("DOMContentLoaded", () => setNeonColor(getColor()));
