@@ -1,5 +1,7 @@
 # Website for Dave Tierney
 
+## 🔦 Dark mode highly recommended
+
 ## 🚀 Technologies Used
 
 ### [Astro.js](https://astro.build/)
@@ -10,4 +12,6 @@
 
 ### [React.js](https://react.dev/)
 
-### Feel free to check [the live site](https://neon-portfolio-dtd.netlify.app/) or reach out [here](mailto:me@davetierney.dev).
+### [MDX](https://mdxjs.com/)
+
+### Feel free to check [the live site](https://davetierney.dev/) or reach out [here](mailto:me@davetierney.dev).
