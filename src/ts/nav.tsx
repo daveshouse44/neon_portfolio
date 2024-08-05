@@ -7,14 +7,20 @@ document.addEventListener("astro:after-swap", () => {
     }
   });
 });
+
 document.addEventListener("astro:page-load", () => {
   const navBarMenu = document.getElementById("navbar-default") as HTMLElement;
-
   const navToggle = document.querySelector(
     "[data-collapse-toggle]",
   ) as HTMLElement;
 
   navToggle.addEventListener("click", () => {
-    navBarMenu.classList.toggle("hidden");
+    if (navBarMenu.classList.contains("max-h-0")) {
+      navBarMenu.classList.remove("max-h-0", "opacity-0");
+      navBarMenu.classList.add("max-h-screen", "opacity-100");
+    } else {
+      navBarMenu.classList.remove("max-h-screen", "opacity-100");
+      navBarMenu.classList.add("max-h-0", "opacity-0");
+    }
   });
 });

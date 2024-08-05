@@ -46,7 +46,10 @@ import Link from "./Link.astro";
           d="M1 1h15M1 7h15M1 13h15"></path>
       </svg>
     </button>
-    <div class="hidden w-full md:flex md:w-auto" id="navbar-default">
+    <div
+      class="max-h-0 w-full overflow-hidden opacity-0 transition-all duration-500 ease-in-out md:flex md:max-h-none md:w-auto md:opacity-100"
+      id="navbar-default"
+    >
       <div
         class="mt-4 flex flex-col items-end p-4 text-right md:mt-0 md:flex-row md:space-x-8 md:p-0"
       >
