@@ -1,21 +1,63 @@
 ---
 import { Image } from "astro:assets";
 import profilePic from "../assets/images/Profile_Pic_no_bg.png";
+interface Props {
+  size: "small" | "medium" | "large";
+}
+
+const { size } = Astro.props;
 ---
 
-<div
-  class="relative m-4 w-80 transition duration-300 hover:scale-105"
-  transition:name="my-face"
->
-  <div class="absolute h-fit">
-    <Image
-      class="rounded-full brightness-125 grayscale filter"
-      src={profilePic}
-      alt="Dave Tierney profile picture"
-    />
-  </div>
-  <div
-    class="relative aspect-square rounded-full bg-neon bg-opacity-20 transition duration-300 hover:shadow-glow hover:shadow-neon"
-  >
-  </div>
-</div>
+<>
+  {
+    size === "small" && (
+      <div
+        class="relative m-4 w-48 transition duration-300 hover:scale-105"
+        transition:name="my-face"
+      >
+        <div class="absolute h-fit">
+          <Image
+            class="rounded-full brightness-125 grayscale filter"
+            src={profilePic}
+            alt="Dave Tierney profile picture"
+          />
+        </div>
+        <div class="relative aspect-square rounded-full bg-neon bg-opacity-20 transition duration-300 hover:shadow-glow hover:shadow-neon" />
+      </div>
+    )
+  }
+  {
+    size === "medium" && (
+      <div
+        class="relative m-4 w-64 transition duration-300 hover:scale-105"
+        transition:name="my-face"
+      >
+        <div class="absolute h-fit">
+          <Image
+            class="rounded-full brightness-125 grayscale filter"
+            src={profilePic}
+            alt="Dave Tierney profile picture"
+          />
+        </div>
+        <div class="relative aspect-square rounded-full bg-neon bg-opacity-20 transition duration-300 hover:shadow-glow hover:shadow-neon" />
+      </div>
+    )
+  }
+  {
+    size === "large" && (
+      <div
+        class="relative m-4 w-80 transition duration-300 hover:scale-105"
+        transition:name="my-face"
+      >
+        <div class="absolute h-fit">
+          <Image
+            class="rounded-full brightness-125 grayscale filter"
+            src={profilePic}
+            alt="Dave Tierney profile picture"
+          />
+        </div>
+        <div class="relative aspect-square rounded-full bg-neon bg-opacity-20 transition duration-300 hover:shadow-glow hover:shadow-neon" />
+      </div>
+    )
+  }
+</>
