@@ -9,47 +9,47 @@ import meData from "../data/meData";
 ---
 
 <MainLayout title="Me" description="A bit more about me">
-  <div
-    class="flex h-full flex-col-reverse items-center justify-center gap-4 p-4 lg:flex-row"
-  >
-    <div class="my-4 flex flex-col-reverse items-center lg:my-0 lg:flex-col">
-      <MyFace size="medium" />
-      <Link
-        href="mailto:me@davetierney.dev"
-        text="Contact me"
-        icon={{ name: "ic:baseline-mail-outline", side: "right" }}
-      />
-    </div>
-    <div class="flex flex-col items-center gap-4 p-2">
-      <h1 class="text-xl font-bold">
-        A bit more about&nbsp;<span
-          class="font-tilt text-4xl font-bold uppercase text-neon transition duration-500 hover:text-primary hover:shadow-neon hover:text-shadow-glow md:text-5xl"
-          >Me</span
-        >
-      </h1>
-      <div
-        class="group mx-4 flex max-w-3xl flex-col items-center justify-center rounded-sm border-2 border-neon border-opacity-30 bg-secondary bg-opacity-50 p-4 shadow backdrop-blur transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur sm:backdrop-blur-none md:gap-4"
+  <div class="mx-6 flex h-full flex-col items-center justify-center gap-4 p-4">
+    <h1 class="text-xl font-bold">
+      A bit more about&nbsp;<span
+        class="font-tilt text-4xl font-bold uppercase text-neon transition duration-500 hover:text-primary hover:shadow-neon hover:text-shadow-glow md:text-5xl"
+        >Me</span
       >
-        <Icon
-          name="ic:baseline-fingerprint"
-          class="h-10 w-10 text-primary transition duration-300 group-hover:text-neon"
+    </h1>
+    <div class="mb-8 flex flex-col items-center lg:flex-row">
+      <div class="my-4 flex flex-col items-center lg:my-0">
+        <MyFace size="medium" />
+        <Link
+          href="mailto:me@davetierney.dev"
+          text="Contact me"
+          icon={{ name: "ic:baseline-mail-outline", side: "right" }}
         />
+      </div>
+      <div class="flex flex-col items-center gap-4 p-2">
         <div
-          class="p-4 sm:p-6 [&>:first-child:first-letter]:float-left [&>:first-child:first-letter]:mr-1.5 [&>:first-child:first-letter]:font-tilt [&>:first-child:first-letter]:text-7xl [&>:first-child:first-letter]:font-bold [&>:first-child:first-letter]:text-neon"
+          class="group flex max-w-3xl flex-col items-center justify-center rounded-sm border-2 border-neon border-opacity-30 bg-secondary bg-opacity-50 p-4 shadow backdrop-blur transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur sm:backdrop-blur-none md:gap-4"
         >
-          {
-            meData.map((item) =>
-              item.text.map((el) => <p class="mb-4 last:mb-0">{el}</p>),
-            )
-          }
+          <Icon
+            name="ic:baseline-fingerprint"
+            class="h-10 w-10 text-primary transition duration-300 group-hover:text-neon"
+          />
+          <div
+            class="p-4 sm:p-6 [&>:first-child:first-letter]:float-left [&>:first-child:first-letter]:mr-1.5 [&>:first-child:first-letter]:font-tilt [&>:first-child:first-letter]:text-7xl [&>:first-child:first-letter]:font-bold [&>:first-child:first-letter]:text-neon"
+          >
+            {
+              meData.map((item) =>
+                item.text.map((el) => <p class="mb-4 last:mb-0">{el}</p>),
+              )
+            }
+          </div>
+          <ul class="p-5 text-base sm:p-7">
+            {
+              meData.map((item) =>
+                item.facts.map((el: string) => <li>&bull;&nbsp;{el}</li>),
+              )
+            }
+          </ul>
         </div>
-        <ul class="p-5 text-base sm:p-7">
-          {
-            meData.map((item) =>
-              item.facts.map((el: string) => <li>&bull;&nbsp;{el}</li>),
-            )
-          }
-        </ul>
       </div>
     </div>
   </div>
