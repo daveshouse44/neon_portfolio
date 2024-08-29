@@ -8,52 +8,52 @@ import { skillData, skillLinks } from "../data/skillData";
 ---
 
 <MainLayout title="Skills" description="Things I can do">
-  <div
-    class="mx-6 flex h-full flex-col-reverse items-center justify-center gap-6 self-center sm:flex-row sm:items-start"
-  >
+  <div class="mx-6 flex h-full flex-col items-center justify-center gap-4 p-4">
+    <h1 class="text-lg font-bold">
+      <span
+        class="font-tilt text-3xl font-semibold uppercase text-neon transition duration-500 group-hover/glass:text-primary group-hover/glass:shadow-neon group-hover/glass:text-shadow-glow md:text-4xl"
+        >Skills&nbsp</span
+      >
+      I am honing:
+    </h1>
     <div
-      class="group/glass mb-8 flex h-fit flex-col gap-4 rounded-sm border-2 border-neon border-opacity-30 bg-secondary bg-opacity-50 px-4 py-6 shadow backdrop-blur transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur sm:mt-8 sm:backdrop-blur-none"
+      class="mb-8 flex flex-col-reverse items-center gap-4 sm:flex-row sm:items-start sm:gap-6"
     >
-      <h1 class="text-lg font-bold">
-        <span
-          class="font-tilt text-3xl font-semibold uppercase text-neon transition duration-500 group-hover/glass:text-primary group-hover/glass:shadow-neon group-hover/glass:text-shadow-glow md:text-4xl"
-          >Skills&nbsp</span
-        >
-        I am honing:
-      </h1>
-      <div class="flex flex-wrap sm:flex-col md:gap-4">
+      <div class="flex h-fit flex-col gap-4 px-4 py-6 sm:my-8">
+        <div class="flex flex-col md:gap-4">
+          {
+            skillLinks.map((item) => (
+              <Link
+                text={item.name}
+                href={item.path}
+                data-nav-link
+                icon={{ name: item.icon?.name, side: item.icon?.side }}
+              />
+            ))
+          }
+        </div>
+      </div>
+      <div class="my-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
         {
-          skillLinks.map((item) => (
-            <Link
-              text={item.name}
-              href={item.path}
-              data-nav-link
-              icon={{ name: item.icon?.name, side: item.icon?.side }}
-            />
+          skillData.map((item) => (
+            <div class="group flex max-w-md flex-col items-center justify-evenly gap-2 rounded-sm border-2 border-neon border-opacity-30 bg-secondary bg-opacity-50 p-4 text-center shadow backdrop-blur transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur sm:backdrop-blur-none md:gap-4">
+              <Icon
+                name={item.icon}
+                class="h-10 w-10 text-primary transition duration-300 group-hover:text-neon"
+              />
+              <h2 class="font-tilt text-2xl font-bold uppercase text-neon transition duration-500 group-hover:text-primary group-hover:shadow-neon group-hover:text-shadow-glow md:text-3xl">
+                {item.title}
+              </h2>
+              <h3 class="text-lg font-semibold">{item.description}</h3>
+              <ul class="text-start">
+                {item.list.map((el) => (
+                  <li class="mx-4 list-outside list-disc">{el}</li>
+                ))}
+              </ul>
+            </div>
           ))
         }
       </div>
-    </div>
-    <div class="my-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
-      {
-        skillData.map((item) => (
-          <div class="group flex max-w-md flex-col items-center justify-evenly gap-2 rounded-sm border-2 border-neon border-opacity-30 bg-secondary bg-opacity-50 p-4 text-center shadow backdrop-blur transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur sm:backdrop-blur-none md:gap-4">
-            <Icon
-              name={item.icon}
-              class="h-10 w-10 text-primary transition duration-300 group-hover:text-neon"
-            />
-            <h2 class="font-tilt text-2xl font-bold uppercase text-neon transition duration-500 group-hover:text-primary group-hover:shadow-neon group-hover:text-shadow-glow md:text-3xl">
-              {item.title}
-            </h2>
-            <h3 class="text-lg font-semibold">{item.description}</h3>
-            <ul class="text-start">
-              {item.list.map((el) => (
-                <li>&bull;&nbsp;{el}</li>
-              ))}
-            </ul>
-          </div>
-        ))
-      }
     </div>
   </div>
 </MainLayout>
