@@ -36,7 +36,7 @@ import { skillData, skillLinks } from "../data/skillData";
       <div class="my-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
         {
           skillData.map((item) => (
-            <div class="group flex max-w-md flex-col items-center justify-evenly gap-2 rounded-sm border-2 border-neon border-opacity-30 bg-secondary bg-opacity-50 p-4 text-center shadow backdrop-blur transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur sm:backdrop-blur-none md:gap-4">
+            <div class="group flex max-w-md flex-col justify-evenly gap-2 rounded-sm border-2 border-neon border-opacity-30 bg-secondary bg-opacity-50 p-6 shadow backdrop-blur transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur sm:backdrop-blur-none md:gap-4">
               <Icon
                 name={item.icon}
                 class="h-10 w-10 text-primary transition duration-300 group-hover:text-neon"
@@ -45,9 +45,9 @@ import { skillData, skillLinks } from "../data/skillData";
                 {item.title}
               </h2>
               <h3 class="text-lg font-semibold">{item.description}</h3>
-              <ul class="text-start">
+              <ul>
                 {item.list.map((el) => (
-                  <li class="mx-4 list-outside list-disc">{el}</li>
+                  <li class="mx-3 list-outside list-disc">{el}</li>
                 ))}
               </ul>
             </div>
