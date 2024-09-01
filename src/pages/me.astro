@@ -11,7 +11,7 @@ const { text, facts } = meData[0];
 
 <MainLayout title="Me" description="A bit more about me">
   <div class="mx-6 flex h-full flex-col items-center justify-center gap-4 p-4">
-    <h1 class="text-xl font-bold">
+    <h1 class="mt-4 text-xl font-bold">
       A bit more about&nbsp;<span
         class="font-tilt text-4xl font-bold uppercase text-neon transition duration-500 hover:text-primary hover:shadow-neon hover:text-shadow-glow md:text-5xl"
         >Me</span
@@ -34,11 +34,11 @@ const { text, facts } = meData[0];
             name="fluent:person-info-16-regular"
             class="h-10 w-10 text-primary transition duration-300 group-hover:text-neon"
           />
-          <h1
+          <h2
             class="font-tilt text-2xl font-bold uppercase text-neon transition duration-500 group-hover:text-primary group-hover:shadow-neon group-hover:text-shadow-glow md:text-3xl"
           >
             Thank you for visiting!
-          </h1>
+          </h2>
           <div>
             {text.map((data) => <p class="mb-4 last:mb-0">{data}</p>)}
           </div>

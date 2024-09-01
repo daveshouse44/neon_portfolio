@@ -1,8 +1,16 @@
 type iconSide = "left" | "right";
+import ma_screenshot from "../assets/images/ma_screenshot.png";
+import pd_screenshot from "../assets/images/pd_screenshot.png";
+import srt_screenshot from "../assets/images/srt_screenshot.png";
+import eh_screenshot from "../assets/images/eh_screenshot.png";
+import sg_screenshot from "../assets/images/sg_screenshot.png";
+import pw_screenshot from "../assets/images/pw_screenshot.png";
+import pp_screenshot from "../assets/images/pp_screenshot.png";
 
 const workLinks = [
   {
     name: "Medical Alley",
+    image: ma_screenshot,
     link: "https://medicalalley.org/",
     icon: {
       name: "teenyicons:wordpress-outline",
@@ -11,6 +19,7 @@ const workLinks = [
   },
   {
     name: "Partner Directory",
+    image: pd_screenshot,
     link: "https://partners.medicalalley.org/",
     icon: {
       name: "teenyicons:nextjs-outline",
@@ -19,6 +28,7 @@ const workLinks = [
   },
   {
     name: "Starts Resource Tool",
+    image: srt_screenshot,
     link: "https://www.alleyinsights.org/startup-resources",
     icon: {
       name: "teenyicons:vue-outline",
@@ -27,6 +37,7 @@ const workLinks = [
   },
   {
     name: "Earth Hero",
+    image: eh_screenshot,
     link: "https://www.earthhero.org/",
     icon: {
       name: "teenyicons:gatsbyjs-outline",
@@ -35,6 +46,7 @@ const workLinks = [
   },
   {
     name: "Snake game",
+    image: sg_screenshot,
     link: "https://daveshouse44.github.io/snake_game/",
     icon: {
       name: "teenyicons:javascript-outline",
@@ -43,6 +55,7 @@ const workLinks = [
   },
   {
     name: "Password Generator",
+    image: pw_screenshot,
     link: "https://pw-gen2.netlify.app/",
     icon: {
       name: "teenyicons:typescript-outline",
@@ -51,6 +64,7 @@ const workLinks = [
   },
   {
     name: "Previous Portfolio",
+    image: pp_screenshot,
     link: "https://daveshouse44.github.io/portfolio_update/",
     icon: {
       name: "teenyicons:react-outline",
