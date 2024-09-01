@@ -46,7 +46,7 @@ const workLinks = [
       name: "teenyicons:gatsbyjs-outline",
       side: "right" as iconSide,
     },
-    description: "Website and web app for Earth Hero",
+    description: "Gatsby website and web app volunteer project",
   },
   {
     name: "Snake game",

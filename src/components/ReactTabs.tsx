@@ -48,7 +48,7 @@ const ReactTabs: React.FC<TabsProps> = ({ items }) => {
           </li>
         ))}
       </ul>
-      <div className="w-full max-w-4xl rounded-lg p-6">
+      <div className="w-full max-w-4xl rounded-lg py-6 md:px-6">
         {items.map((item, index) => (
           <div
             className={`${selectedTab === index ? "" : "hidden"}`}

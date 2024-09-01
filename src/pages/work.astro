@@ -30,7 +30,7 @@ import ReactTabs from "../components/ReactTabs.tsx";
             <h3 class="whitespace-nowrap font-tilt text-xl font-bold uppercase text-neon transition duration-500 group-hover/glass:text-primary group-hover/glass:text-shadow-glow ">
               {item.name}
             </h3>
-            <p class="w-60">{item.description}</p>
+            <p class="w-64 max-w-full">{item.description}</p>
             <Link
               href={item.link}
               text="Go to site"
@@ -38,7 +38,7 @@ import ReactTabs from "../components/ReactTabs.tsx";
               target="_blank"
               rel="noopener noreferrer"
             />
-            <div class="relative m-4 w-60 transition duration-300 group-hover/glass:scale-105">
+            <div class="relative m-4 w-64 max-w-full self-center transition duration-300 group-hover/glass:scale-105">
               <div class="absolute h-fit">
                 <Image
                   class="brightness-125 grayscale filter duration-300 group-hover/glass:grayscale-0"
