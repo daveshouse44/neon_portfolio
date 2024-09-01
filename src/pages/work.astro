@@ -2,6 +2,7 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import Link from "../components/Link.astro";
 import { Image } from "astro:assets";
+import Icon from "astro-icon";
 
 import { workLinks, workTabItems } from "../data/workData.tsx";
 import ReactTabs from "../components/ReactTabs.tsx";
@@ -21,8 +22,23 @@ import ReactTabs from "../components/ReactTabs.tsx";
     <div class="my-2 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {
         workLinks.map((item) => (
-          <div class="group/glass flex max-w-sm flex-col items-center justify-evenly gap-2 rounded-sm border-2 border-neon border-opacity-30 bg-secondary bg-opacity-50 p-4 text-center shadow backdrop-blur transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur sm:backdrop-blur-none">
-            <div class="relative m-4 w-48 transition duration-300 group-hover/glass:scale-105">
+          <div class="group/glass flex max-w-sm flex-col justify-evenly gap-2 rounded-sm border-2 border-neon border-opacity-30 bg-secondary bg-opacity-50 p-4 shadow backdrop-blur transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur sm:backdrop-blur-none">
+            <Icon
+              name={item.icon.name}
+              class="h-8 w-8 text-primary transition duration-300 group-hover/glass:text-neon"
+            />
+            <h3 class="whitespace-nowrap font-tilt text-xl font-bold uppercase text-neon transition duration-500 group-hover/glass:text-primary group-hover/glass:text-shadow-glow ">
+              {item.name}
+            </h3>
+            <p class="w-60">{item.description}</p>
+            <Link
+              href={item.link}
+              text="Go to site"
+              icon={{ name: "charm:link-external", side: "right" }}
+              target="_blank"
+              rel="noopener noreferrer"
+            />
+            <div class="relative m-4 w-60 transition duration-300 group-hover/glass:scale-105">
               <div class="absolute h-fit">
                 <Image
                   class="brightness-125 grayscale filter duration-300 group-hover/glass:grayscale-0"
@@ -32,14 +48,6 @@ import ReactTabs from "../components/ReactTabs.tsx";
               </div>
               <div class="relative aspect-video bg-neon bg-opacity-20 transition duration-300 group-hover/glass:bg-inherit" />
             </div>
-            <Link
-              text={item.name}
-              href={item.link}
-              data-nav-link
-              icon={{ name: item.icon?.name, side: item.icon?.side }}
-              target="_blank"
-              rel="noopener noreferrer"
-            />
           </div>
         ))
       }

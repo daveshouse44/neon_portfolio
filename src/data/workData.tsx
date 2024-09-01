@@ -16,6 +16,7 @@ const workLinks = [
       name: "teenyicons:wordpress-outline",
       side: "right" as iconSide,
     },
+    description: "Rebranded website using WordPress",
   },
   {
     name: "Partner Directory",
@@ -25,6 +26,7 @@ const workLinks = [
       name: "teenyicons:nextjs-outline",
       side: "right" as iconSide,
     },
+    description: "Next.js application to showcase Medical Alley partners",
   },
   {
     name: "Starts Resource Tool",
@@ -34,6 +36,7 @@ const workLinks = [
       name: "teenyicons:vue-outline",
       side: "right" as iconSide,
     },
+    description: "Vue.js application that filters resources for startups",
   },
   {
     name: "Earth Hero",
@@ -43,6 +46,7 @@ const workLinks = [
       name: "teenyicons:gatsbyjs-outline",
       side: "right" as iconSide,
     },
+    description: "Website and web app for Earth Hero",
   },
   {
     name: "Snake game",
@@ -52,6 +56,7 @@ const workLinks = [
       name: "teenyicons:javascript-outline",
       side: "right" as iconSide,
     },
+    description: "Simple but fun native JavaScript game",
   },
   {
     name: "Password Generator",
@@ -61,6 +66,7 @@ const workLinks = [
       name: "teenyicons:typescript-outline",
       side: "right" as iconSide,
     },
+    description: "Highly customizable password generator",
   },
   {
     name: "Previous Portfolio",
@@ -70,6 +76,7 @@ const workLinks = [
       name: "teenyicons:react-outline",
       side: "right" as iconSide,
     },
+    description: "Fun look at my early work",
   },
 ];
 
