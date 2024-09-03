@@ -1,11 +1,11 @@
 type iconSide = "left" | "right";
-import ma_screenshot from "../assets/images/ma_screenshot.png";
-import pd_screenshot from "../assets/images/pd_screenshot.png";
-import srt_screenshot from "../assets/images/srt_screenshot.png";
-import eh_screenshot from "../assets/images/eh_screenshot.png";
-import sg_screenshot from "../assets/images/sg_screenshot.png";
-import pw_screenshot from "../assets/images/pw_screenshot.png";
-import pp_screenshot from "../assets/images/pp_screenshot.png";
+import ma_screenshot from "../assets/images/projects_ma_screenshot.png";
+import pd_screenshot from "../assets/images/projects_pd_screenshot.png";
+import srt_screenshot from "../assets/images/projects_srt_screenshot.png";
+import eh_screenshot from "../assets/images/projects_eh_screenshot.png";
+import sg_screenshot from "../assets/images/projects_sg_screenshot.png";
+import pw_screenshot from "../assets/images/projects_pw_screenshot.png";
+import pp_screenshot from "../assets/images/projects_pp_screenshot.png";
 
 const workLinks = [
   {
