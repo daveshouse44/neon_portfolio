@@ -20,14 +20,7 @@ interface TabsProps {
 
 const ReactTabs: React.FC<TabsProps> = ({ items }) => {
   const [selectedTab, setSelectedTab] = useState(0);
-  const firstBtnRef = useRef<HTMLButtonElement | null>(null);
   const tabContentRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (firstBtnRef.current) {
-      firstBtnRef.current.style.border = "border-neon";
-    }
-  }, []);
 
   useEffect(() => {
     const adjustHeight = () => {
@@ -47,10 +40,9 @@ const ReactTabs: React.FC<TabsProps> = ({ items }) => {
         {items.map((item, index) => (
           <li key={index}>
             <button
-              ref={index === 0 ? firstBtnRef : null}
               key={index}
               onClick={() => setSelectedTab(index)}
-              className={`grid w-full items-center rounded-sm border-2 px-4 py-3 transition ${
+              className={`grid w-full items-center whitespace-nowrap rounded-sm border-2 px-4 py-3 transition ${
                 selectedTab === index
                   ? "border-neon bg-secondary bg-opacity-50"
                   : "border-transparent"
@@ -63,37 +55,39 @@ const ReactTabs: React.FC<TabsProps> = ({ items }) => {
       </ul>
       <div className="relative mt-6 w-full max-w-4xl rounded-lg md:mt-0">
         <div className="overflow-hidden" ref={tabContentRef}>
-          <div className="group flex flex-col items-center justify-center rounded-sm border-2 border-neon border-opacity-30 bg-secondary bg-opacity-50 p-4 text-center shadow backdrop-blur transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur sm:m-6 sm:backdrop-blur-none">
-            <span className="flex items-center justify-center group-hover:text-neon">
+          <div className="group flex flex-col justify-center gap-2 rounded-sm border-2 border-neon border-opacity-30 bg-secondary bg-opacity-50 p-6 shadow backdrop-blur transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur sm:m-6 sm:backdrop-blur-none">
+            <span className="group-hover:text-neon">
               {items[selectedTab].icon === 0 ? (
-                <CodeIcon className=" mb-2 h-10 w-10" />
+                <CodeIcon className=" h-10 w-10" />
               ) : items[selectedTab].icon === 1 ? (
-                <EarthIcon className=" mb-2 h-10 w-10" />
+                <EarthIcon className=" h-10 w-10" />
               ) : items[selectedTab].icon === 2 ? (
-                <PizzaIcon className=" mb-2 h-10 w-10" />
+                <PizzaIcon className=" h-10 w-10" />
               ) : items[selectedTab].icon === 3 ? (
-                <CheeseIcon className=" mb-2 h-10 w-10" />
+                <CheeseIcon className=" h-10 w-10" />
               ) : items[selectedTab].icon === 4 ? (
-                <HammerIcon className=" mb-2 h-10 w-10" />
+                <HammerIcon className=" h-10 w-10" />
               ) : null}
             </span>
             <h3 className="font-tilt text-2xl font-bold uppercase text-neon transition duration-500 group-hover:text-primary group-hover:text-shadow-glow ">
               {items[selectedTab].employer}
             </h3>
-            <h5 className="mb-2 text-lg font-bold group-hover:text-neon">
+            <h5 className="text-lg font-bold group-hover:text-neon">
               {items[selectedTab].title}
             </h5>
-            <p className="mb-2 text-sm font-semibold text-secondary">
+            <p className="text-sm font-semibold text-secondary">
               {items[selectedTab].dates}
             </p>
-            {items[selectedTab].content.map((content, index) => (
-              <p
-                key={index}
-                className="mb-2 self-start px-4 text-start md:mx-16"
-              >
-                {content}
-              </p>
-            ))}
+            <ul>
+              {items[selectedTab].content.map((content, index) => (
+                <li
+                  key={index}
+                  className="mx-3 list-outside list-disc last:list-none last:pt-2 last:font-bold last:italic"
+                >
+                  {content}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
