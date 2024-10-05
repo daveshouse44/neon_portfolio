@@ -90,7 +90,7 @@ const workTabItems = [
       "Maintain and improve current web-based applications",
       "Develop products to share resources, share data, and make connections",
       "Create new tools to increase productivity and expand our reach",
-      "Adminster IT support to ensure data security and application integrity",
+      "Administer IT support to ensure data security and application integrity",
       "Innovate digital and in person experiences to increase engagement and value",
       "Vue.js ~ Next.js ~ WordPress ~ PHP ~ Python ~ Tailwindcss ~ AWS ~ MySQL",
     ],
