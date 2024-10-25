@@ -1,0 +1,31 @@
+---
+layout: "../layouts/RippleLayout.astro"
+title: Speedrunning database migrations
+date: 2024-10-25
+author: Dave Tierney
+description: Suddenly I'm neck deep in mysql database migraines ~ I mean migrations
+draft: false
+category: Coding
+---
+
+import { Image } from "astro:assets";
+import notComplaining from "../assets/images/complaining.jpg";
+
+<Image
+  src={notComplaining}
+  alt="Not complaining neon sign"
+  height="600"
+  width="1200"
+/>
+
+Database migrations can be both exciting and challenging. Recently, I was tasked to tackle two distinct migration projects using <a href="https://www.mysql.com/" target="_blank" rel="noopener" className="whitespace-nowrap underline decoration-neon transition hover:text-neon">MySQL</a>, each with its own unique set of requirements and hurdles. I can't get too detailed as these were both work projects, but I can share some general insights into the process.
+
+The first project involved migrating data between two Customer Relationship Management (CRM) systems. This migration was crucial for maintaining business continuity and preserving valuable customer information. The process required careful mapping of data fields between the source and target CRM databases to ensure all relevant information was transferred accurately.
+
+The second migration involved a deployed <a href="https://www.python.org/" target="_blank" rel="noopener" className="whitespace-nowrap underline decoration-neon transition hover:text-neon">Python</a> application using a cloud database. This project was particularly interesting as it required not only moving the data but also ensuring the application could seamlessly connect to the new database environment without disruption to end-users.
+
+Despite these challenges, the migrations were completed successfully and on schedule. The key to our success was thorough planning, careful testing in staging environments, and clear communication with all stakeholders throughout the process. I'd be lying if I said there weren't a few late nights and some unexpected issues along the way, but overall, the projects went smoothly.
+
+In the end, both the CRM data and the Python application's database were successfully migrated, setting the stage for improved performance and scalability in their new environments. These projects serve as a reminder that while database migrations can be complex, with the right approach and tools, they can be executed smoothly and effectively.
+
+{/* <a href="" target="_blank" rel="noopener" className="whitespace-nowrap underline decoration-neon transition hover:text-neon"></a> */}
