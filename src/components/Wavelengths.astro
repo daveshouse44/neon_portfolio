@@ -35,7 +35,7 @@ const { showCount } = Astro.props;
     sortedWaves.map(([wavelength, count]) => (
       <li>
         <a
-          class="rounded-sm border-2 border-neon border-opacity-30 bg-secondary bg-opacity-50 p-1 text-sm shadow backdrop-blur transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur sm:backdrop-blur-none"
+          class="rounded-sm border-2 border-neon border-opacity-40 bg-background bg-opacity-80 p-1 text-sm shadow transition duration-300 hover:border-opacity-100 hover:bg-opacity-100 hover:shadow-glow hover:shadow-neon"
           href={`/category/${slugify(wavelength)}/`}
         >
           {wavelength}&nbsp;{showCount && `~ ${count}`}

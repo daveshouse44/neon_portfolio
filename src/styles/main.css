@@ -11,10 +11,10 @@
     --color-secondary: 231deg 11% 53%;
   }
   :root[data-theme="light"] {
-    --color-neon: 191deg 80% 35%;
+    --color-neon: 191deg 80% 30%;
     --color-background: 228deg 10% 80%;
-    --color-primary: 240deg 10% 2%;
-    --color-secondary: 231deg 11% 53%;
+    --color-primary: 240deg 10% 1%;
+    --color-secondary: 231deg 11% 50%;
   }
   /* User settings dark theme */
   @media (prefers-color-scheme: dark) {
@@ -40,13 +40,13 @@
     --color-neon: 216deg 100% 50%;
   }
   :root[data-neon="green"] {
-    --color-neon: 124deg 100% 31%;
+    --color-neon: 124deg 100% 28%;
   }
   :root[data-neon="yellow"] {
-    --color-neon: 52deg 100% 32%;
+    --color-neon: 52deg 100% 30%;
   }
   :root[data-neon="orange"] {
-    --color-neon: 35deg 100% 42%;
+    --color-neon: 35deg 100% 40%;
   }
   :root[data-neon="red"] {
     --color-neon: 359deg 100% 43%;

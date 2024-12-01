@@ -44,7 +44,7 @@ const ReactTabs: React.FC<TabsProps> = ({ items }) => {
               onClick={() => setSelectedTab(index)}
               className={`grid w-full items-center whitespace-nowrap rounded-sm border-2 px-4 py-3 transition ${
                 selectedTab === index
-                  ? "border-neon bg-secondary bg-opacity-50"
+                  ? "border-neon bg-background bg-opacity-95"
                   : "border-transparent"
               } hover:border-neon md:inline-flex`}
             >
@@ -55,7 +55,7 @@ const ReactTabs: React.FC<TabsProps> = ({ items }) => {
       </ul>
       <div className="relative mt-6 w-full max-w-4xl rounded-lg md:mt-0">
         <div className="overflow-hidden" ref={tabContentRef}>
-          <div className="group flex flex-col justify-center gap-2 rounded-sm border-2 border-neon border-opacity-30 bg-secondary bg-opacity-50 p-6 shadow backdrop-blur transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur sm:m-6 sm:backdrop-blur-none">
+          <div className="group flex flex-col justify-center gap-2 rounded-sm border-2 border-neon border-opacity-40 bg-background bg-opacity-80 p-6 shadow backdrop-blur transition duration-300 hover:border-opacity-100 hover:bg-opacity-100 hover:shadow-glow hover:shadow-neon sm:m-6">
             <span className="group-hover:text-neon">
               {items[selectedTab].icon === 0 ? (
                 <CodeIcon className=" h-10 w-10" />
