@@ -57,7 +57,7 @@
           <h2>Recent Items</h2>
           <xsl:for-each select="/rss/channel/item">
             <div class="pb-5">
-              <h3 class="mb-0">
+              <h3 class="mb-2">
                 <a target="_blank">
                   <xsl:attribute name="href">
                     <xsl:value-of select="link"/>
@@ -65,7 +65,7 @@
                   <xsl:value-of select="title"/>
                 </a>
               </h3>
-              <p><xsl:value-of select="description"/></p>
+              <p class="mb-2"><xsl:value-of select="description"/></p>
               <small class="text-gray">
                 Published: <xsl:value-of select="pubDate" />
               </small>
