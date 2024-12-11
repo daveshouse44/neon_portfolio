@@ -16,8 +16,9 @@ import contactData from "../data/contactData";
       <div class="sm: flex gap-4 sm:gap-6">
         {
           contactData.map((item) => (
-            <a href={item.href}>
+            <a href={item.href} title={item.name}>
               <Icon name={item.icon} class={item.class} />
+              <span class="sr-only">{item.name}</span>
             </a>
           ))
         }

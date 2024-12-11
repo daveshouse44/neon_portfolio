@@ -6,6 +6,12 @@ const contactData = [
     class: "h-4 w-4 text-primary transition duration-300 hover:text-neon",
   },
   {
+    name: "RSS",
+    href: "/rss.xml",
+    icon: "ph:rss-bold",
+    class: "h-4 w-4 text-primary transition duration-300 hover:text-neon",
+  },
+  {
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/dave-tierney/",
     icon: "lucide:linkedin",
