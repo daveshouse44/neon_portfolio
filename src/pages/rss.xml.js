@@ -4,9 +4,7 @@ import { formatRipples, slugify, urlPrefix } from "../ts/utils";
 const rippleImportResult = import.meta.glob("../posts/*.{md,mdx}", {
   eager: true,
 });
-console.log(rippleImportResult);
 const ripples = formatRipples(Object.values(rippleImportResult));
-console.log(ripples);
 
 export async function GET(context) {
   const items = ripples.map((ripple) => ({
