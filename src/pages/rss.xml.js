@@ -16,7 +16,7 @@ export async function GET(context) {
 
   return rss({
     stylesheet: "/rss/styles.xsl",
-    title: "Dave Tierney's Ripples",
+    title: "davetierney.dev",
     description: "Sending ripples into the ether",
     site: context.site,
     items,
