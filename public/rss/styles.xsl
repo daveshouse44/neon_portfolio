@@ -45,7 +45,7 @@ This file is in BETA. Please test and contribute to the discussion:
 	<xsl:template match="/">
 		<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 			<head>
-				<title><xsl:value-of select="/rss/channel/title"/> Web Feed</title>
+				<title><xsl:value-of select="/rss/channel/title"/> web feed</title>
 				<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 				<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 				<style type="text/css">
@@ -95,9 +95,12 @@ This file is in BETA. Please test and contribute to the discussion:
 					}
 
 					a {
-						color: var(--blue);
+						color: var(--default);
+						text-decoration-thickness: 0.2ex;
+						text-underline-offset: 0.2ex;
+					}
+					a:hover {
 						text-decoration-thickness: 0.3ex;
-						text-underline-offset: 0.3ex;
 					}
 				</style>
 			</head>
