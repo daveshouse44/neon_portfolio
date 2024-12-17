@@ -21,6 +21,5 @@ export async function GET(context) {
       "Hello, I'm Dave Tierney. I'm a Web Developer, Culinarian, and Tinkerer. I like to build or fix things instead of buying them. I like to know how all of the things work. I occasionally share thoughts on my endeavors by sending ripples into the ether",
     site: context.site,
     items,
-    length: ripples.length,
   });
 }
