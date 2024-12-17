@@ -154,7 +154,7 @@ This file is in BETA. Please test and contribute to the discussion:
 						</a>
 					</header>
 
-					<h2>Recent Items</h2>
+					<h2>Ripples ~ <xsl:value-of select="/rss/channel/length"/> total</h2>
 					<xsl:for-each select="/rss/channel/item">
 						<div>
 							<h3>
