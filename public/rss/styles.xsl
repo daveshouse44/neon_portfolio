@@ -45,7 +45,7 @@ This file is in BETA. Please test and contribute to the discussion:
 	<xsl:template match="/">
 		<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 			<head>
-				<title>cassidoo's web feed</title>
+				<title><xsl:value-of select="/rss/channel/title"/> Web Feed</title>
 				<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 				<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 				<style type="text/css">
@@ -58,7 +58,7 @@ This file is in BETA. Please test and contribute to the discussion:
 						--moretransblack: rgba(37, 37, 37, 0.1);
 						--gray: #6b6b6b;
 						--orange: #ff8600;
-            --default: #2cbfdd;
+            			--default: #2cbfdd;
 						--red: #ed0003;
 						--green: #01fe01;
 						--violet: #8c00fc;
