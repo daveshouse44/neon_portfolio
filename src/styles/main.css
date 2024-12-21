@@ -5,13 +5,13 @@
 @layer base {
   /* Default light colors */
   :root {
-    --color-neon: 191deg 80% 35%;
+    --color-neon: 191deg 85% 25%;
     --color-background: 228deg 10% 80%;
-    --color-primary: 240deg 10% 2%;
-    --color-secondary: 231deg 11% 53%;
+    --color-primary: 240deg 10% 1%;
+    --color-secondary: 231deg 11% 50%;
   }
   :root[data-theme="light"] {
-    --color-neon: 191deg 80% 30%;
+    --color-neon: 191deg 85% 25%;
     --color-background: 228deg 10% 80%;
     --color-primary: 240deg 10% 1%;
     --color-secondary: 231deg 11% 50%;
