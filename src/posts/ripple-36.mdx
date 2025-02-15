@@ -4,7 +4,7 @@ title: Testing out macros
 date: 2025-02-12
 author: Dave Tierney
 description: So many ways to automate ~ let's start with keyboard shortcuts
-draft: true
+draft: false
 category: Coding
 ---
 
@@ -13,4 +13,30 @@ import ups from "../assets/images/ups.jpg";
 
 <Image src={ups} alt="Ups neon sign" height="600" width="1200" />
 
+Especially after switching to Linux, I've been fascinated by the power of automation. Recently, I decided to dive into the world of AutoKey, a powerful tool for creating macros and automating tasks on Linux systems. Here's my journey as a beginner, with a focus on using AutoKey on Linux Mint.
+
+The first step was installing <a href="https://autokey.github.io/index.html" target="_blank" rel="noopener" className="whitespace-nowrap underline decoration-neon transition hover:text-neon">AutoKey</a>. On Linux Mint, I found that the easiest way to do this was through the Software Manager, after which I installed the GTK version of AutoKey. After installation, I launched AutoKey from the Applications menu. The interface was straightforward, with a main window displaying folders for organizing scripts and phrases.
+
+I decided to start simple by creating a text expansion macro. Here's how I did it:
+
+• In the AutoKey window, I clicked on "New" to create a new phrase.
+
+• I typed in a long email signature I frequently use.
+
+• To set up the trigger, I clicked on "Set Phrase" and added a short abbreviation, "sig1".
+
+• I clicked "Save" to store my new macro.
+
+Now, whenever I type "sig1" in any application, AutoKey automatically expands it to my full signature. It was incredibly satisfying to see it work across different programs!
+
+Next, I wanted to try using hotkeys. I created a new script to launch Google Chrome:
+
+I assigned the hotkey "Super+C" to this script pressing the Windows key and C simultaneously launches Chrome instantly. It's a small change, but it's made my workflow noticeably smoother.
+
+I did encounter a few hiccups along the way. At first, some of my phrases weren't working. I discovered that special characters in phrases can cause issues. I also learned the importance of checking the "View Script Error" option under Tools when things weren't working as expected.
+
+As I grew more comfortable with AutoKey, I started exploring its Python scripting capabilities. I found I could automate complex tasks, control windows, and even manipulate the clipboard. The possibilities seemed endless!
+
+My journey with AutoKey has just begun, but I'm already seeing significant improvements in my productivity. For Linux Mint users and other Linux enthusiasts, I highly recommend giving AutoKey a try. It's a powerful tool that can adapt to your specific needs and workflow.
+Remember, the key to success with AutoKey is practice and experimentation. Start small, and gradually build up to more complex automations. Before you know it, you'll be an AutoKey pro, streamlining your Linux experience in ways you never thought possible.
 {/* <a href="" target="_blank" rel="noopener" className="whitespace-nowrap underline decoration-neon transition hover:text-neon"></a> */}
