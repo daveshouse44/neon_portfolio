@@ -6,8 +6,19 @@ import eh_screenshot from "../assets/images/projects_eh_screenshot.png";
 import sg_screenshot from "../assets/images/projects_sg_screenshot.png";
 import pw_screenshot from "../assets/images/projects_pw_screenshot.png";
 import pp_screenshot from "../assets/images/projects_pp_screenshot.png";
+import academy_screenshot from "../assets/images/projects_academy_screenshot.png";
 
 const workLinks = [
+  {
+    name: "Medical Alley Academy",
+    image: academy_screenshot,
+    link: "https://medicalalley.org/academy/",
+    icon: {
+      name: "simple-icons:woo",
+      side: "right" as iconSide,
+    },
+    description: "Digital Education platform",
+  },
   {
     name: "Medical Alley",
     image: ma_screenshot,
@@ -83,15 +94,17 @@ const workLinks = [
 const workTabItems = [
   {
     icon: 0,
-    title: "Web Developer ~ Front-End Specialist",
+    title: "Web Developer ~ Technology Liaison",
     employer: "Medical Alley",
     dates: "2022 ~ Present",
     content: [
-      "Maintain and improve current web-based applications",
-      "Develop products to share resources, share data, and make connections",
-      "Create new tools to increase productivity and expand our reach",
-      "Administer IT support to ensure data security and application integrity",
-      "Innovate digital and in person experiences to increase engagement and value",
+      "Develop modern front-end UIs using JavaScript/TypeScript frameworks (Vue, React) and integrate with back-end APIs",
+      "Customize HTML, CSS, and create XML sitemaps and RSS feeds while adhering to brand guidelines",
+      "Design and review software development using Kanban SDLC, including Python server development",
+      "Communicate effectively with stakeholders, manage deadlines, and develop products to enhance resource sharing",
+      "Provide IT support, ensure data security, and create tools to increase productivity",
+      "Innovate digital and in-person experiences, focusing on customer engagement and efficient project management",
+      "Architected platform for Digital Education products",
       "Vue.js ~ Next.js ~ WordPress ~ PHP ~ Python ~ Tailwindcss ~ AWS ~ MySQL",
     ],
   },
@@ -105,7 +118,8 @@ const workTabItems = [
       "Refactoring and redesigning Earth Hero website, while working with other developers and UI/UX Designers",
       "Implementing the creation of the web app version of Earth Hero, to compliment the mobile app version",
       "Driving changes from UI/UX Designers to the website with new design systems and components",
-      "React.js ~ Gatsby.js ~ Airtable ~ MaterialUI ~ SCSS ~ Netlify ~ Firebase",
+      "Migrated the website from Gatsby to Next.js, improving performance and future",
+      "React.js ~ Next.js ~ Gatsby.js ~ Airtable ~ MaterialUI ~ SCSS ~ Netlify ~ Firebase",
     ],
   },
   {
