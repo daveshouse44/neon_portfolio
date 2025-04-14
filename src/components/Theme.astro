@@ -49,12 +49,9 @@ import neonData from "../data/neonData";
                 type="radio"
                 name="color"
                 value={color.name}
-                aria-labelledby={`Set neon to ${color.name}`}
                 class={`absolute -z-10 h-6 w-6 appearance-none rounded-sm checked:z-10 checked:border checked:border-gray-900 ${color.hex.input} checked:outline checked:outline-white`}
               />
-              <span class="sr-only absolute" aria-hidden="true">
-                Set neon to {color.name}
-              </span>
+              <span class="sr-only">Set neon to {color.name}</span>
               <div
                 class={`h-6 w-6 rounded-sm border ${color.hex.div.border} border-opacity-75 ${color.hex.div.background} bg-opacity-60 shadow shadow-gray-900 hover:border-none hover:bg-opacity-100 hover:shadow-none hover:outline hover:outline-white`}
               />
