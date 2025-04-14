@@ -1,5 +1,5 @@
 ---
-import Icon from "astro-icon";
+import { Icon } from "astro-icon/components";
 import neonData from "../data/neonData";
 ---
 
@@ -39,7 +39,7 @@ import neonData from "../data/neonData";
     <div
       class="flex flex-col content-center gap-3 bg-background bg-opacity-95 p-4 text-center font-bold text-primary hover:bg-opacity-100 sm:gap-4 sm:p-8"
     >
-      <h2 class="text-xl font-bold">Color select</h2>
+      <div class="text-xl font-bold">Color select</div>
       <div class="flex justify-evenly gap-3 sm:gap-4">
         {
           neonData.map((color) => (
@@ -49,9 +49,12 @@ import neonData from "../data/neonData";
                 type="radio"
                 name="color"
                 value={color.name}
+                aria-labelledby={`Set neon to ${color.name}`}
                 class={`absolute -z-10 h-6 w-6 appearance-none rounded-sm checked:z-10 checked:border checked:border-gray-900 ${color.hex.input} checked:outline checked:outline-white`}
               />
-              <span class="sr-only absolute">Set neon to {color.name}</span>
+              <span class="sr-only absolute" aria-hidden="true">
+                Set neon to {color.name}
+              </span>
               <div
                 class={`h-6 w-6 rounded-sm border ${color.hex.div.border} border-opacity-75 ${color.hex.div.background} bg-opacity-60 shadow shadow-gray-900 hover:border-none hover:bg-opacity-100 hover:shadow-none hover:outline hover:outline-white`}
               />

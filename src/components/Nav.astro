@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 import navData from "../data/navData";
 import Link from "./Link.astro";
 ---
@@ -13,7 +13,8 @@ import Link from "./Link.astro";
     <a href="/" class="group flex items-center gap-2" aria-label="Go home">
       <Icon
         name="logo"
-        width="50"
+        height={50}
+        width={50}
         class="text-neon opacity-90 transition duration-500 group-hover:text-primary group-hover:text-opacity-100 group-hover:shadow-glow group-hover:shadow-neon"
       />
       <span

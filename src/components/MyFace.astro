@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import profilePic from "../assets/images/Profile_Pic_no_bg.png";
 interface Props {
   size: "small" | "medium" | "large";
+  loading?: "eager" | "lazy";
 }
 
 const { size } = Astro.props;
@@ -19,7 +20,8 @@ const { size } = Astro.props;
           <Image
             class="rounded-full brightness-125 grayscale filter"
             src={profilePic}
-            alt="Dave Tierney profile picture"
+            alt="Dave Tierney profile"
+            loading={Astro.props.loading}
           />
         </div>
         <div class="relative aspect-square rounded-full bg-neon bg-opacity-20 transition duration-300 hover:shadow-glow hover:shadow-neon" />
@@ -36,7 +38,8 @@ const { size } = Astro.props;
           <Image
             class="rounded-full brightness-125 grayscale filter"
             src={profilePic}
-            alt="Dave Tierney profile picture"
+            alt="Dave Tierney profile"
+            loading={Astro.props.loading}
           />
         </div>
         <div class="relative aspect-square rounded-full bg-neon bg-opacity-20 transition duration-300 hover:shadow-glow hover:shadow-neon" />
@@ -53,7 +56,8 @@ const { size } = Astro.props;
           <Image
             class="rounded-full brightness-125 grayscale filter"
             src={profilePic}
-            alt="Dave Tierney profile picture"
+            alt="Dave Tierney profile"
+            loading={Astro.props.loading}
           />
         </div>
         <div class="relative aspect-square rounded-full bg-neon bg-opacity-20 transition duration-300 hover:shadow-glow hover:shadow-neon" />
