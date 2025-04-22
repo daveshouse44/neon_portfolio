@@ -44,8 +44,13 @@ const { page }: { page: PageType } = Astro.props;
       <Paginate prevUrl={page.url.prev} />
       <div class="my-2 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {
-          page.data.map((ripple) => (
-            <RippleGlass frontmatter={ripple.frontmatter} url={ripple.url} />
+          page.data.map((ripple, index) => (
+            <RippleGlass
+              frontmatter={ripple.frontmatter}
+              url={ripple.url}
+              style={`--customDelay:${index * 150}ms`}
+              class="animate-flip-down animate-delay-[var(--customDelay)] animate-duration-1000"
+            />
           ))
         }
       </div>

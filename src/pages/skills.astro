@@ -34,8 +34,11 @@ import { skillData, skillLinks } from "../data/skillData";
       </div>
       <div class="my-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
         {
-          skillData.map((item) => (
-            <div class="group flex max-w-md flex-col justify-evenly gap-2 rounded-sm border-2 border-neon border-opacity-40 bg-background bg-opacity-80 p-6 shadow transition duration-300 hover:border-opacity-100 hover:bg-opacity-100 hover:shadow-glow hover:shadow-neon md:gap-4">
+          skillData.map((item, index) => (
+            <div
+              style={`--customDelay:${index * 150}ms`}
+              class="group flex max-w-md animate-flip-down flex-col justify-evenly gap-2 rounded-sm border-2 border-neon border-opacity-40 bg-background bg-opacity-80 p-6 shadow transition duration-300 animate-delay-[var(--customDelay)] animate-duration-1000 hover:border-opacity-100 hover:bg-opacity-100 hover:shadow-glow hover:shadow-neon md:gap-4"
+            >
               <Icon
                 name={item.icon}
                 class="h-10 w-10 text-primary transition duration-300 group-hover:text-neon"

@@ -2,21 +2,40 @@
 import { slugify, formatDate } from "../ts/utils";
 import Link from "./Link.astro";
 
-const { frontmatter, url } = Astro.props;
-const { title, date, author, description, category } = frontmatter;
+export interface RippleGlassProps {
+  frontmatter: {
+    title: string;
+    date: string;
+    author: string;
+    description: string;
+    category: string;
+  };
+  url: string;
+  style?: string;
+  class?: string;
+}
+
+const {
+  frontmatter,
+  url,
+  style,
+  class: className,
+} = Astro.props as RippleGlassProps;
 ---
 
 <div
-  class="group/glass flex max-w-sm flex-col items-center justify-evenly gap-2 rounded-sm border-2 border-neon border-opacity-40 bg-background bg-opacity-80 p-4 text-center shadow transition duration-300 hover:border-opacity-100 hover:bg-opacity-100 hover:shadow-glow hover:shadow-neon"
+  style={style}
+  class={`group/glass flex max-w-sm flex-col items-center justify-evenly gap-2 rounded-sm border-2 border-neon border-opacity-40 bg-background bg-opacity-80 p-4 text-center shadow transition duration-300 hover:border-opacity-100 hover:bg-opacity-100 hover:shadow-glow hover:shadow-neon ${className}`}
 >
   <a
     class="rounded-sm border-2 border-neon border-opacity-30 p-1 text-sm shadow transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur-sm group-hover/glass:bg-neon group-hover/glass:bg-opacity-5"
-    href={`/category/${slugify(category)}`}>{category}</a
+    href={`/category/${slugify(frontmatter.category)}`}
+    >{frontmatter.category}</a
   >
   <h3
     class="font-tilt text-lg font-bold uppercase text-neon transition duration-500 hover:underline hover:decoration-neon group-hover/glass:text-primary group-hover/glass:shadow-neon group-hover/glass:text-shadow-glow md:text-xl"
   >
-    <a href={url}>{title}</a>
+    <a href={url}>{frontmatter.title}</a>
   </h3>
   <p class="font-semibold">
     <!-- Comment in line below if ever multiple authors -->
@@ -24,11 +43,11 @@ const { title, date, author, description, category } = frontmatter;
     <a href="/me"
       ><span
         class="transition duration-300 hover:text-neon hover:underline hover:decoration-neon"
-        >{author}</span
+        >{frontmatter.author}</span
       ></a
-    > &#12316; {formatDate(date)}
+    > &#12316; {formatDate(frontmatter.date)}
   </p>
-  <p>{description}</p>
+  <p>{frontmatter.description}</p>
   <Link
     href={url}
     text="Read More"

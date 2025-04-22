@@ -66,6 +66,14 @@ const skillLinks = [
     },
   },
   {
+    name: "SQL",
+    path: "/ripples/speedrunning-database-migrations/",
+    icon: {
+      name: "teenyicons:database-outline",
+      side: "left" as iconSide,
+    },
+  },
+  {
     name: "Figma",
     path: "/ripples/pushing-my-design-creativity-with-figma",
     icon: {
@@ -125,18 +133,6 @@ const skillData = [
     ],
   },
   {
-    icon: "carbon:restaurant-fine",
-    title: "Chef and Restaurant Management",
-    description: "I have a passion for food and the restaurant industry",
-    list: [
-      "Efficent execution and oversight",
-      "Keen awareness of food safety",
-      "Concise food preparation and portioning",
-      "Cost control in all aspects of operations",
-      "Strong leadership and developer of people",
-    ],
-  },
-  {
     icon: "mdi:head-lightbulb-outline",
     title: "Factotum and Problem Solver",
     description: "I get things done by getting my hands dirty",
@@ -146,6 +142,18 @@ const skillData = [
       "Cost analysis and budgeting focus",
       "Growing skills in various trades and crafts",
       "Tenacious and determined to complete tasks",
+    ],
+  },
+  {
+    icon: "carbon:restaurant-fine",
+    title: "Chef and Restaurant Management",
+    description: "I have a passion for food and the restaurant industry",
+    list: [
+      "Efficent execution and oversight",
+      "Keen awareness of food safety",
+      "Concise food preparation and portioning",
+      "Cost control in all aspects of operations",
+      "Strong leadership and developer of people",
     ],
   },
 ];
