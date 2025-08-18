@@ -1,4 +1,4 @@
-const currentRole = "Full Stack Web Developer & Technology Liaison";
+const currentRole = "Webmaster & Web Developer";
 
 const meData = [
   {
@@ -9,6 +9,7 @@ const meData = [
     facts: [
       "I have two dogs and a wonderfully supportive wife",
       "I love making something instead of buying it",
+      "I am passionate about living a sustainable lifestyle and advocating for climate action",
       "My favorite foods to make are fried rice, pizza, smoked salmon, and enchiladas",
       "I enjoy disc golf, bowling, beach volleyball, darts, and rollerblading",
       "I usually read sci-fi and magical realism, but I also enjoy non-fiction",

@@ -5,6 +5,7 @@ import { EarthIcon } from "../data/react-icons/EarthIcon";
 import { PizzaIcon } from "../data/react-icons/PizzaIcon";
 import { CheeseIcon } from "../data/react-icons/CheeseIcon";
 import { HammerIcon } from "../data/react-icons/HammerIcon";
+import { RiverIcon } from "../data/react-icons/RiverIcon";
 
 export interface TabItem {
   icon: number;
@@ -58,14 +59,16 @@ const ReactTabs: React.FC<TabsProps> = ({ items }) => {
           <div className="group flex flex-col justify-center gap-2 rounded-sm border-2 border-neon border-opacity-40 bg-background bg-opacity-80 p-6 shadow backdrop-blur transition duration-300 hover:border-opacity-100 hover:bg-opacity-100 hover:shadow-glow hover:shadow-neon sm:m-6">
             <span className="group-hover:text-neon">
               {items[selectedTab].icon === 0 ? (
-                <CodeIcon className=" h-10 w-10" />
+                <RiverIcon className=" h-10 w-10" />
               ) : items[selectedTab].icon === 1 ? (
-                <EarthIcon className=" h-10 w-10" />
+                <CodeIcon className=" h-10 w-10" />
               ) : items[selectedTab].icon === 2 ? (
-                <PizzaIcon className=" h-10 w-10" />
+                <EarthIcon className=" h-10 w-10" />
               ) : items[selectedTab].icon === 3 ? (
-                <CheeseIcon className=" h-10 w-10" />
+                <PizzaIcon className=" h-10 w-10" />
               ) : items[selectedTab].icon === 4 ? (
+                <CheeseIcon className=" h-10 w-10" />
+              ) : items[selectedTab].icon === 5 ? (
                 <HammerIcon className=" h-10 w-10" />
               ) : null}
             </span>

@@ -94,9 +94,29 @@ const workLinks = [
 const workTabItems = [
   {
     icon: 0,
+    title: "Webmaster",
+    employer: "St. Croix Hospice",
+    dates: "2025 ~ Present",
+    content: [
+      "Build and optimize web experiences through developing, maintaining and enhancing our web presence to ensure an engaging and seamless user experience.",
+      "In collaboration with Marketing & Communications colleagues, identify content strategy needs, updates and opportunities for website enhancements using data and analytics to draw traffic and build new digital experiences.",
+      "Implement non-engineering website updates, including content, design and functionality, ensuring accuracy and quality.",
+      "Develop and manage landing pages, ensuring they align with visitor experience best practices.",
+      "Manage performance reporting and analysis to connect web metrics to the marketing funnel, providing actionable insights and reports to elevate brand performance.",
+      "Leverage web platforms and tools such as WordPress, Google Analytics, Jot forms and more to manage and optimize web content and performance.",
+      "Ensure adherence to compliance and web best practices, including information architecture and analytics-driven optimization.",
+      "Manage content creation and ensure that all website content is up-to-date, relevant and optimized for search engines.",
+      "Administer and maintain web-based local business listings, including Google Business Profile.",
+      "Stay up to date on the latest SEO trends and advise team members of changes that may impact the quality of website traffic, using best White Hat SEO practices.",
+      "Conduct research on industry trends and competitor strategies to identify opportunities for improvement.",
+      "WordPress ~ PHP ~ Gutenberg ~ CSS ~ Google Analytics ~ SEO/SEM ~ DNS ~ Content Writing",
+    ],
+  },
+  {
+    icon: 1,
     title: "Web Developer ~ Technology Liaison",
     employer: "Medical Alley",
-    dates: "2022 ~ Present",
+    dates: "2022 ~ 2025",
     content: [
       "Develop modern front-end UIs using JavaScript/TypeScript frameworks (Vue, React) and integrate with back-end APIs",
       "Customize HTML, CSS, and create XML sitemaps and RSS feeds while adhering to brand guidelines",
@@ -105,11 +125,11 @@ const workTabItems = [
       "Provide IT support, ensure data security, and create tools to increase productivity",
       "Innovate digital and in-person experiences, focusing on customer engagement and efficient project management",
       "Architected platform for Digital Education products",
-      "Vue.js ~ Next.js ~ WordPress ~ PHP ~ Python ~ Tailwindcss ~ AWS ~ MySQL",
+      "Vue.js ~ Next.js ~ WordPress ~ PHP ~ Python ~ TailwindCSS ~ AWS ~ MySQL",
     ],
   },
   {
-    icon: 1,
+    icon: 2,
     title: "Volunteer Web Developer",
     employer: "Earth Hero",
     dates: "2022 ~ Present",
@@ -123,7 +143,7 @@ const workTabItems = [
     ],
   },
   {
-    icon: 2,
+    icon: 3,
     title: "General Manager",
     employer: "Punch Pizza",
     dates: "2016 ~ 2022",
@@ -137,7 +157,7 @@ const workTabItems = [
     ],
   },
   {
-    icon: 3,
+    icon: 4,
     title: "Chef ~ Kitchen Manager",
     employer: "Surdyk's Flights",
     dates: "2008 ~ 2016",
@@ -151,7 +171,7 @@ const workTabItems = [
     ],
   },
   {
-    icon: 4,
+    icon: 5,
     title: "Project Manager",
     employer: "Modern Concepts & Design",
     dates: "2004 ~ 2008",

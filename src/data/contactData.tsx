@@ -6,12 +6,6 @@ const contactData = [
     class: "h-4 w-4 text-primary transition duration-300 hover:text-neon",
   },
   {
-    name: "RSS",
-    href: "/rss.xml",
-    icon: "ph:rss-bold",
-    class: "h-4 w-4 text-primary transition duration-300 hover:text-neon",
-  },
-  {
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/dave-tierney/",
     icon: "lucide:linkedin",
@@ -24,17 +18,23 @@ const contactData = [
     class: "h-4 w-4 text-primary transition duration-300 hover:text-neon",
   },
   {
-    name: "Reddit",
-    href: "https://www.reddit.com/user/daves_house",
-    icon: "ph:reddit-logo-bold",
+    name: "RSS",
+    href: "/rss.xml",
+    icon: "ph:rss-bold",
     class: "h-4 w-4 text-primary transition duration-300 hover:text-neon",
   },
-  {
-    name: "Discord",
-    href: "https://discordapp.com/users/daveshouse44#3785",
-    icon: "ph:discord-logo-bold",
-    class: "h-4 w-4 text-primary transition duration-300 hover:text-neon",
-  },
+  // {
+  //   name: "Reddit",
+  //   href: "https://www.reddit.com/user/daves_house",
+  //   icon: "ph:reddit-logo-bold",
+  //   class: "h-4 w-4 text-primary transition duration-300 hover:text-neon",
+  // },
+  // {
+  //   name: "Discord",
+  //   href: "https://discordapp.com/users/daveshouse44#3785",
+  //   icon: "ph:discord-logo-bold",
+  //   class: "h-4 w-4 text-primary transition duration-300 hover:text-neon",
+  // },
 ];
 
 export default contactData;
