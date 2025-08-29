@@ -4,7 +4,7 @@ import navData from "../data/navData";
 import Link from "./Link.astro";
 ---
 
-<nav
+<header
   class="border-b-2 border-neon border-opacity-40 bg-neon bg-opacity-30 shadow hover:border-opacity-100 hover:bg-neon hover:bg-opacity-40 hover:shadow-glow hover:shadow-neon"
 >
   <div
@@ -51,7 +51,7 @@ import Link from "./Link.astro";
       class="max-h-0 w-full overflow-hidden opacity-0 transition-all duration-500 ease-in-out md:flex md:max-h-none md:w-auto md:opacity-100"
       id="navbar-default"
     >
-      <div
+      <nav
         class="mt-4 flex flex-col items-end p-4 text-right md:mt-0 md:flex-row md:space-x-8 md:p-0"
       >
         {
@@ -64,10 +64,10 @@ import Link from "./Link.astro";
             />
           ))
         }
-      </div>
+      </nav>
     </div>
   </div>
-</nav>
+</header>
 <script>
   import "../ts/nav";
 </script>

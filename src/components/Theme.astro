@@ -3,7 +3,11 @@ import { Icon } from "astro-icon/components";
 import neonData from "../data/neonData";
 ---
 
-<section class="relative flex flex-col items-center" transition:persist="theme">
+<section
+  class="relative flex flex-col items-center"
+  aria-label="Theme selector"
+  transition:persist="theme"
+>
   <div class="flex items-center justify-center gap-2 py-2">
     <button
       class="group grid h-8 w-8 place-items-center rounded-sm border-2 border-neon border-opacity-30 shadow transition duration-300 hover:border-opacity-100 hover:bg-neon hover:bg-opacity-5 hover:shadow-glow hover:shadow-neon"
