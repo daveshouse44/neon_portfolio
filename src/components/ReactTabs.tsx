@@ -61,9 +61,9 @@ const ReactTabs: React.FC<TabsProps> = ({ items }) => {
               {items[selectedTab].icon === 0 ? (
                 <RiverIcon className=" h-10 w-10" />
               ) : items[selectedTab].icon === 1 ? (
-                <CodeIcon className=" h-10 w-10" />
-              ) : items[selectedTab].icon === 2 ? (
                 <EarthIcon className=" h-10 w-10" />
+              ) : items[selectedTab].icon === 2 ? (
+                <CodeIcon className=" h-10 w-10" />
               ) : items[selectedTab].icon === 3 ? (
                 <PizzaIcon className=" h-10 w-10" />
               ) : items[selectedTab].icon === 4 ? (

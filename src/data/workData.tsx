@@ -7,8 +7,19 @@ import sg_screenshot from "../assets/images/projects_sg_screenshot.png";
 import pw_screenshot from "../assets/images/projects_pw_screenshot.png";
 import pp_screenshot from "../assets/images/projects_pp_screenshot.png";
 import academy_screenshot from "../assets/images/projects_academy_screenshot.png";
+import sch_screenshot from "../assets/images/projects_sch_screenshot.png";
 
 const workLinks = [
+  {
+    name: "St. Croix Hospice",
+    image: sch_screenshot,
+    link: "https://www.stcroixhospice.com/",
+    icon: {
+      name: "simple-icons:pantheon",
+      side: "right" as iconSide,
+    },
+    description: "Hosting and database migration",
+  },
   {
     name: "Medical Alley Academy",
     image: academy_screenshot,
@@ -114,6 +125,20 @@ const workTabItems = [
   },
   {
     icon: 1,
+    title: "Volunteer Web Developer",
+    employer: "Earth Hero",
+    dates: "2022 ~ Present",
+    content: [
+      "Central role in the web development team specializing in front-end design.",
+      "Refactoring and redesigning Earth Hero website, while working with other developers and UI/UX Designers",
+      "Implementing the creation of the web app version of Earth Hero, to compliment the mobile app version",
+      "Driving changes from UI/UX Designers to the website with new design systems and components",
+      "Migrated the website from Gatsby to Next.js, improving performance and future",
+      "React.js ~ Next.js ~ Gatsby.js ~ Airtable ~ MaterialUI ~ SCSS ~ Netlify ~ Firebase",
+    ],
+  },
+  {
+    icon: 2,
     title: "Web Developer ~ Technology Liaison",
     employer: "Medical Alley",
     dates: "2022 ~ 2025",
@@ -126,20 +151,6 @@ const workTabItems = [
       "Innovate digital and in-person experiences, focusing on customer engagement and efficient project management",
       "Architected platform for Digital Education products",
       "Vue.js ~ Next.js ~ WordPress ~ PHP ~ Python ~ TailwindCSS ~ AWS ~ MySQL",
-    ],
-  },
-  {
-    icon: 2,
-    title: "Volunteer Web Developer",
-    employer: "Earth Hero",
-    dates: "2022 ~ Present",
-    content: [
-      "Central role in the web development team specializing in front-end design.",
-      "Refactoring and redesigning Earth Hero website, while working with other developers and UI/UX Designers",
-      "Implementing the creation of the web app version of Earth Hero, to compliment the mobile app version",
-      "Driving changes from UI/UX Designers to the website with new design systems and components",
-      "Migrated the website from Gatsby to Next.js, improving performance and future",
-      "React.js ~ Next.js ~ Gatsby.js ~ Airtable ~ MaterialUI ~ SCSS ~ Netlify ~ Firebase",
     ],
   },
   {
