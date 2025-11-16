@@ -5,14 +5,16 @@ const rippleImportResult = import.meta.glob("../posts/*.{md,mdx}", {
   eager: true,
 });
 const ripples = formatRipples(Object.values(rippleImportResult));
+console.log("Loaded ripples for RSS feed:", ripples);
 
 export async function GET(context) {
   const items = ripples.map((ripple) => ({
     link: urlPrefix + slugify(ripple.frontmatter.title),
     title: ripple.frontmatter.title,
-    pubDate: ripple.frontmatter.date,
+    pubDate: new Date(ripple.frontmatter.date).toISOString().split("T")[0],
     description: ripple.frontmatter.description,
   }));
+  console.log("Generating RSS feed with items:", items);
 
   return rss({
     stylesheet: "/rss/styles.xsl",

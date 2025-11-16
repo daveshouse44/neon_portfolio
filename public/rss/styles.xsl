@@ -167,7 +167,7 @@ This file is in BETA. Please test and contribute to the discussion:
 							</h3>
               <p><xsl:value-of select="description"/></p>
 							<small>
-								Published: <xsl:value-of select="pubDate" />
+								Published: <xsl:value-of select="substring(pubDate, 6, 11)" />
 							</small>
 						</div>
 					</xsl:for-each>
