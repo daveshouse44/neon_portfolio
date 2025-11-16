@@ -75,10 +75,10 @@ This file is in BETA. Please test and contribute to the discussion:
 						margin: auto;
 						padding: 20px;
 						max-width: 70ch;
-						background-color: var(--white);
+						background-color: var(--black);
 						word-wrap: break-word;
 						overflow-wrap: break-word;
-						color: var(--black);
+						color: var(--white);
 						line-height: 1.6;
 					}
 
@@ -91,7 +91,7 @@ This file is in BETA. Please test and contribute to the discussion:
 					}
 
 					h2, h3,	h4,	h5, h6 {
-						color: var(--gray);
+						color: var(--transwhite);
 					}
 
 					a {
