@@ -5,7 +5,7 @@ const skillLinks = [
     name: "Astro.js",
     path: "/ripples/new-astro-projects-gearing-for-launch",
     icon: {
-      name: "simple-icons:astro",
+      name: "tabler:brand-astro",
       side: "left" as iconSide,
     },
   },
@@ -83,7 +83,7 @@ const skillLinks = [
   },
   {
     name: "Knife sharpening",
-    path: "/ripples/staying-sharp-talking-about-knives-this-time",
+    path: "/ripples/sharpening-steel-to-keep-a-fine-edge",
     icon: {
       name: "ph:knife",
       side: "left" as iconSide,
@@ -91,7 +91,7 @@ const skillLinks = [
   },
   {
     name: "Wood-fired pizza",
-    path: "/ripples/becoming-a-pizzaiolo-at-home",
+    path: "/ripples/pizza-and-plans",
     icon: {
       name: "fluent:food-pizza-24-regular",
       side: "left" as iconSide,
@@ -99,7 +99,7 @@ const skillLinks = [
   },
   {
     name: "Leathercraft",
-    path: "/ripples/exploring-leathercraft-with-simple-projects",
+    path: "/ripples/leathercraft-2024-reboot-part-1",
     icon: {
       name: "iconoir:wallet",
       side: "left" as iconSide,
