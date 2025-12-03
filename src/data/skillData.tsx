@@ -5,7 +5,7 @@ const skillLinks = [
     name: "Astro.js",
     path: "/ripples/new-astro-projects-gearing-for-launch",
     icon: {
-      name: "tabler:brand-astro",
+      name: "astro",
       side: "left" as iconSide,
     },
   },
@@ -13,7 +13,7 @@ const skillLinks = [
     name: "tailwindcss",
     path: "/ripples/adventures-in-tailwind-and-astro",
     icon: {
-      name: "teenyicons:tailwind-outline",
+      name: "tailwind",
       side: "left" as iconSide,
     },
   },
@@ -21,7 +21,7 @@ const skillLinks = [
     name: "React.js",
     path: "/ripples/comparing-vue-and-react",
     icon: {
-      name: "teenyicons:react-outline",
+      name: "react",
       side: "left" as iconSide,
     },
   },
@@ -29,7 +29,7 @@ const skillLinks = [
     name: "Next.js",
     path: "/ripples/next-and-typescript",
     icon: {
-      name: "teenyicons:nextjs-outline",
+      name: "nextjs",
       side: "left" as iconSide,
     },
   },
@@ -37,7 +37,7 @@ const skillLinks = [
     name: "TypeScript",
     path: "/ripples/next-and-typescript",
     icon: {
-      name: "teenyicons:typescript-outline",
+      name: "typescript",
       side: "left" as iconSide,
     },
   },
@@ -45,7 +45,7 @@ const skillLinks = [
     name: "Python",
     path: "/ripples/learning-wordpress-and-python-for-work",
     icon: {
-      name: "teenyicons:python-outline",
+      name: "python",
       side: "left" as iconSide,
     },
   },
@@ -53,7 +53,7 @@ const skillLinks = [
     name: "Vue.js",
     path: "/ripples/comparing-vue-and-react",
     icon: {
-      name: "teenyicons:vue-outline",
+      name: "vue",
       side: "left" as iconSide,
     },
   },
@@ -61,7 +61,7 @@ const skillLinks = [
     name: "WordPress",
     path: "/ripples/learning-wordpress-and-python-for-work",
     icon: {
-      name: "teenyicons:wordpress-outline",
+      name: "wordpress",
       side: "left" as iconSide,
     },
   },
@@ -69,7 +69,7 @@ const skillLinks = [
     name: "SQL",
     path: "/ripples/speedrunning-database-migrations/",
     icon: {
-      name: "teenyicons:database-outline",
+      name: "database",
       side: "left" as iconSide,
     },
   },
@@ -77,7 +77,7 @@ const skillLinks = [
     name: "Figma",
     path: "/ripples/pushing-my-design-creativity-with-figma",
     icon: {
-      name: "teenyicons:figma-outline",
+      name: "figma",
       side: "left" as iconSide,
     },
   },
@@ -85,7 +85,7 @@ const skillLinks = [
     name: "Knife sharpening",
     path: "/ripples/sharpening-steel-to-keep-a-fine-edge",
     icon: {
-      name: "ph:knife",
+      name: "knife",
       side: "left" as iconSide,
     },
   },
@@ -93,7 +93,7 @@ const skillLinks = [
     name: "Wood-fired pizza",
     path: "/ripples/pizzas-and-plans",
     icon: {
-      name: "fluent:food-pizza-24-regular",
+      name: "fluent:pizza",
       side: "left" as iconSide,
     },
   },
@@ -101,7 +101,7 @@ const skillLinks = [
     name: "Leathercraft",
     path: "/ripples/leathercraft-2024-reboot-part-1",
     icon: {
-      name: "iconoir:wallet",
+      name: "wallet",
       side: "left" as iconSide,
     },
   },
@@ -109,7 +109,7 @@ const skillLinks = [
 
 const skillData = [
   {
-    icon: "mdi:web",
+    icon: "web",
     title: "Full Stack Web Development",
     description: "I take a strategic approach to design and development",
     list: [
@@ -121,7 +121,7 @@ const skillData = [
     ],
   },
   {
-    icon: "mdi:shield-key-outline",
+    icon: "shieldkey",
     title: "IT and Cybersecurity Management",
     description: "I can handle complex challenges so you don't have to",
     list: [
@@ -133,7 +133,7 @@ const skillData = [
     ],
   },
   {
-    icon: "mdi:head-lightbulb-outline",
+    icon: "lightbulbhead",
     title: "Factotum and Problem Solver",
     description: "I get things done by getting my hands dirty",
     list: [
@@ -145,7 +145,7 @@ const skillData = [
     ],
   },
   {
-    icon: "carbon:restaurant-fine",
+    icon: "restaurant",
     title: "Chef and Restaurant Management",
     description: "I have a passion for food and the restaurant industry",
     list: [

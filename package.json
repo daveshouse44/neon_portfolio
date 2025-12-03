@@ -27,20 +27,6 @@
     "tailwindcss-animated": "^2.0.0"
   },
   "devDependencies": {
-    "@iconify-json/bx": "^1.2.2",
-    "@iconify-json/carbon": "^1.2.8",
-    "@iconify-json/charm": "^1.2.2",
-    "@iconify-json/fluent": "^1.2.19",
-    "@iconify-json/ic": "^1.2.2",
-    "@iconify-json/iconoir": "^1.2.7",
-    "@iconify-json/jam": "^1.2.3",
-    "@iconify-json/lucide": "^1.2.35",
-    "@iconify-json/mdi": "^1.2.3",
-    "@iconify-json/ph": "^1.2.2",
-    "@iconify-json/ri": "^1.2.5",
-    "@iconify-json/simple-icons": "^1.2.31",
-    "@iconify-json/tabler": "^1.2.23",
-    "@iconify-json/teenyicons": "^1.2.2",
     "prettier": "^3.1.1",
     "prettier-plugin-astro": "^0.12.3",
     "prettier-plugin-tailwindcss": "^0.5.4"

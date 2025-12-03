@@ -15,7 +15,7 @@ const workLinks = [
     image: sch_screenshot,
     link: "https://www.stcroixhospice.com/",
     icon: {
-      name: "simple-icons:pantheon",
+      name: "pantheon",
       side: "right" as iconSide,
     },
     description: "Hosting and database migration",
@@ -25,7 +25,7 @@ const workLinks = [
     image: academy_screenshot,
     link: "https://medicalalley.org/academy/",
     icon: {
-      name: "simple-icons:woo",
+      name: "woo",
       side: "right" as iconSide,
     },
     description: "Digital Education platform",
@@ -35,7 +35,7 @@ const workLinks = [
     image: ma_screenshot,
     link: "https://medicalalley.org/",
     icon: {
-      name: "teenyicons:wordpress-outline",
+      name: "wordpress",
       side: "right" as iconSide,
     },
     description: "Rebranded website using WordPress",
@@ -45,7 +45,7 @@ const workLinks = [
     image: pd_screenshot,
     link: "https://partners.medicalalley.org/",
     icon: {
-      name: "teenyicons:nextjs-outline",
+      name: "nextjs",
       side: "right" as iconSide,
     },
     description: "Next.js application to showcase Medical Alley partners",
@@ -55,7 +55,7 @@ const workLinks = [
     image: srt_screenshot,
     link: "https://www.alleyinsights.org/startup-resources",
     icon: {
-      name: "teenyicons:vue-outline",
+      name: "vue",
       side: "right" as iconSide,
     },
     description: "Vue.js application that filters resources for startups",
@@ -65,7 +65,7 @@ const workLinks = [
     image: eh_screenshot,
     link: "https://www.earthhero.org/",
     icon: {
-      name: "teenyicons:gatsbyjs-outline",
+      name: "gatsbyjs",
       side: "right" as iconSide,
     },
     description: "Gatsby website and web app volunteer project",
@@ -75,7 +75,7 @@ const workLinks = [
     image: sg_screenshot,
     link: "https://daveshouse44.github.io/snake_game/",
     icon: {
-      name: "teenyicons:javascript-outline",
+      name: "javascript",
       side: "right" as iconSide,
     },
     description: "Simple but fun native JavaScript game",
@@ -85,7 +85,7 @@ const workLinks = [
     image: pw_screenshot,
     link: "https://pw-gen2.netlify.app/",
     icon: {
-      name: "teenyicons:typescript-outline",
+      name: "typescript",
       side: "right" as iconSide,
     },
     description: "Highly customizable password generator",
@@ -95,7 +95,7 @@ const workLinks = [
     image: pp_screenshot,
     link: "https://daveshouse44.github.io/portfolio_update/",
     icon: {
-      name: "teenyicons:react-outline",
+      name: "react",
       side: "right" as iconSide,
     },
     description: "Fun look at my early work",

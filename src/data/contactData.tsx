@@ -2,37 +2,37 @@ const contactData = [
   {
     name: "Email",
     href: "mailto:me@davetierney.dev",
-    icon: "ph:envelope-simple-bold",
+    icon: "envelope",
     class: "h-4 w-4 text-primary transition duration-300 hover:text-neon",
   },
   {
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/dave-tierney/",
-    icon: "lucide:linkedin",
+    icon: "linkedin",
     class: "h-4 w-4 text-primary transition duration-300 hover:text-neon",
   },
   {
     name: "GitHub",
     href: "https://github.com/daveshouse44",
-    icon: "ri:github-line",
+    icon: "github",
     class: "h-4 w-4 text-primary transition duration-300 hover:text-neon",
   },
   {
     name: "RSS",
     href: "/rss.xml",
-    icon: "ph:rss-bold",
+    icon: "rss",
     class: "h-4 w-4 text-primary transition duration-300 hover:text-neon",
   },
   // {
   //   name: "Reddit",
   //   href: "https://www.reddit.com/user/daves_house",
-  //   icon: "ph:reddit-logo-bold",
+  //   icon: "reddit",
   //   class: "h-4 w-4 text-primary transition duration-300 hover:text-neon",
   // },
   // {
   //   name: "Discord",
   //   href: "https://discordapp.com/users/daveshouse44#3785",
-  //   icon: "ph:discord-logo-bold",
+  //   icon: "discord",
   //   class: "h-4 w-4 text-primary transition duration-300 hover:text-neon",
   // },
 ];

@@ -5,7 +5,7 @@ const navData = [
     name: "Me",
     path: "/me/",
     icon: {
-      name: "ic:outline-account-box",
+      name: "account",
       side: "right" as iconSide,
     },
   },
@@ -13,7 +13,7 @@ const navData = [
     name: "Skills",
     path: "/skills/",
     icon: {
-      name: "jam:tools",
+      name: "tools",
       side: "right" as iconSide,
     },
   },
@@ -21,7 +21,7 @@ const navData = [
     name: "Work",
     path: "/work/",
     icon: {
-      name: "ph:briefcase-bold",
+      name: "briefcase",
       side: "right" as iconSide,
     },
   },
@@ -29,7 +29,7 @@ const navData = [
     name: "Ripples",
     path: "/ripples/",
     icon: {
-      name: "ph:broadcast-bold",
+      name: "broadcast",
       side: "right" as iconSide,
     },
   },
