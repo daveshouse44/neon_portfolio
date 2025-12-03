@@ -93,7 +93,7 @@ const skillLinks = [
     name: "Wood-fired pizza",
     path: "/ripples/pizzas-and-plans",
     icon: {
-      name: "fluent:pizza",
+      name: "pizza",
       side: "left" as iconSide,
     },
   },
