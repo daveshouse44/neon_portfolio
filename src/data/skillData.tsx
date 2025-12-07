@@ -99,7 +99,7 @@ const skillLinks = [
   },
   {
     name: "Leathercraft",
-    path: "/ripples/leathercraft-2024-reboot-part-1",
+    path: "/ripples/leathercraft-2025-update-part-2",
     icon: {
       name: "wallet",
       side: "left" as iconSide,
