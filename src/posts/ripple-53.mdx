@@ -1,0 +1,18 @@
+---
+layout: "../layouts/RippleLayout.astro"
+title: A food ripple
+date: 2026-02-27
+author: Dave Tierney
+description: It's a food ripple.
+draft: true
+category: Food
+---
+
+import { Image } from "astro:assets";
+import bbq from "../assets/images/bbq.jpg";
+
+<Image src={bbq} alt="BBQ neon sign" height="600" width="1200" />
+
+Talking about some bbq!
+
+{/* <a href="" target="_blank" rel="noopener" className="whitespace-nowrap underline decoration-neon transition hover:text-neon"></a> */}
