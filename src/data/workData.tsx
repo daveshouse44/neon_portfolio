@@ -45,10 +45,11 @@ const workLinks = [
     image: pd_screenshot,
     link: "https://partners.medicalalley.org/",
     icon: {
-      name: "nextjs",
+      name: "hubspot",
       side: "right" as iconSide,
     },
-    description: "Next.js application to showcase Medical Alley partners",
+    description:
+      "HubSpot integrated into Next.js application to showcase partners",
   },
   {
     name: "Starts Resource Tool",
@@ -65,10 +66,10 @@ const workLinks = [
     image: eh_screenshot,
     link: "https://www.earthhero.org/",
     icon: {
-      name: "gatsbyjs",
+      name: "nextjs",
       side: "right" as iconSide,
     },
-    description: "Gatsby website and web app volunteer project",
+    description: "Next.js website and web app volunteer project",
   },
   {
     name: "Snake game",
