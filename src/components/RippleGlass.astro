@@ -1,6 +1,7 @@
 ---
 import { slugify, formatDate } from "../ts/utils";
 import Link from "./Link.astro";
+import ImageWithOverlay from "./ImageWithOverlay.astro";
 
 export interface RippleGlassProps {
   data: {
@@ -9,13 +10,22 @@ export interface RippleGlassProps {
     author: string;
     description: string;
     category: string;
+    cover?: any;
+    coverAlt?: string;
   };
   url: string;
   style?: string;
   class?: string;
+  showImage?: boolean;
 }
 
-const { data, url, style, class: className } = Astro.props as RippleGlassProps;
+const {
+  data,
+  url,
+  style,
+  class: className,
+  showImage = false,
+} = Astro.props as RippleGlassProps;
 ---
 
 <div
@@ -26,6 +36,17 @@ const { data, url, style, class: className } = Astro.props as RippleGlassProps;
     class="rounded-sm border-2 border-neon border-opacity-30 p-1 text-sm shadow transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur-sm group-hover/glass:bg-neon group-hover/glass:bg-opacity-5"
     href={`/category/${slugify(data.category)}`}>{data.category}</a
   >
+  {
+    showImage && data.cover && (
+      <ImageWithOverlay
+        src={data.cover}
+        alt={data.coverAlt || data.title}
+        width={304}
+        height={171}
+        transitionName={`ripple-image-${slugify(data.title)}`}
+      />
+    )
+  }
   <h3
     class="font-tilt text-lg font-bold uppercase text-neon transition duration-500 hover:underline hover:decoration-neon group-hover/glass:text-primary group-hover/glass:shadow-neon group-hover/glass:text-shadow-glow md:text-xl"
   >

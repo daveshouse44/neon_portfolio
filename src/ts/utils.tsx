@@ -3,6 +3,11 @@ export interface Ripple {
     title: string;
     pubDate: string;
     draft: boolean;
+    author: string;
+    description: string;
+    category: string;
+    cover?: any;
+    coverAlt?: string;
   };
   url?: string;
   category?: string;

@@ -1,0 +1,40 @@
+---
+import { Image } from "astro:assets";
+
+export interface ImageWithOverlayProps {
+  src: any;
+  alt: string;
+  width?: number;
+  height?: number;
+  class?: string;
+  transitionName?: string;
+}
+
+const {
+  src,
+  alt,
+  width = 304,
+  height = 171,
+  class: className = "",
+  transitionName,
+} = Astro.props as ImageWithOverlayProps;
+---
+
+<div
+  class={`relative m-4 w-64 max-w-full self-center transition duration-300 group-hover/glass:scale-105 ${className}`}
+  transition:name={transitionName}
+>
+  <div class="absolute h-fit">
+    <Image
+      class="brightness-125 grayscale filter duration-300 group-hover/glass:grayscale-0"
+      src={src}
+      alt={alt}
+      width={width}
+      height={height}
+    />
+  </div>
+  <div
+    class="relative aspect-video bg-neon bg-opacity-20 transition duration-300 group-hover/glass:bg-inherit"
+  >
+  </div>
+</div>

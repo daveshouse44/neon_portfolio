@@ -1,7 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Link from "../components/Link.astro";
-import { Image } from "astro:assets";
+import ImageWithOverlay from "../components/ImageWithOverlay.astro";
 import { Icon } from "astro-icon/components";
 
 import { workLinks, workTabItems } from "../data/workData.tsx";
@@ -45,16 +45,10 @@ import ReactTabs from "../components/ReactTabs.tsx";
               target="_blank"
               rel="noopener noreferrer"
             />
-            <div class="relative m-4 w-64 max-w-full self-center transition duration-300 group-hover/glass:scale-105">
-              <div class="absolute h-fit">
-                <Image
-                  class="brightness-125 grayscale filter duration-300 group-hover/glass:grayscale-0"
-                  src={item.image}
-                  alt={item.name}
-                />
-              </div>
-              <div class="relative aspect-video bg-neon bg-opacity-20 transition duration-300 group-hover/glass:bg-inherit" />
-            </div>
+            <ImageWithOverlay
+              src={item.image}
+              alt={item.name}
+            />
           </div>
         ))
       }

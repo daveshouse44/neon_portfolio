@@ -50,7 +50,11 @@ const formattedRipples = formatRipples(ripples, { limit: 1 });
       <div class="grid grid-cols-1">
         {
           formattedRipples.map((ripple) => (
-            <RippleGlass data={ripple.data} url={ripple.url} />
+            <RippleGlass 
+              data={ripple.data} 
+              url={ripple.url} 
+              showImage={true}
+            />
           ))
         }
       </div>
