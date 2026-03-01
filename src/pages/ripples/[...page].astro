@@ -1,4 +1,5 @@
 ---
+import { getCollection } from "astro:content";
 import MainLayout from "../../layouts/MainLayout.astro";
 import RippleGlass from "../../components/RippleGlass.astro";
 import Paginate from "../../components/Paginate.astro";
@@ -13,11 +14,11 @@ import {
 } from "../../ts/utils";
 
 export async function getStaticPaths({ paginate }: { paginate: Function }) {
-  const allRipples = await Astro.glob("../../posts/*.mdx");
+  const allRipples = await getCollection("posts");
   const ripples: Ripple[] = allRipples.map((ripple) => ({
-    frontmatter: ripple.frontmatter as Ripple["frontmatter"],
-    url: urlPrefix + slugify(ripple.frontmatter.title),
-    category: ripple.frontmatter.category,
+    data: ripple.data as Ripple["data"],
+    url: urlPrefix + slugify(ripple.data.title),
+    category: ripple.data.category,
   }));
   const formattedRipples = formatRipples(ripples);
 
@@ -46,7 +47,7 @@ const { page }: { page: PageType } = Astro.props;
         {
           page.data.map((ripple, index) => (
             <RippleGlass
-              frontmatter={ripple.frontmatter}
+              data={ripple.data}
               url={ripple.url}
               style={`--customDelay:${index * 150}ms`}
               class="animate-flip-down animate-delay-[var(--customDelay)] animate-duration-1000"

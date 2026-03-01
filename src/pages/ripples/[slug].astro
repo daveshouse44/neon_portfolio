@@ -1,13 +1,14 @@
 ---
-import { type Ripple, slugify } from "../../ts/utils";
-type MDXPost = Ripple & { Content: any };
+import { getCollection, render } from "astro:content";
+import { slugify } from "../../ts/utils";
+import RippleLayout from "../../layouts/RippleLayout.astro";
 
 export async function getStaticPaths() {
-  const posts: MDXPost[] = await Astro.glob("../../posts/*.mdx");
+  const posts = await getCollection("posts");
 
   return posts.map((post) => ({
     params: {
-      slug: slugify(post.frontmatter.title),
+      slug: slugify(post.data.title),
     },
     props: {
       post,
@@ -15,9 +16,19 @@ export async function getStaticPaths() {
   }));
 }
 
-const { Content } = Astro.props.post;
+const { post } = Astro.props;
+
+if (!post) {
+  return new Response(null, {
+    status: 404,
+    statusText: "Post not found",
+  });
+}
+
+// Use the render function to get the processed content
+const { Content } = await render(post);
 ---
 
-<article>
+<RippleLayout data={post.data}>
   <Content />
-</article>
+</RippleLayout>

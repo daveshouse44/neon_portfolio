@@ -1,4 +1,5 @@
 ---
+import { getCollection } from "astro:content";
 import MainLayout from "../../../layouts/MainLayout.astro";
 import RippleGlass from "../../../components/RippleGlass.astro";
 import Paginate from "../../../components/Paginate.astro";
@@ -12,11 +13,11 @@ import {
 } from "../../../ts/utils";
 
 export async function getStaticPaths({ paginate }: { paginate: Function }) {
-  const allRipples = await Astro.glob("../../../posts/*.mdx");
+  const allRipples = await getCollection("posts");
   const ripples: Ripple[] = allRipples.map((ripple) => ({
-    frontmatter: ripple.frontmatter as Ripple["frontmatter"],
-    url: urlPrefix + slugify(ripple.frontmatter.title),
-    category: ripple.frontmatter.category || "uncategorized",
+    data: ripple.data as Ripple["data"],
+    url: urlPrefix + slugify(ripple.data.title),
+    category: ripple.data.category || "uncategorized",
   }));
   const formattedRipples = formatRipples(ripples);
   const allCategories = [
@@ -60,7 +61,7 @@ const capitalizedCategory =
       <div class="my-2 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {
           page.data.map((ripple: Ripple) => (
-            <RippleGlass frontmatter={ripple.frontmatter} url={ripple.url} />
+            <RippleGlass data={ripple.data} url={ripple.url} />
           ))
         }
       </div>

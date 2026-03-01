@@ -3,9 +3,9 @@ import { slugify, formatDate } from "../ts/utils";
 import Link from "./Link.astro";
 
 export interface RippleGlassProps {
-  frontmatter: {
+  data: {
     title: string;
-    date: string;
+    pubDate: string;
     author: string;
     description: string;
     category: string;
@@ -15,12 +15,7 @@ export interface RippleGlassProps {
   class?: string;
 }
 
-const {
-  frontmatter,
-  url,
-  style,
-  class: className,
-} = Astro.props as RippleGlassProps;
+const { data, url, style, class: className } = Astro.props as RippleGlassProps;
 ---
 
 <div
@@ -29,13 +24,12 @@ const {
 >
   <a
     class="rounded-sm border-2 border-neon border-opacity-30 p-1 text-sm shadow transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur-sm group-hover/glass:bg-neon group-hover/glass:bg-opacity-5"
-    href={`/category/${slugify(frontmatter.category)}`}
-    >{frontmatter.category}</a
+    href={`/category/${slugify(data.category)}`}>{data.category}</a
   >
   <h3
     class="font-tilt text-lg font-bold uppercase text-neon transition duration-500 hover:underline hover:decoration-neon group-hover/glass:text-primary group-hover/glass:shadow-neon group-hover/glass:text-shadow-glow md:text-xl"
   >
-    <a href={url}>{frontmatter.title}</a>
+    <a href={url}>{data.title}</a>
   </h3>
   <p class="font-semibold">
     <!-- Comment in line below if ever multiple authors -->
@@ -43,11 +37,11 @@ const {
     <a href="/me"
       ><span
         class="transition duration-300 hover:text-neon hover:underline hover:decoration-neon"
-        >{frontmatter.author}</span
+        >{data.author}</span
       ></a
-    > &#12316; {formatDate(frontmatter.date)}
+    > &#12316; {formatDate(data.pubDate)}
   </p>
-  <p>{frontmatter.description}</p>
+  <p>{data.description}</p>
   <Link
     href={url}
     text="Read More"

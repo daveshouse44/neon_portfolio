@@ -1,7 +1,7 @@
 export interface Ripple {
-  frontmatter: {
+  data: {
     title: string;
-    date: string;
+    pubDate: string;
     draft: boolean;
   };
   url?: string;
@@ -13,8 +13,8 @@ export interface PageType {
     next: string;
   };
   data: Array<{
-    frontmatter: {
-      date: string;
+    data: {
+      pubDate: string;
       draft: boolean;
     };
     url: string;
@@ -36,8 +36,8 @@ export function slugify(text: string) {
     .replace(/-+$/, "");
 }
 
-export function formatDate(date: string) {
-  return new Date(date).toLocaleDateString("en-US", {
+export function formatDate(pubDate: string) {
+  return new Date(pubDate).toLocaleDateString("en-US", {
     timeZone: "UTC",
   });
 }
@@ -57,12 +57,12 @@ export function formatRipples(
   } = {},
 ): Ripple[] {
   const filteredRipples = ripples.reduce((acc: Ripple[], ripple: Ripple) => {
-    const { date, draft } = ripple.frontmatter;
+    const { pubDate, draft } = ripple.data;
     // filterOutDrafts if true
     if (filterOutDrafts && draft) return acc;
 
-    // filterOutFuturePosts if true
-    if (filterOutFutureRipples && new Date(date) > new Date()) return acc;
+    // filterOutFutureRipples if true
+    if (filterOutFutureRipples && new Date(pubDate) > new Date()) return acc;
 
     // add ripple to acc
     acc.push(ripple);
@@ -74,8 +74,7 @@ export function formatRipples(
   if (sortByDate) {
     filteredRipples.sort(
       (a, b) =>
-        new Date(b.frontmatter.date).getTime() -
-        new Date(a.frontmatter.date).getTime(),
+        new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime(),
     );
   } else {
     filteredRipples.sort(() => Math.random() - 0.5);

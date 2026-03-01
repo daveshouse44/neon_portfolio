@@ -1,4 +1,5 @@
 ---
+import { getCollection } from "astro:content";
 import MainLayout from "../layouts/MainLayout.astro";
 import MyFace from "../components/MyFace.astro";
 
@@ -6,10 +7,10 @@ import RippleGlass from "../components/RippleGlass.astro";
 
 import { formatRipples, type Ripple, slugify, urlPrefix } from "../ts/utils";
 
-const allRipples = await Astro.glob("../posts/*.mdx");
+const allRipples = await getCollection("posts");
 const ripples: Ripple[] = allRipples.map((ripple) => ({
-  frontmatter: ripple.frontmatter as Ripple["frontmatter"],
-  url: urlPrefix + slugify(ripple.frontmatter.title),
+  data: ripple.data as Ripple["data"],
+  url: urlPrefix + slugify(ripple.data.title),
 }));
 const formattedRipples = formatRipples(ripples, { limit: 1 });
 ---
@@ -47,7 +48,7 @@ const formattedRipples = formatRipples(ripples, { limit: 1 });
       <div class="grid grid-cols-1">
         {
           formattedRipples.map((ripple) => (
-            <RippleGlass frontmatter={ripple.frontmatter} url={ripple.url} />
+            <RippleGlass data={ripple.data} url={ripple.url} />
           ))
         }
       </div>

@@ -1,11 +1,12 @@
 ---
+import { getCollection } from "astro:content";
 import { formatRipples, type Ripple, slugify, urlPrefix } from "../ts/utils";
 
-const allRipples = await Astro.glob("../posts/*.mdx");
+const allRipples = await getCollection("posts");
 const ripples: Ripple[] = allRipples.map((ripple) => ({
-  frontmatter: ripple.frontmatter as Ripple["frontmatter"],
-  url: urlPrefix + slugify(ripple.frontmatter.title),
-  category: ripple.frontmatter.category,
+  data: ripple.data as Ripple["data"],
+  url: urlPrefix + slugify(ripple.data.title),
+  category: ripple.data.category,
 }));
 const formattedRipples = formatRipples(ripples);
 const allWavelengths = formattedRipples.map((waves) => waves.category).flat();

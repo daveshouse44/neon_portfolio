@@ -8,10 +8,10 @@ const ripples = formatRipples(Object.values(rippleImportResult));
 
 export async function GET(context) {
   const items = ripples.map((ripple) => ({
-    link: urlPrefix + slugify(ripple.frontmatter.title),
-    title: ripple.frontmatter.title,
-    pubDate: new Date(ripple.frontmatter.date).toISOString().split("T")[0],
-    description: ripple.frontmatter.description,
+    link: urlPrefix + slugify(ripple.data.title),
+    title: ripple.data.title,
+    pubDate: new Date(ripple.data.pubDate).toISOString().split("T")[0],
+    description: ripple.data.description,
   }));
 
   return rss({

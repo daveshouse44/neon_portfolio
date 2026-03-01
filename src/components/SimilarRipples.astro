@@ -5,11 +5,11 @@ const { similarRipples } = Astro.props;
 
 interface RippleType {
   url: string;
-  frontmatter: {
+  data: {
     title: string;
     author: string;
     description: string;
-    date: string;
+    pubDate: string;
   };
 }
 ---
@@ -19,19 +19,19 @@ interface RippleType {
     similarRipples.map((ripple: RippleType) => (
       <div class="group/glass flex flex-col items-center justify-evenly gap-2 rounded-sm border-2 border-neon border-opacity-40 bg-background bg-opacity-80 p-4 text-center shadow transition duration-300 hover:border-opacity-100 hover:bg-opacity-100 hover:shadow-glow hover:shadow-neon">
         <h3 class="md:text-x font-tilt text-lg font-bold uppercase text-neon transition duration-500 hover:underline hover:decoration-neon group-hover/glass:text-primary group-hover/glass:shadow-neon group-hover/glass:text-shadow-glow">
-          <a href={urlPrefix + slugify(ripple.frontmatter.title)}>
-            {ripple.frontmatter.title}
+          <a href={urlPrefix + slugify(ripple.data.title)}>
+            {ripple.data.title}
           </a>
         </h3>
         <small>
           <a href="/me">
             <span class="transition duration-300 hover:text-neon hover:underline hover:decoration-neon">
-              {ripple.frontmatter.author}
+              {ripple.data.author}
             </span>
-          </a>{" "}
-          ~ {formatDate(ripple.frontmatter.date)}
+          </a>
+          ~ {formatDate(ripple.data.pubDate)}
         </small>
-        <p>{ripple.frontmatter.description}</p>
+        <p>{ripple.data.description}</p>
       </div>
     ))
   }

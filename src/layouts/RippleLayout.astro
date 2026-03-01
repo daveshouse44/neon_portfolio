@@ -1,4 +1,5 @@
 ---
+import { getCollection } from "astro:content";
 import RippleHeader from "../components/RippleHeader.astro";
 import Wavelengths from "../components/Wavelengths.astro";
 import MainLayout from "../layouts/MainLayout.astro";
@@ -6,20 +7,19 @@ import SimilarRipples from "../components/SimilarRipples.astro";
 
 import { formatRipples, type Ripple, slugify } from "../ts/utils";
 
-const { frontmatter } = Astro.props;
-const { title, date, author, description, category } = frontmatter;
+const { data } = Astro.props;
+const { title, pubDate, author, description, category, cover, coverAlt } = data;
 
-const allRipples = await Astro.glob("../posts/*.mdx");
+const allRipples = await getCollection("posts");
 const ripples: Ripple[] = allRipples.map((ripple) => ({
-  frontmatter: ripple.frontmatter as Ripple["frontmatter"],
-  url: slugify(ripple.frontmatter.title),
-  category: ripple.frontmatter.category,
+  data: ripple.data as Ripple["data"],
+  url: slugify(ripple.data.title),
+  category: ripple.data.category,
 }));
 const formattedRipples = formatRipples(ripples, { sortByDate: false });
 const similarRipples = formattedRipples
   .filter(
-    (ripple) =>
-      ripple.category === category && ripple.frontmatter.title !== title,
+    (ripple) => ripple.category === category && ripple.data.title !== title,
   )
   .slice(0, 2);
 ---
@@ -29,12 +29,14 @@ const similarRipples = formattedRipples
     <div class="grid max-w-5xl place-items-center gap-6 p-6">
       <RippleHeader
         title={title}
-        date={date}
+        pubDate={pubDate}
         author={author}
         category={category}
+        cover={cover}
+        coverAlt={coverAlt}
       />
       <div
-        class="grid max-w-2xl gap-6 bg-background bg-opacity-95 pb-6 [&>:nth-child(2):first-letter]:float-left [&>:nth-child(2):first-letter]:mr-1.5 [&>:nth-child(2):first-letter]:font-tilt [&>:nth-child(2):first-letter]:text-7xl [&>:nth-child(2):first-letter]:font-bold [&>:nth-child(2):first-letter]:text-neon [&>ol]:list-inside [&>ol]:list-decimal [&>ol]:px-6 [&>p]:px-6 [&>ul]:list-inside [&>ul]:list-disc [&>ul]:px-6"
+        class="grid max-w-2xl gap-6 bg-background bg-opacity-95 pb-6 [&>:nth-child(1):first-letter]:float-left [&>:nth-child(1):first-letter]:mr-1.5 [&>:nth-child(1):first-letter]:font-tilt [&>:nth-child(1):first-letter]:text-7xl [&>:nth-child(1):first-letter]:font-bold [&>:nth-child(1):first-letter]:text-neon [&>ol]:list-inside [&>ol]:list-decimal [&>ol]:px-6 [&>p]:px-6 [&>ul]:list-inside [&>ul]:list-disc [&>ul]:px-6"
       >
         <slot />
       </div>
