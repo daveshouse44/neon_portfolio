@@ -8,10 +8,12 @@ import RippleGlass from "../components/RippleGlass.astro";
 import { formatRipples, type Ripple, slugify, urlPrefix } from "../ts/utils";
 
 const allRipples = await getCollection("posts");
-const ripples: Ripple[] = allRipples.map((ripple) => ({
-  data: ripple.data as Ripple["data"],
-  url: urlPrefix + slugify(ripple.data.title),
-}));
+const ripples: Ripple[] = allRipples
+  .filter((ripple) => ripple.data && ripple.data.title)
+  .map((ripple) => ({
+    data: ripple.data as Ripple["data"],
+    url: urlPrefix + slugify(ripple.data.title),
+  }));
 const formattedRipples = formatRipples(ripples, { limit: 1 });
 ---
 

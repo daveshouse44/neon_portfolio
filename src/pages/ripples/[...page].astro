@@ -15,11 +15,13 @@ import {
 
 export async function getStaticPaths({ paginate }: { paginate: Function }) {
   const allRipples = await getCollection("posts");
-  const ripples: Ripple[] = allRipples.map((ripple) => ({
-    data: ripple.data as Ripple["data"],
-    url: urlPrefix + slugify(ripple.data.title),
-    category: ripple.data.category,
-  }));
+  const ripples: Ripple[] = allRipples
+    .filter((ripple) => ripple.data && ripple.data.title)
+    .map((ripple) => ({
+      data: ripple.data as Ripple["data"],
+      url: urlPrefix + slugify(ripple.data.title),
+      category: ripple.data.category,
+    }));
   const formattedRipples = formatRipples(ripples);
 
   return paginate(formattedRipples, { pageSize: 6 });

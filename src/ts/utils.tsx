@@ -57,6 +57,9 @@ export function formatRipples(
   } = {},
 ): Ripple[] {
   const filteredRipples = ripples.reduce((acc: Ripple[], ripple: Ripple) => {
+    // Skip ripples with invalid or missing data
+    if (!ripple.data || !ripple.data.pubDate) return acc;
+
     const { pubDate, draft } = ripple.data;
     // filterOutDrafts if true
     if (filterOutDrafts && draft) return acc;
@@ -72,10 +75,13 @@ export function formatRipples(
 
   // sortByDate or randomize
   if (sortByDate) {
-    filteredRipples.sort(
-      (a, b) =>
-        new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime(),
-    );
+    filteredRipples.sort((a, b) => {
+      // Ensure both ripples have valid data and pubDate
+      if (!a.data?.pubDate || !b.data?.pubDate) return 0;
+      return (
+        new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+      );
+    });
   } else {
     filteredRipples.sort(() => Math.random() - 0.5);
   }
