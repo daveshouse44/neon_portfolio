@@ -13,16 +13,22 @@ import ReactTabs from "../components/ReactTabs.tsx";
     <h1 class="mt-4 text-lg font-bold">
       <span
         class="inline-block animate-flip-up font-tilt text-4xl font-bold uppercase text-neon transition duration-500 animate-duration-1000 hover:text-primary hover:shadow-neon hover:text-shadow-glow md:text-5xl"
-        >Work&nbsp</span
+        >Work&nbsp;</span
       >I have done
     </h1>
     <div class="w-full max-w-5xl md:pb-4">
       <ReactTabs items={workTabItems} client:load />
     </div>
-    <h2 class="text-lg font-semibold">Projects to see</h2>
+    <h2 class="text-lg font-semibold">
+      <span
+        class="inline-block animate-flip-up font-tilt text-2xl font-bold uppercase text-neon transition duration-500 animate-duration-1000 hover:text-primary hover:shadow-neon hover:text-shadow-glow"
+      >
+        Projects&nbsp;
+      </span>to see
+    </h2>
 
     <div
-      class="my-2 grid w-full max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+      class="mt-2 mb-8 grid w-full max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
     >
       {
         workLinks.map((item, index) => (
@@ -45,10 +51,7 @@ import ReactTabs from "../components/ReactTabs.tsx";
               target="_blank"
               rel="noopener noreferrer"
             />
-            <ImageWithOverlay
-              src={item.image}
-              alt={item.name}
-            />
+            <ImageWithOverlay src={item.image} alt={item.name} />
           </div>
         ))
       }

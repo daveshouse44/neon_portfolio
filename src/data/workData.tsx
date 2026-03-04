@@ -21,6 +21,36 @@ const workLinks = [
     description: "Hosting and database migration",
   },
   {
+    name: "Earth Hero",
+    image: eh_screenshot,
+    link: "https://www.earthhero.org/",
+    icon: {
+      name: "nextjs",
+      side: "right" as iconSide,
+    },
+    description: "Next.js website and web app volunteer project",
+  },
+  {
+    name: "Password Generator",
+    image: pw_screenshot,
+    link: "https://pw-gen2.netlify.app/",
+    icon: {
+      name: "typescript",
+      side: "right" as iconSide,
+    },
+    description: "Highly customizable password generator",
+  },
+  {
+    name: "Snake game",
+    image: sg_screenshot,
+    link: "https://daveshouse44.github.io/snake_game/",
+    icon: {
+      name: "javascript",
+      side: "right" as iconSide,
+    },
+    description: "Simple but fun native JavaScript game",
+  },
+  {
     name: "Medical Alley Academy",
     image: academy_screenshot,
     link: "https://medicalalley.org/academy/",
@@ -60,36 +90,6 @@ const workLinks = [
       side: "right" as iconSide,
     },
     description: "Vue.js application that filters resources for startups",
-  },
-  {
-    name: "Earth Hero",
-    image: eh_screenshot,
-    link: "https://www.earthhero.org/",
-    icon: {
-      name: "nextjs",
-      side: "right" as iconSide,
-    },
-    description: "Next.js website and web app volunteer project",
-  },
-  {
-    name: "Snake game",
-    image: sg_screenshot,
-    link: "https://daveshouse44.github.io/snake_game/",
-    icon: {
-      name: "javascript",
-      side: "right" as iconSide,
-    },
-    description: "Simple but fun native JavaScript game",
-  },
-  {
-    name: "Password Generator",
-    image: pw_screenshot,
-    link: "https://pw-gen2.netlify.app/",
-    icon: {
-      name: "typescript",
-      side: "right" as iconSide,
-    },
-    description: "Highly customizable password generator",
   },
   {
     name: "Previous Portfolio",
