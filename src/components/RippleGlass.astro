@@ -17,6 +17,7 @@ export interface RippleGlassProps {
   style?: string;
   class?: string;
   showImage?: boolean;
+  priority?: boolean;
 }
 
 const {
@@ -25,6 +26,7 @@ const {
   style,
   class: className,
   showImage = false,
+  priority = false,
 } = Astro.props as RippleGlassProps;
 ---
 
@@ -44,6 +46,7 @@ const {
         width={304}
         height={171}
         transitionName={`ripple-image-${slugify(data.title)}`}
+        priority={priority}
       />
     )
   }

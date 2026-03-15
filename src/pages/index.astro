@@ -22,9 +22,9 @@ const formattedRipples = formatRipples(ripples, { limit: 1 });
     class="mx-6 flex h-full flex-col items-center justify-evenly p-4 lg:flex-row"
   >
     <div
-      class="max-w-full flex flex-col-reverse items-center justify-center gap-4 p-4 sm:flex-row"
+      class="flex max-w-full flex-col-reverse items-center justify-center gap-4 p-4 sm:flex-row"
     >
-      <MyFace size="large" loading="eager" />
+      <MyFace size="large" priority={true} />
       <div class="flex flex-col gap-4">
         <h2 class="text-xl font-bold">Greetings, I'm</h2>
         <h1
@@ -52,7 +52,12 @@ const formattedRipples = formatRipples(ripples, { limit: 1 });
       <div class="grid grid-cols-1">
         {
           formattedRipples.map((ripple) => (
-            <RippleGlass data={ripple.data} url={ripple.url} showImage={true} />
+            <RippleGlass
+              data={ripple.data}
+              url={ripple.url}
+              showImage={true}
+              priority={true}
+            />
           ))
         }
       </div>

@@ -8,6 +8,7 @@ export interface ImageWithOverlayProps {
   height?: number;
   class?: string;
   transitionName?: string;
+  priority?: boolean;
 }
 
 const {
@@ -17,6 +18,7 @@ const {
   height = 171,
   class: className = "",
   transitionName,
+  priority = false,
 } = Astro.props as ImageWithOverlayProps;
 ---
 
@@ -31,6 +33,7 @@ const {
       alt={alt}
       width={width}
       height={height}
+      priority={priority}
     />
   </div>
   <div
