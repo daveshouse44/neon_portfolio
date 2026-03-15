@@ -10,38 +10,38 @@ import neonData from "../data/neonData";
 >
   <div class="flex items-center justify-center gap-2 py-2">
     <button
-      class="group grid h-8 w-8 place-items-center rounded-xs border-2 border-neon/30 shadow-sm transition duration-300 hover:border-neon hover:bg-neon/5 hover:shadow-glow hover:shadow-neon"
+      class="group border-neon/30 hover:border-neon hover:bg-neon/5 hover:shadow-glow hover:shadow-neon grid h-8 w-8 place-items-center rounded-xs border-2 shadow-sm transition duration-300"
       data-theme-toggle
       aria-label="toggle theme"
     >
       <Icon
         name="sun"
-        class="h-4 w-4 text-primary transition duration-300 group-hover:text-neon"
+        class="text-primary group-hover:text-neon h-4 w-4 transition duration-300"
       />
     </button>
     <button
-      class="group grid h-8 w-8 place-items-center rounded-xs border-2 border-neon/30 shadow-sm transition duration-300 hover:border-neon hover:bg-neon/5 hover:shadow-glow hover:shadow-neon"
+      class="group border-neon/30 hover:border-neon hover:bg-neon/5 hover:shadow-glow hover:shadow-neon grid h-8 w-8 place-items-center rounded-xs border-2 shadow-sm transition duration-300"
       data-neon-toggle
       aria-label="select color"
     >
       <Icon
         name="palette"
-        class="h-4 w-4 text-primary transition duration-300 group-hover:text-neon"
+        class="text-primary group-hover:text-neon h-4 w-4 transition duration-300"
       />
     </button>
   </div>
   <p
     data-text-suggestion
-    class="absolute -bottom-4.5 animate-shake text-sm font-bold uppercase text-primary animate-delay-1000"
+    class="animate-shake text-primary animate-delay-1000 absolute -bottom-4.5 text-sm font-bold uppercase"
   >
     It's better in the dark
   </p>
   <div
     data-neon-container
-    class="invisible absolute top-16 z-10 max-w-sm rounded-xs border-2 border-neon/40 shadow-sm transition duration-300 hover:border-neon hover:bg-neon/5 hover:shadow-glow hover:shadow-neon"
+    class="border-neon/40 hover:border-neon hover:bg-neon/5 hover:shadow-glow hover:shadow-neon invisible absolute top-16 z-10 max-w-sm rounded-xs border-2 shadow-sm transition duration-300"
   >
     <div
-      class="flex flex-col content-center gap-3 bg-background/95 p-4 text-center font-bold text-primary hover:bg-background sm:gap-4 sm:p-8"
+      class="bg-background/95 text-primary hover:bg-background flex flex-col content-center gap-3 p-4 text-center font-bold sm:gap-4 sm:p-8"
     >
       <div class="text-xl font-bold">Color select</div>
       <div class="flex justify-evenly gap-3 sm:gap-4">
@@ -53,22 +53,22 @@ import neonData from "../data/neonData";
                 type="radio"
                 name="color"
                 value={color.name}
-                class={`absolute -z-10 h-6 w-6 appearance-none rounded-xs checked:z-10 checked:border checked:border-gray-900 ${color.hex.input} checked:outline-solid checked:outline-white`}
+                class={`absolute -z-10 h-6 w-6 appearance-none rounded-xs checked:z-10 checked:border checked:border-gray-900 ${color.hex.input} checked:outline-white checked:outline-solid`}
               />
               <span class="sr-only">Set neon to {color.name}</span>
               <div
-                class={`h-6 w-6 rounded-xs border ${color.hex.div.border}/75 ${color.hex.div.background}/60 shadow-sm shadow-gray-900 hover:border-none hover:${color.hex.div.background} hover:shadow-none hover:outline-solid hover:outline-white`}
+                class={`h-6 w-6 rounded-xs border ${color.hex.div.border} ${color.hex.div.background} shadow-sm shadow-gray-900 hover:border-none hover:${color.hex.div.backgroundHover} hover:shadow-none hover:outline-white hover:outline-solid`}
               />
             </label>
           ))
         }
       </div>
       <button
-        class="group mt-2 grid h-8 w-8 place-items-center self-center rounded-xs border-2 border-neon/40 shadow-sm transition duration-300 hover:border-neon hover:bg-neon/5 hover:shadow-glow hover:shadow-neon"
+        class="group border-neon/40 hover:border-neon hover:bg-neon/5 hover:shadow-glow hover:shadow-neon mt-2 grid h-8 w-8 place-items-center self-center rounded-xs border-2 shadow-sm transition duration-300"
         data-neon-close
         aria-label="close neon select container"
       >
-        <Icon name="close" class="h-4 w-4 text-primary group-hover:text-neon" />
+        <Icon name="close" class="text-primary group-hover:text-neon h-4 w-4" />
       </button>
     </div>
   </div>
