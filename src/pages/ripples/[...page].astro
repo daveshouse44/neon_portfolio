@@ -52,7 +52,7 @@ const { page }: { page: PageType } = Astro.props;
               data={ripple.data}
               url={ripple.url}
               style={`--customDelay:${index * 150}ms`}
-              class="animate-flip-down animate-delay-[var(--customDelay)] animate-duration-1000"
+              class="animate-flip-down animate-delay-(--customDelay) animate-duration-1000"
             />
           ))
         }

@@ -19,7 +19,7 @@ const { text, href, icon, target, rel, ...rest } = Astro.props as Props;
   target={target}
   rel={rel}
   {...rest}
-  class="group inline-flex gap-1 rounded px-1 py-2 font-semibold uppercase text-primary transition md:border-0 md:p-0 md:hover:bg-transparent"
+  class="group inline-flex gap-1 rounded-sm px-1 py-2 font-semibold uppercase text-primary transition md:border-0 md:p-0 md:hover:bg-transparent"
 >
   {
     icon && icon.side === "left" && (
@@ -32,7 +32,7 @@ const { text, href, icon, target, rel, ...rest } = Astro.props as Props;
         />
         <div class="flex flex-col">
           <span class="whitespace-nowrap">{text}</span>
-          <span class="-mt-[3px] h-0.5 max-w-0 bg-neon transition-all delay-150 duration-500 group-hover:max-w-full group-aria-[current='page']:max-w-full" />
+          <span class="-mt-0.75 h-0.5 max-w-0 bg-neon transition-all delay-150 duration-500 group-hover:max-w-full group-aria-[current='page']:max-w-full" />
         </div>
       </>
     )
@@ -43,7 +43,7 @@ const { text, href, icon, target, rel, ...rest } = Astro.props as Props;
       <>
         <div class="flex flex-col">
           <span class="whitespace-nowrap">{text}</span>
-          <span class="-mt-[3px] h-0.5 max-w-0 bg-neon transition-all duration-500 group-hover:max-w-full group-aria-[current='page']:max-w-full" />
+          <span class="-mt-0.75 h-0.5 max-w-0 bg-neon transition-all duration-500 group-hover:max-w-full group-aria-[current='page']:max-w-full" />
         </div>
         <Icon
           name={icon.name}

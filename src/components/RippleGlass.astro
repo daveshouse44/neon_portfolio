@@ -32,10 +32,10 @@ const {
 
 <div
   style={style}
-  class={`group/glass flex max-w-sm flex-col items-center justify-evenly gap-2 rounded-sm border-2 border-neon border-opacity-40 bg-background bg-opacity-80 p-4 text-center shadow transition duration-300 hover:border-opacity-100 hover:bg-opacity-100 hover:shadow-glow hover:shadow-neon ${className}`}
+  class={`group/glass flex max-w-sm flex-col items-center justify-evenly gap-2 rounded-xs border-2 border-neon/40 bg-background/80 p-4 text-center shadow-sm transition duration-300 hover:border-neon hover:bg-background hover:shadow-glow hover:shadow-neon ${className}`}
 >
   <a
-    class="rounded-sm border-2 border-neon border-opacity-30 p-1 text-sm shadow transition duration-300 hover:border-opacity-100 hover:shadow-glow hover:shadow-neon hover:backdrop-blur-sm group-hover/glass:bg-neon group-hover/glass:bg-opacity-5"
+    class="rounded-xs border-2 border-neon/30 p-1 text-sm shadow-sm transition duration-300 hover:border-neon hover:shadow-glow hover:shadow-neon hover:backdrop-blur-xs group-hover/glass:bg-neon/5"
     href={`/category/${slugify(data.category)}`}>{data.category}</a
   >
   {

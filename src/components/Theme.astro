@@ -10,7 +10,7 @@ import neonData from "../data/neonData";
 >
   <div class="flex items-center justify-center gap-2 py-2">
     <button
-      class="group grid h-8 w-8 place-items-center rounded-sm border-2 border-neon border-opacity-30 shadow transition duration-300 hover:border-opacity-100 hover:bg-neon hover:bg-opacity-5 hover:shadow-glow hover:shadow-neon"
+      class="group grid h-8 w-8 place-items-center rounded-xs border-2 border-neon/30 shadow-sm transition duration-300 hover:border-neon hover:bg-neon/5 hover:shadow-glow hover:shadow-neon"
       data-theme-toggle
       aria-label="toggle theme"
     >
@@ -20,7 +20,7 @@ import neonData from "../data/neonData";
       />
     </button>
     <button
-      class="group grid h-8 w-8 place-items-center rounded-sm border-2 border-neon border-opacity-30 shadow transition duration-300 hover:border-opacity-100 hover:bg-neon hover:bg-opacity-5 hover:shadow-glow hover:shadow-neon"
+      class="group grid h-8 w-8 place-items-center rounded-xs border-2 border-neon/30 shadow-sm transition duration-300 hover:border-neon hover:bg-neon/5 hover:shadow-glow hover:shadow-neon"
       data-neon-toggle
       aria-label="select color"
     >
@@ -32,16 +32,16 @@ import neonData from "../data/neonData";
   </div>
   <p
     data-text-suggestion
-    class="absolute bottom-[-18px] animate-shake text-sm font-bold uppercase text-primary animate-delay-1000"
+    class="absolute -bottom-4.5 animate-shake text-sm font-bold uppercase text-primary animate-delay-1000"
   >
     It's better in the dark
   </p>
   <div
     data-neon-container
-    class="invisible absolute top-16 z-10 max-w-sm rounded-sm border-2 border-neon border-opacity-40 shadow transition duration-300 hover:border-opacity-100 hover:bg-neon hover:bg-opacity-5 hover:shadow-glow hover:shadow-neon"
+    class="invisible absolute top-16 z-10 max-w-sm rounded-xs border-2 border-neon/40 shadow-sm transition duration-300 hover:border-neon hover:bg-neon/5 hover:shadow-glow hover:shadow-neon"
   >
     <div
-      class="flex flex-col content-center gap-3 bg-background bg-opacity-95 p-4 text-center font-bold text-primary hover:bg-opacity-100 sm:gap-4 sm:p-8"
+      class="flex flex-col content-center gap-3 bg-background/95 p-4 text-center font-bold text-primary hover:bg-background sm:gap-4 sm:p-8"
     >
       <div class="text-xl font-bold">Color select</div>
       <div class="flex justify-evenly gap-3 sm:gap-4">
@@ -53,18 +53,18 @@ import neonData from "../data/neonData";
                 type="radio"
                 name="color"
                 value={color.name}
-                class={`absolute -z-10 h-6 w-6 appearance-none rounded-sm checked:z-10 checked:border checked:border-gray-900 ${color.hex.input} checked:outline checked:outline-white`}
+                class={`absolute -z-10 h-6 w-6 appearance-none rounded-xs checked:z-10 checked:border checked:border-gray-900 ${color.hex.input} checked:outline-solid checked:outline-white`}
               />
               <span class="sr-only">Set neon to {color.name}</span>
               <div
-                class={`h-6 w-6 rounded-sm border ${color.hex.div.border} border-opacity-75 ${color.hex.div.background} bg-opacity-60 shadow shadow-gray-900 hover:border-none hover:bg-opacity-100 hover:shadow-none hover:outline hover:outline-white`}
+                class={`h-6 w-6 rounded-xs border ${color.hex.div.border}/75 ${color.hex.div.background}/60 shadow-sm shadow-gray-900 hover:border-none hover:${color.hex.div.background} hover:shadow-none hover:outline-solid hover:outline-white`}
               />
             </label>
           ))
         }
       </div>
       <button
-        class="group mt-2 grid h-8 w-8 place-items-center self-center rounded-sm border-2 border-neon border-opacity-40 shadow transition duration-300 hover:border-opacity-100 hover:bg-neon hover:bg-opacity-5 hover:shadow-glow hover:shadow-neon"
+        class="group mt-2 grid h-8 w-8 place-items-center self-center rounded-xs border-2 border-neon/40 shadow-sm transition duration-300 hover:border-neon hover:bg-neon/5 hover:shadow-glow hover:shadow-neon"
         data-neon-close
         aria-label="close neon select container"
       >
