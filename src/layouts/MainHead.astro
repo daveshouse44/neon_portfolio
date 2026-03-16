@@ -15,5 +15,11 @@ const { title, description } = Astro.props;
   <meta name="generator" content={Astro.generator} />
   <title>{title} ~ Dave Tierney's site</title>
   <meta name="description" content={description} />
+  <link
+    rel="sitemap"
+    type="application/xml"
+    title="Sitemap for davetierney.dev"
+    href="https://davetierney.dev/sitemap-index.xml"
+  />
   <ClientRouter />
 </head>
