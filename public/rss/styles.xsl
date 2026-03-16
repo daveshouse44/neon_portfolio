@@ -167,8 +167,26 @@ This file is in BETA. Please test and contribute to the discussion:
 							</h3>
               <p><xsl:value-of select="description"/></p>
 							<small>
-								Published: <xsl:value-of select="substring(pubDate, 6, 11)" />
+								Published ~ <xsl:value-of select="substring(pubDate, 6, 11)" />
 							</small>
+							<xsl:if test="updated">
+								<small>
+									| Updated ~ <xsl:value-of select="substring(updated, 9, 2)" /><xsl:text> </xsl:text><xsl:choose>
+										<xsl:when test="substring(updated, 6, 2) = '01'">Jan</xsl:when>
+										<xsl:when test="substring(updated, 6, 2) = '02'">Feb</xsl:when>
+										<xsl:when test="substring(updated, 6, 2) = '03'">Mar</xsl:when>
+										<xsl:when test="substring(updated, 6, 2) = '04'">Apr</xsl:when>
+										<xsl:when test="substring(updated, 6, 2) = '05'">May</xsl:when>
+										<xsl:when test="substring(updated, 6, 2) = '06'">Jun</xsl:when>
+										<xsl:when test="substring(updated, 6, 2) = '07'">Jul</xsl:when>
+										<xsl:when test="substring(updated, 6, 2) = '08'">Aug</xsl:when>
+										<xsl:when test="substring(updated, 6, 2) = '09'">Sep</xsl:when>
+										<xsl:when test="substring(updated, 6, 2) = '10'">Oct</xsl:when>
+										<xsl:when test="substring(updated, 6, 2) = '11'">Nov</xsl:when>
+										<xsl:when test="substring(updated, 6, 2) = '12'">Dec</xsl:when>
+									</xsl:choose><xsl:text> </xsl:text><xsl:value-of select="substring(updated, 1, 4)" />
+								</small>
+							</xsl:if>
 						</div>
 					</xsl:for-each>
 				</div>

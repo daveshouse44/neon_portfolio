@@ -3,7 +3,6 @@ import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
 
 import { z } from "astro/zod";
-import { imageConfig } from "astro:assets";
 
 const posts = defineCollection({
   loader: glob({ pattern: "*.mdx", base: "./src/posts" }),
@@ -11,7 +10,7 @@ const posts = defineCollection({
     z.object({
       title: z.string(),
       pubDate: z.union([z.string(), z.date()]),
-      // updated: z.union([z.string(), z.date()]).optional(),
+      updated: z.union([z.string(), z.date()]).optional(),
       author: z.string(),
       description: z.string(),
       draft: z.boolean(),

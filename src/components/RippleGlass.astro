@@ -12,6 +12,7 @@ export interface RippleGlassProps {
     category: string;
     cover?: any;
     coverAlt?: string;
+    updated?: string;
   };
   url: string;
   style?: string;
@@ -35,7 +36,7 @@ const {
   class={`group/glass flex max-w-sm flex-col items-center justify-evenly gap-2 rounded-xs border-2 border-neon/40 bg-background/80 p-4 text-center shadow-sm transition duration-300 hover:border-neon hover:bg-background hover:shadow-glow hover:shadow-neon ${className}`}
 >
   <a
-    class="rounded-xs border-2 border-neon/30 p-1 text-sm shadow-sm transition duration-300 hover:border-neon hover:shadow-glow hover:shadow-neon hover:backdrop-blur-xs group-hover/glass:bg-neon/5"
+    class="border-neon/30 hover:border-neon hover:shadow-glow hover:shadow-neon group-hover/glass:bg-neon/5 rounded-xs border-2 p-1 text-sm shadow-sm transition duration-300 hover:backdrop-blur-xs"
     href={`/category/${slugify(data.category)}`}>{data.category}</a
   >
   {
@@ -51,7 +52,7 @@ const {
     )
   }
   <h3
-    class="font-tilt text-lg font-bold uppercase text-neon transition duration-500 hover:underline hover:decoration-neon group-hover/glass:text-primary group-hover/glass:shadow-neon group-hover/glass:text-shadow-glow md:text-xl"
+    class="font-tilt text-neon hover:decoration-neon group-hover/glass:text-primary group-hover/glass:shadow-neon group-hover/glass:text-shadow-glow text-lg font-bold uppercase transition duration-500 hover:underline md:text-xl"
   >
     <a href={url}>{data.title}</a>
   </h3>
@@ -60,11 +61,16 @@ const {
     <!-- <a href={`/author/${slugify(author)}`} -->
     <a href="/me"
       ><span
-        class="transition duration-300 hover:text-neon hover:underline hover:decoration-neon"
+        class="hover:text-neon hover:decoration-neon transition duration-300 hover:underline"
         >{data.author}</span
       ></a
     > &#12316; {formatDate(data.pubDate)}
   </p>
+  {
+    data.updated && (
+      <p class="font-bold">Updated ~ {formatDate(data.updated)}</p>
+    )
+  }
   <p>{data.description}</p>
   <Link
     href={url}

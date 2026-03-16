@@ -8,7 +8,16 @@ import SimilarRipples from "../components/SimilarRipples.astro";
 import { formatRipples, type Ripple, slugify } from "../ts/utils";
 
 const { data } = Astro.props;
-const { title, pubDate, author, description, category, cover, coverAlt } = data;
+const {
+  title,
+  pubDate,
+  author,
+  description,
+  category,
+  cover,
+  coverAlt,
+  updated,
+} = data;
 
 const allRipples = await getCollection("posts");
 const ripples: Ripple[] = allRipples.map((ripple) => ({
@@ -34,9 +43,10 @@ const similarRipples = formattedRipples
         category={category}
         cover={cover}
         coverAlt={coverAlt}
+        updated={updated}
       />
       <div
-        class="grid max-w-2xl gap-6 bg-background/95 py-5 [&>:nth-child(1):first-letter]:float-left [&>:nth-child(1):first-letter]:mr-1.5 [&>:nth-child(1):first-letter]:font-tilt [&>:nth-child(1):first-letter]:text-7xl [&>:nth-child(1):first-letter]:font-bold [&>:nth-child(1):first-letter]:text-neon [&>ol]:list-inside [&>ol]:list-decimal [&>ol]:px-6 [&>p]:px-6 [&>ul]:list-inside [&>ul]:list-disc [&>ul]:px-6"
+        class="bg-background/95 [&>:nth-child(1):first-letter]:font-tilt [&>:nth-child(1):first-letter]:text-neon grid max-w-2xl gap-6 py-5 [&>:nth-child(1):first-letter]:float-left [&>:nth-child(1):first-letter]:mr-1.5 [&>:nth-child(1):first-letter]:text-7xl [&>:nth-child(1):first-letter]:font-bold [&>ol]:list-inside [&>ol]:list-decimal [&>ol]:px-6 [&>p]:px-6 [&>ul]:list-inside [&>ul]:list-disc [&>ul]:px-6"
       >
         <slot />
       </div>
