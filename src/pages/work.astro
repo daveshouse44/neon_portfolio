@@ -12,7 +12,7 @@ import ReactTabs from "../components/ReactTabs.tsx";
   <div class="mx-6 flex h-full flex-col items-center justify-center gap-4 p-4">
     <h1 class="mt-4 text-lg font-bold">
       <span
-        class="inline-block animate-flip-up font-tilt text-4xl font-bold uppercase text-neon transition duration-500 animate-duration-1000 hover:text-primary hover:shadow-neon hover:text-shadow-glow md:text-5xl"
+        class="animate-flip-up font-tilt text-neon animate-duration-1000 hover:text-primary hover:shadow-neon hover:text-shadow-glow inline-block text-4xl font-bold uppercase transition duration-500 md:text-5xl"
         >Work&nbsp;</span
       >I have done
     </h1>
@@ -21,7 +21,7 @@ import ReactTabs from "../components/ReactTabs.tsx";
     </div>
     <h2 class="text-lg font-semibold">
       <span
-        class="inline-block animate-flip-up font-tilt text-2xl font-bold uppercase text-neon transition duration-500 animate-duration-1000 hover:text-primary hover:shadow-neon hover:text-shadow-glow"
+        class="animate-flip-up font-tilt text-neon animate-duration-1000 hover:text-primary hover:shadow-neon hover:text-shadow-glow inline-block text-2xl font-bold uppercase transition duration-500"
       >
         Projects&nbsp;
       </span>to see
@@ -34,13 +34,13 @@ import ReactTabs from "../components/ReactTabs.tsx";
         workLinks.map((item, index) => (
           <div
             style={`--customDelay:${index * 150}ms`}
-            class="group/glass flex animate-flip-down flex-col justify-evenly gap-2 rounded-xs border-2 border-neon/40 bg-background/80 p-4 shadow-sm transition duration-300 animate-delay-(--customDelay) animate-duration-1000 hover:border-neon hover:bg-background hover:shadow-glow hover:shadow-neon"
+            class="group/glass animate-flip-down border-neon/40 bg-background/80 animate-delay-(--customDelay) animate-duration-1000 hover:border-neon hover:bg-background hover:shadow-glow hover:shadow-neon flex flex-col justify-evenly gap-2 rounded-xs border-2 p-4 shadow-sm transition duration-300"
           >
             <Icon
               name={item.icon.name}
-              class="h-8 w-8 text-primary transition duration-300 group-hover/glass:text-neon"
+              class="text-primary group-hover/glass:text-neon h-8 w-8 transition duration-300"
             />
-            <h3 class="whitespace-nowrap font-tilt text-xl font-bold uppercase text-neon transition duration-500 group-hover/glass:text-primary group-hover/glass:text-shadow-glow ">
+            <h3 class="font-tilt text-neon group-hover/glass:text-primary group-hover/glass:text-shadow-glow text-xl font-bold whitespace-nowrap uppercase transition duration-500">
               {item.name}
             </h3>
             <p class="w-64 max-w-full">{item.description}</p>
@@ -50,6 +50,7 @@ import ReactTabs from "../components/ReactTabs.tsx";
               icon={{ name: "extlink", side: "right" }}
               target="_blank"
               rel="noopener noreferrer"
+              screenReaderText={`Go to the site: ${item.name}`}
             />
             <ImageWithOverlay src={item.image} alt={item.name} />
           </div>
