@@ -6,6 +6,8 @@ import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import { getDraftUrls } from "./config-utils.js";
 
+const draftUrls = getDraftUrls();
+
 export default defineConfig({
   site: "https://davetierney.dev",
   integrations: [
@@ -13,8 +15,10 @@ export default defineConfig({
     mdx(),
     sitemap({
       filter: (page) => {
-        const draftUrls = getDraftUrls();
-        return !draftUrls.includes(page);
+        const fullDraftUrls = draftUrls.map(
+          (url) => `https://davetierney.dev${url}`,
+        );
+        return fullDraftUrls.every((draftUrl) => page !== draftUrl);
       },
     }),
     icon(),

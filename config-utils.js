@@ -4,11 +4,17 @@ import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-/**
- * Get URLs of draft posts to exclude from sitemap
- * Reads MDX files from src/posts and checks frontmatter for draft: true
- * @returns {string[]} Array of URLs for draft posts
- */
+function slugify(text) {
+  return text
+    .toString()
+    .toLowerCase()
+    .replace(/\s+/g, "-")
+    .replace(/[^\w-]+/g, "")
+    .replace(/--+/g, "-")
+    .replace(/^-+/, "")
+    .replace(/-+$/, "");
+}
+
 export function getDraftUrls() {
   const postsDir = path.join(__dirname, "src/posts");
   const draftUrls = [];
@@ -21,16 +27,18 @@ export function getDraftUrls() {
         const filePath = path.join(postsDir, file);
         const content = fs.readFileSync(filePath, "utf-8");
 
-        // Extract frontmatter using regex
         const frontmatterMatch = content.match(/^---\s*\n([\s\S]*?)\n---/);
         if (frontmatterMatch) {
           const frontmatter = frontmatterMatch[1];
           const draftMatch = frontmatter.match(/draft:\s*(true|false)/);
 
           if (draftMatch && draftMatch[1] === "true") {
-            // Generate the URL slug from filename
-            const slug = file.replace(".mdx", "");
-            draftUrls.push(`https://davetierney.dev/ripples/${slug}`);
+            const titleMatch = frontmatter.match(/title:\s*(.+)/);
+            if (titleMatch) {
+              const title = titleMatch[1].replace(/['"]/g, "").trim();
+              const slug = slugify(title);
+              draftUrls.push(`/ripples/${slug}/`);
+            }
           }
         }
       }
