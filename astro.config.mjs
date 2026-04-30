@@ -7,7 +7,17 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   site: "https://davetierney.dev",
-  integrations: [react(), mdx(), sitemap(), icon()],
+  integrations: [
+    react(),
+    mdx(),
+    sitemap({
+      filter: (page) => {
+        // Exclude draft pages from the sitemap
+        return !page.data.draft;
+      },
+    }),
+    icon(),
+  ],
   vite: {
     plugins: [tailwindcss()],
   },
