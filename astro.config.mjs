@@ -4,6 +4,7 @@ import mdx from "@astrojs/mdx";
 import icon from "astro-icon";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
+import { getDraftUrls } from "./config-utils.js";
 
 export default defineConfig({
   site: "https://davetierney.dev",
@@ -12,8 +13,8 @@ export default defineConfig({
     mdx(),
     sitemap({
       filter: (page) => {
-        // Exclude draft pages from the sitemap
-        return !page.data.draft;
+        const draftUrls = getDraftUrls();
+        return !draftUrls.includes(page);
       },
     }),
     icon(),

@@ -8,7 +8,6 @@ export async function GET(context) {
   blog.sort((a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate));
   // Filter out drafts
   const publishedBlog = blog.filter((post) => !post.data.draft);
-  console.log("Blog collection:", publishedBlog);
 
   return rss({
     stylesheet: "/rss/styles.xsl",
