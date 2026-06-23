@@ -43,7 +43,7 @@ const ReactTabs: React.FC<TabsProps> = ({ items }) => {
             <button
               key={index}
               onClick={() => setSelectedTab(index)}
-              className={`grid w-full items-center whitespace-nowrap rounded-xs border-2 px-4 py-3 transition ${
+              className={`grid w-full items-center rounded-xs border-2 px-4 py-3 whitespace-nowrap transition ${
                 selectedTab === index
                   ? "border-neon bg-background/95"
                   : "border-transparent"
@@ -56,29 +56,29 @@ const ReactTabs: React.FC<TabsProps> = ({ items }) => {
       </ul>
       <div className="relative mt-6 w-full max-w-4xl rounded-lg md:mt-0">
         <div className="overflow-hidden" ref={tabContentRef}>
-          <div className="group flex flex-col justify-center gap-2 rounded-xs border-2 border-neon/40 bg-background/80 p-6 shadow-sm backdrop-blur-sm transition duration-300 hover:border-neon hover:bg-background hover:shadow-glow hover:shadow-neon sm:m-6">
+          <div className="group border-neon/40 bg-background/80 hover:border-neon hover:bg-background hover:shadow-glow hover:shadow-neon flex flex-col justify-center gap-2 rounded-xs border-2 p-6 shadow-sm backdrop-blur-sm transition duration-300 sm:m-6">
             <span className="group-hover:text-neon">
               {items[selectedTab].icon === 0 ? (
-                <RiverIcon className=" h-10 w-10" />
+                <RiverIcon className="h-10 w-10" />
               ) : items[selectedTab].icon === 1 ? (
-                <EarthIcon className=" h-10 w-10" />
+                <EarthIcon className="h-10 w-10" />
               ) : items[selectedTab].icon === 2 ? (
-                <CodeIcon className=" h-10 w-10" />
+                <CodeIcon className="h-10 w-10" />
               ) : items[selectedTab].icon === 3 ? (
-                <PizzaIcon className=" h-10 w-10" />
+                <PizzaIcon className="h-10 w-10" />
               ) : items[selectedTab].icon === 4 ? (
-                <CheeseIcon className=" h-10 w-10" />
+                <CheeseIcon className="h-10 w-10" />
               ) : items[selectedTab].icon === 5 ? (
-                <HammerIcon className=" h-10 w-10" />
+                <HammerIcon className="h-10 w-10" />
               ) : null}
             </span>
-            <h3 className="font-tilt text-2xl font-bold uppercase text-neon transition duration-500 group-hover:text-primary group-hover:text-shadow-glow ">
+            <h2 className="font-tilt text-neon group-hover:text-primary group-hover:text-shadow-glow text-2xl font-bold uppercase transition duration-500">
               {items[selectedTab].employer}
-            </h3>
-            <h5 className="text-lg font-bold group-hover:text-neon">
+            </h2>
+            <h3 className="group-hover:text-neon text-lg font-bold">
               {items[selectedTab].title}
-            </h5>
-            <p className="text-sm font-semibold text-secondary">
+            </h3>
+            <p className="text-secondary text-sm font-semibold">
               {items[selectedTab].dates}
             </p>
             <ul>
