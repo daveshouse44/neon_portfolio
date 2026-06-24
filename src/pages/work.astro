@@ -19,7 +19,6 @@ const workHistorySchema = createItemListSchema({
   items: workTabItems.map((item) => ({
     name: `${item.title} at ${item.employer}`,
     description: item.content[0],
-    startDate: item.dates,
   })),
 });
 

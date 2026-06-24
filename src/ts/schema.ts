@@ -18,9 +18,7 @@ interface ProfilePageOptions extends WebPageOptions {
   sameAs?: string[];
 }
 
-interface BlogOptions extends WebPageOptions {
-  path?: string;
-}
+interface BlogOptions extends WebPageOptions {}
 
 interface CollectionPageOptions extends WebPageOptions {
   about: string;
