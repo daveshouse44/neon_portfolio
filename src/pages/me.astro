@@ -6,14 +6,33 @@ import MyFace from "../components/MyFace.astro";
 import Link from "../components/Link.astro";
 
 import meData from "../data/meData";
+import contactData from "../data/contactData";
+import { createProfilePageSchema } from "../ts/schema";
 const { text, facts } = meData[0];
+
+const sameAs = contactData
+  .map((item) => item.href)
+  .filter((href) => /^https?:\/\//i.test(href));
+
+const structuredData = [
+  createProfilePageSchema({
+    path: "/me/",
+    title: "Me",
+    description: "A bit more about me",
+    sameAs,
+  }),
+];
 ---
 
-<MainLayout title="Me" description="A bit more about me">
+<MainLayout
+  title="Me"
+  description="A bit more about me"
+  structuredData={structuredData}
+>
   <div class="mx-6 flex h-full flex-col items-center justify-center gap-4 p-4">
     <h1 class="mt-4 text-xl font-bold">
       A bit more about&nbsp;<span
-        class="inline-block animate-flip-up font-tilt text-4xl font-bold uppercase text-neon transition duration-500 animate-duration-1000 hover:text-primary hover:shadow-neon hover:text-shadow-glow md:text-5xl"
+        class="animate-flip-up font-tilt text-neon animate-duration-1000 hover:text-primary hover:shadow-neon hover:text-shadow-glow inline-block text-4xl font-bold uppercase transition duration-500 md:text-5xl"
         >Me</span
       >
     </h1>
@@ -28,14 +47,14 @@ const { text, facts } = meData[0];
       </div>
       <div class="flex flex-col items-center gap-4">
         <div
-          class="group flex max-w-3xl flex-col justify-center gap-2 rounded-xs border-2 border-neon/40 bg-background/80 p-6 shadow-sm transition duration-300 hover:border-neon hover:bg-background hover:shadow-glow hover:shadow-neon md:gap-4"
+          class="group border-neon/40 bg-background/80 hover:border-neon hover:bg-background hover:shadow-glow hover:shadow-neon flex max-w-3xl flex-col justify-center gap-2 rounded-xs border-2 p-6 shadow-sm transition duration-300 md:gap-4"
         >
           <Icon
             name="person"
-            class="h-10 w-10 text-primary transition duration-300 group-hover:text-neon"
+            class="text-primary group-hover:text-neon h-10 w-10 transition duration-300"
           />
           <h2
-            class="font-tilt text-2xl font-bold uppercase text-neon transition duration-500 group-hover:text-primary group-hover:shadow-neon group-hover:text-shadow-glow md:text-3xl"
+            class="font-tilt text-neon group-hover:text-primary group-hover:shadow-neon group-hover:text-shadow-glow text-2xl font-bold uppercase transition duration-500 md:text-3xl"
           >
             Thank you for visiting!
           </h2>

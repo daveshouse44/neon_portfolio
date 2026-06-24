@@ -11,6 +11,10 @@ import {
   type Ripple,
   urlPrefix,
 } from "../../../ts/utils";
+import {
+  createCollectionPageSchema,
+  createItemListSchema,
+} from "../../../ts/schema";
 
 export async function getStaticPaths({ paginate }: { paginate: Function }) {
   const allRipples = await getCollection("posts");
@@ -38,11 +42,33 @@ const { page } = Astro.props;
 const params = Astro.params;
 const capitalizedCategory =
   params.category.charAt(0).toUpperCase() + params.category.slice(1);
+const title = `${capitalizedCategory} ripples`;
+const description = "A small ripple can spread";
+const structuredData = [
+  createCollectionPageSchema({
+    path: Astro.url.pathname,
+    title,
+    description,
+    about: capitalizedCategory,
+  }),
+  createItemListSchema({
+    id: `${params.category}-ripple-items`,
+    path: Astro.url.pathname,
+    name: `${capitalizedCategory} ripple archive page`,
+    description: `Published ${capitalizedCategory.toLowerCase()} ripple posts shown on this archive page.`,
+    items: page.data.map((ripple: Ripple) => ({
+      name: ripple.data.title,
+      description: ripple.data.description,
+      url: ripple.url,
+    })),
+  }),
+];
 ---
 
 <MainLayout
-  title={`${capitalizedCategory} ripples`}
-  description="A small ripple can spread"
+  title={title}
+  description={description}
+  structuredData={structuredData}
 >
   <div
     class="mx-6 flex h-full justify-center gap-4 p-4"
@@ -52,7 +78,7 @@ const capitalizedCategory =
       <h1 class="text-xl font-bold">
         <a
           href={urlPrefix}
-          class="inline-block animate-flip-up font-tilt text-4xl font-bold uppercase text-neon underline transition duration-500 animate-duration-1000 hover:text-primary hover:underline hover:decoration-neon hover:shadow-neon hover:text-shadow-glow sm:no-underline md:text-5xl"
+          class="animate-flip-up font-tilt text-neon animate-duration-1000 hover:text-primary hover:decoration-neon hover:shadow-neon hover:text-shadow-glow inline-block text-4xl font-bold uppercase underline transition duration-500 hover:underline sm:no-underline md:text-5xl"
           >ripples</a
         >
         &nbsp;about&nbsp;{params.category}

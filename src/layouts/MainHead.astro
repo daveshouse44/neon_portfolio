@@ -1,6 +1,24 @@
 ---
 import { ClientRouter } from "astro:transitions";
-const { title, description } = Astro.props;
+import type { SchemaNode } from "../ts/schema";
+
+interface Props {
+  title: string;
+  description: string;
+  structuredData?: SchemaNode[];
+}
+
+const { title, description, structuredData = [] }: Props = Astro.props;
+
+const jsonLdGraph =
+  structuredData.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@graph": structuredData.map(({ "@context": _context, ...schema }) =>
+          schema,
+        ),
+      }
+    : undefined;
 ---
 
 <head>
@@ -21,5 +39,8 @@ const { title, description } = Astro.props;
     title="Sitemap for davetierney.dev"
     href="https://davetierney.dev/sitemap-index.xml"
   />
+  {jsonLdGraph && (
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLdGraph)} />
+  )}
   <ClientRouter />
 </head>

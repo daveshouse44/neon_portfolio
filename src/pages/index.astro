@@ -6,6 +6,7 @@ import MyFace from "../components/MyFace.astro";
 import RippleGlass from "../components/RippleGlass.astro";
 
 import { formatRipples, type Ripple, slugify, urlPrefix } from "../ts/utils";
+import { createItemListSchema, createWebSiteSchema } from "../ts/schema";
 
 const allRipples = await getCollection("posts");
 const ripples: Ripple[] = allRipples
@@ -15,9 +16,27 @@ const ripples: Ripple[] = allRipples
     url: urlPrefix + slugify(ripple.data.title),
   }));
 const formattedRipples = formatRipples(ripples, { limit: 1 });
+const structuredData = [
+  createWebSiteSchema(),
+  createItemListSchema({
+    id: "homepage-featured-ripples",
+    path: "/",
+    name: "Featured ripple",
+    description: "The most recent ripple featured on the homepage.",
+    items: formattedRipples.map((ripple) => ({
+      name: ripple.data.title,
+      description: ripple.data.description,
+      url: ripple.url,
+    })),
+  }),
+];
 ---
 
-<MainLayout title="Homepage" description="Welcome to my website">
+<MainLayout
+  title="Homepage"
+  description="Welcome to my website"
+  structuredData={structuredData}
+>
   <div
     class="mx-6 flex h-full flex-col items-center justify-evenly p-4 lg:flex-row"
   >
@@ -28,7 +47,7 @@ const formattedRipples = formatRipples(ripples, { limit: 1 });
       <div class="flex flex-col gap-4">
         <h2 class="text-xl font-bold">Greetings, I'm</h2>
         <h1
-          class="animate-flip-up font-tilt text-4xl font-bold uppercase text-neon transition duration-500 animate-duration-1000 hover:text-primary hover:shadow-neon hover:text-shadow-glow md:text-5xl"
+          class="animate-flip-up font-tilt text-neon animate-duration-1000 hover:text-primary hover:shadow-neon hover:text-shadow-glow text-4xl font-bold uppercase transition duration-500 md:text-5xl"
         >
           Dave Tierney
         </h1>
@@ -45,7 +64,7 @@ const formattedRipples = formatRipples(ripples, { limit: 1 });
         Most recent&nbsp;
         <a
           href="/ripples"
-          class="font-tilt text-xl font-bold uppercase text-neon underline transition duration-500 hover:text-primary hover:underline hover:decoration-neon hover:shadow-neon hover:text-shadow-glow sm:no-underline md:text-2xl"
+          class="font-tilt text-neon hover:text-primary hover:decoration-neon hover:shadow-neon hover:text-shadow-glow text-xl font-bold uppercase underline transition duration-500 hover:underline sm:no-underline md:text-2xl"
           >ripple</a
         >
       </h2>

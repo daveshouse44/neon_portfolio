@@ -6,9 +6,41 @@ import { Icon } from "astro-icon/components";
 
 import { workLinks, workTabItems } from "../data/workData.tsx";
 import ReactTabs from "../components/ReactTabs.tsx";
+import {
+  createItemListSchema,
+  createWebApplicationSchemas,
+} from "../ts/schema";
+
+const workHistorySchema = createItemListSchema({
+  id: "worktab-items",
+  path: "/work/",
+  name: "Work history",
+  description: "Career roles and responsibilities over time.",
+  items: workTabItems.map((item) => ({
+    name: `${item.title} at ${item.employer}`,
+    description: item.content[0],
+    startDate: item.dates,
+  })),
+});
+
+const workApplicationSchemas = createWebApplicationSchemas(
+  "/work/",
+  workLinks.map((item) => ({
+    name: item.name,
+    description: item.description,
+    url: item.link,
+    image: item.image?.src,
+  })),
+);
+
+const structuredData = [workHistorySchema, ...workApplicationSchemas];
 ---
 
-<MainLayout title="Work" description="Jobs and projects">
+<MainLayout
+  title="Work"
+  description="Jobs and projects"
+  structuredData={structuredData}
+>
   <div class="mx-6 flex h-full flex-col items-center justify-center gap-4 p-4">
     <h1 class="mt-4 text-lg font-bold">
       <span

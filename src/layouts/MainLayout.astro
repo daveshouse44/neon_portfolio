@@ -1,5 +1,6 @@
 ---
 import MainHead from "./MainHead.astro";
+import { createWebPageSchema, type SchemaNode } from "../ts/schema";
 
 import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav.astro";
@@ -12,17 +13,27 @@ import "@fontsource/tilt-neon";
 interface Props {
   title?: string;
   description?: string;
+  structuredData?: SchemaNode[];
 }
 
 const {
   title = "Dave Tierney's site",
   description = "Creating ripples in my world",
+  structuredData = [],
 } = Astro.props;
+
+const webPageSchema = createWebPageSchema({
+  path: Astro.url.pathname,
+  title,
+  description,
+});
+
+const mergedStructuredData = [webPageSchema, ...structuredData];
 ---
 
 <html lang="en">
-  <MainHead title={title} {description} />
-  <body class="flex h-screen flex-col bg-background text-primary">
+  <MainHead title={title} {description} structuredData={mergedStructuredData} />
+  <body class="bg-background text-primary flex h-screen flex-col">
     <Nav />
     <Theme />
     <main class="grow" transition:animate="initial">

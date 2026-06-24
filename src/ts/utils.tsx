@@ -12,19 +12,16 @@ export interface Ripple {
   url?: string;
   category?: string;
 }
-export interface PageType {
+
+export interface PaginatedPage<T> {
   url: {
-    prev: string;
-    next: string;
+    prev: string | undefined;
+    next: string | undefined;
   };
-  data: Array<{
-    data: {
-      pubDate: string;
-      draft: boolean;
-    };
-    url: string;
-  }>;
+  data: T[];
 }
+
+export type RipplePage = PaginatedPage<Ripple>;
 
 const urlPrefix = "/ripples/";
 

@@ -6,8 +6,24 @@ import MainLayout from "../layouts/MainLayout.astro";
 import SimilarRipples from "../components/SimilarRipples.astro";
 
 import { formatRipples, type Ripple, slugify } from "../ts/utils";
+import type { SchemaNode } from "../ts/schema";
 
-const { data } = Astro.props;
+interface Props {
+  data: {
+    title: string;
+    pubDate: string | Date;
+    draft: boolean;
+    author: string;
+    description: string;
+    category: string;
+    cover?: any;
+    coverAlt?: string;
+    updated?: string | Date;
+  };
+  structuredData?: SchemaNode[];
+}
+
+const { data, structuredData = [] }: Props = Astro.props;
 const {
   title,
   pubDate,
@@ -20,11 +36,27 @@ const {
 } = data;
 
 const allRipples = await getCollection("posts");
-const ripples: Ripple[] = allRipples.map((ripple) => ({
-  data: ripple.data as Ripple["data"],
-  url: slugify(ripple.data.title),
-  category: ripple.data.category,
-}));
+const ripples: Ripple[] = allRipples.map((ripple) => {
+  const normalizedPubDate =
+    typeof ripple.data.pubDate === "string"
+      ? ripple.data.pubDate
+      : ripple.data.pubDate.toISOString();
+
+  return {
+    data: {
+      title: ripple.data.title,
+      pubDate: normalizedPubDate,
+      draft: ripple.data.draft,
+      author: ripple.data.author,
+      description: ripple.data.description,
+      category: ripple.data.category,
+      cover: ripple.data.cover,
+      coverAlt: ripple.data.coverAlt,
+    },
+    url: slugify(ripple.data.title),
+    category: ripple.data.category,
+  };
+});
 const formattedRipples = formatRipples(ripples, { sortByDate: false });
 const similarRipples = formattedRipples
   .filter(
@@ -33,7 +65,11 @@ const similarRipples = formattedRipples
   .slice(0, 2);
 ---
 
-<MainLayout title={title} description={description}>
+<MainLayout
+  title={title}
+  description={description}
+  structuredData={structuredData}
+>
   <div class="my-4 grid w-full place-items-center">
     <div class="grid max-w-5xl place-items-center gap-6 p-6">
       <RippleHeader

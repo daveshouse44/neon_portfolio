@@ -8,10 +8,11 @@ import Wavelengths from "../../components/Wavelengths.astro";
 import {
   formatRipples,
   type Ripple,
-  type PageType,
+  type RipplePage,
   slugify,
   urlPrefix,
 } from "../../ts/utils";
+import { createBlogSchema, createItemListSchema } from "../../ts/schema";
 
 export async function getStaticPaths({ paginate }: { paginate: Function }) {
   const allRipples = await getCollection("posts");
@@ -27,10 +28,35 @@ export async function getStaticPaths({ paginate }: { paginate: Function }) {
   return paginate(formattedRipples, { pageSize: 6 });
 }
 
-const { page }: { page: PageType } = Astro.props;
+const { page }: { page: RipplePage } = Astro.props;
+const title = "Ripples";
+const description = "A small ripple can spread";
+
+const structuredData = [
+  createBlogSchema({
+    path: "/ripples/",
+    title,
+    description,
+  }),
+  createItemListSchema({
+    id: "ripple-items",
+    path: Astro.url.pathname,
+    name: `${title} archive page`,
+    description: "Published ripple posts shown on this archive page.",
+    items: page.data.map((ripple) => ({
+      name: ripple.data.title,
+      description: ripple.data.description,
+      url: ripple.url,
+    })),
+  }),
+];
 ---
 
-<MainLayout title="Ripples" description="A small ripple can spread">
+<MainLayout
+  title={title}
+  description={description}
+  structuredData={structuredData}
+>
   <div
     class="mx-6 flex h-full flex-col justify-center gap-4 p-4"
     aria-label="New Ripples"
@@ -39,7 +65,7 @@ const { page }: { page: PageType } = Astro.props;
       <h1 class="text-xl font-bold">
         Sending &nbsp;
         <span
-          class="inline-block animate-flip-up font-tilt text-4xl font-bold uppercase text-neon transition duration-500 animate-duration-1000 hover:text-primary hover:shadow-neon hover:text-shadow-glow md:text-5xl"
+          class="animate-flip-up font-tilt text-neon animate-duration-1000 hover:text-primary hover:shadow-neon hover:text-shadow-glow inline-block text-4xl font-bold uppercase transition duration-500 md:text-5xl"
           >ripples</span
         >
         &nbsp;into the ether
